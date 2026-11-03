@@ -1,0 +1,47 @@
+when "jrp_case_complete == 1" -> :quiet
+when "jrp_guard_reformed == 1" -> :report
+when "jrp_wife_agreed == 1" -> :guard
+when "jrp_guard_agreed == 1" -> :wife
+when "jrp_colleagues_interviewed == 1 && jrp_vendor_interviewed == 1 && jrp_wife_interviewed == 1 && jrp_cycle_observed == 1" -> :offer
+when "jrp_guard_refused == 1" -> :witnesses
+when "jrp_reset_done == 1" -> :question
+when "jrp_clues_complete == 1" -> :reset
+when "jrp_clue_body == 1 || jrp_clue_bottles == 1 || jrp_clue_note == 1" -> :finish_inspection
+text "Смерть: Если про косу — это рабочий инструмент. Меч тебе не вернут." key=jrp/investigation/death_hint/first second=jrp/death
+select ""
+option "Спросить о первом деле" key=jrp/investigation/death_hint/ask_work -> :first_case
+option "У тебя бывает перерыв?" key=jrp/investigation/death_hint/ask_break -> :break
+:first_case
+text "Смерть: Сначала посмотри на тело. И на всё, что рядом. Не пиши «нападение игроков», пока не увидишь следы. В прошлый раз так и сделали." key=jrp/investigation/death_hint/inspect second=jrp/death
+end
+:break
+text "Смерть: Был. Пока ты спрашивал." key=jrp/investigation/death_hint/break second=jrp/death
+ptext "Она переворачивает пейджер экраном вниз. Он продолжает мигать." key=jrp/investigation/death_hint/pager
+end
+:finish_inspection
+text "Смерть: Ты уже начал осмотр. Доведи его до конца: тело, бутылки и бумага у стола. Без трёх записей восстанавливать пока рано." key=jrp/investigation/death_hint/finish second=jrp/death
+end
+:reset
+text "Смерть: Все три находки внесены? Тогда к временному столу. В заявке укажи: восстановить Глеба, материалы осмотра сохранить. Иначе начальник ещё попросит осмотреть его заново." key=jrp/investigation/death_hint/reset second=jrp/death
+end
+:question
+text "Смерть: Глеб жив и у западных ворот. Теперь спроси его самого. Нет, я не могу заодно восстановить желание разговаривать." key=jrp/investigation/death_hint/question second=jrp/death
+end
+:witnesses
+text "Смерть: Отказ — тоже ответ, только пустой. Коллеги у ворот, лавочник на рынке, Лида дома за рядами. И укрытие во дворе мельницы: там можно увидеть, куда уходит его смена." key=jrp/investigation/death_hint/witnesses second=jrp/death
+end
+:offer
+text "Смерть: Показания сходятся. Теперь нужен разговор с Глебом, а не ещё одна копия акта. Предложи выплаты на сына и трезвую встречу после смены, при свидетеле." key=jrp/investigation/death_hint/offer second=jrp/death
+end
+:wife
+text "Смерть: Глеб согласился. Лида ещё нет. Её решение в твоих служебных полномочиях не записано — сходи и спроси." key=jrp/investigation/death_hint/wife second=jrp/death
+end
+:guard
+text "Смерть: Условия согласованы. Передай их Глебу у ворот и проверь, что он сдаёт смену по книге. Потом вернёмся к отчёту." key=jrp/investigation/death_hint/guard second=jrp/death
+end
+:report
+text "Смерть: Глеб на посту. Вызовов меньше. Начальник это заметит — отправь отчёт со своего стола, пока он не посчитал тишину недоработкой." key=jrp/investigation/death_hint/report second=jrp/death
+end
+:quiet
+text "Смерть: Пейджер молчит. Пять минут у кофейного столика — и ни одного вопроса про работу. С этим справишься?" key=jrp/investigation/death_hint/quiet second=jrp/death
+end

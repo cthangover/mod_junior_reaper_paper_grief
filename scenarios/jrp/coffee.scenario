@@ -1,0 +1,22 @@
+when "jrp_death_window == 1" -> :window
+when "jrp_coffee_offered == 1" -> :busy
+text "Стас: Я могу налить две чашки." key=jrp/investigation/coffee/offer first=jrp/stas
+text "Смерть: Одну. Вторую я не успею." key=jrp/investigation/coffee/one second=jrp/death
+ptext "Стас оставляет чашку на свободном краю стола. Смерть забирает её, не выпуская пейджер." key=jrp/investigation/coffee/leave
+flag jrp_coffee_offered 1
+text "Смерть: Без сахара. На будущее." key=jrp/investigation/coffee/no_sugar second=jrp/death
+end
+:busy
+ptext "На дисплее автомата: «Кофе есть». Пейджер Смерти настаивает на другом." key=jrp/investigation/coffee/busy
+end
+:window
+when "jrp_coffee_after_case == 1" -> :after
+flag jrp_coffee_after_case 1
+ptext "Смерть кладёт пейджер на край стола. Экран остаётся тёмным." key=jrp/investigation/coffee/quiet
+text "Смерть: Я помню такую тишину. До Бюро." key=jrp/investigation/coffee/remember second=jrp/death
+text "Стас: Не будем её заполнять." key=jrp/investigation/coffee/dont_fill first=jrp/stas
+ptext "Пять минут никто ничего не заполняет." key=jrp/investigation/coffee/five
+end
+:after
+text "Смерть: Если ещё останешься — налей себе. Это уже твой перерыв." key=jrp/investigation/coffee/after second=jrp/death
+end

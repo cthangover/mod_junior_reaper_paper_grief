@@ -1,0 +1,14 @@
+when "jrp_clues_complete == 1 && jrp_reset_done != 1" -> :reset
+action rpg.teleport map=jrp_mill_yard x=9 y=6 dir=Down
+end
+:reset
+text "Стас: Теперь можно просить восстановление. Доказательства останутся в деле." key=jrp/investigation/millexit/reset first=jrp/stas
+select ""
+option "Вернуться в Бюро через служебный портал" key=jrp/investigation/millexit/office -> :office
+option "Выйти во двор мельницы" key=jrp/investigation/millexit/yard -> :yard
+:office
+action rpg.teleport map=jrp_bureau_hall x=17 y=3 dir=Left
+end
+:yard
+action rpg.teleport map=jrp_mill_yard x=9 y=6 dir=Down
+end

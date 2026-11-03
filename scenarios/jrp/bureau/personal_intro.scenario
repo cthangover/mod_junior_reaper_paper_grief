@@ -1,0 +1,15 @@
+scene: jrp_stas_office
+priority: 10
+is_one_run: true
+save_allowed: true
+---
+when "jrp_case_complete != 1" -> :locked
+flag jrp_personal_office 1
+title "Личный кабинет · принят по описи" key=jrp/bureau/personal/title
+text "Стас: Один стол. Один шкаф. Уже можно не согласовывать, где лежит дело." key=jrp/bureau/personal/stas first=jrp/stas
+ptext "В описи против кресла стоит: «Скрип допустимый». Стас подписывает." key=jrp/bureau/personal/inventory
+end
+:locked
+ptext "На служебном пропуске: «Рабочее место — кабинет Смерти. Отдельный кабинет после первого закрытого дела». Дверь пока опломбирована." key=jrp/bureau/door/locked
+action rpg.teleport map=jrp_bureau_hall x=13 y=1 dir=Down
+end

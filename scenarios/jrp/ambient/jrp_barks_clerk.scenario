@@ -1,0 +1,10 @@
+scene: jrp_gates
+channel: ambient
+actor.c: jrp_gates/bark_clerk
+condition: near("c", "player", 4)
+cooldown: 35
+---
+:remark
+action npc.look who=c target=player
+text "Если из Бюро — очередь вон там. Если не из Бюро — всё равно там." who=c key=jrp/barks/clerk/queue duration=4
+end

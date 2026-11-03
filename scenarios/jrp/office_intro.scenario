@@ -1,0 +1,25 @@
+scene: jrp_office
+priority: 10
+is_one_run: true
+save_allowed: true
+---
+light_use_time false
+title "Бюро · кабинет Смерти" key=jrp/office/title
+ptext "Начальник, по громкой связи: Новый сотрудник? Прекрасно. Дело № 001 — повторные смерти столичного стражника." key=jrp/office/1
+text "Стас: Я ещё заявление не написал." key=jrp/office/2 first=jrp/stas
+ptext "Начальник: Заполните задним числом. В столице безопасная зона. Стражники там умирать не должны. Выясните причину." key=jrp/office/3
+action quest.set_status quest_id=jrp_guard_case status=Progress
+action quest.set_data_status quest_id=jrp_guard_case level=0
+action item.add id=jrp/case_file
+flag jrp_briefed 1
+text "Смерть: Его уже пятый раз находят у старой мельницы. К воротам он так и не возвращается." key=jrp/office/4 second=jrp/death
+text "Стас: И охрану никто не заменил?" key=jrp/office/5 first=jrp/stas
+text "Смерть: Живой стражник и есть защита. Нет его — игроки могут бить местных. А собирать их потом мне." key=jrp/office/6 second=jrp/death
+text "Стас: Сколько у тебя людей в отделе?" key=jrp/office/7 first=jrp/stas
+text "Смерть: В поле? Один. Можешь пересчитать." key=jrp/office/8 second=jrp/death
+text "Смерть: Пока садись за маленький стол. Картотека общая. Мою стопку с пейджером не трогай." key=jrp/bureau/intro/seat second=jrp/death
+text "Стас: А отдельный кабинет?" key=jrp/bureau/intro/temporary first=jrp/stas
+text "Смерть: После первого закрытого дела. Если поставлю тебе ещё и шкаф, я отсюда не выйду." key=jrp/bureau/intro/first_case second=jrp/death
+ptext "Первое дело уже в сумке. Временное место Стаса — за маленьким столом в кабинете Смерти. Диспетчерская находится в коридоре Бюро." key=jrp/office/9
+ptext "Ходить — WASD или стрелки. Взаимодействовать — E или F, стоя лицом к предмету или сотруднику." key=jrp/office/controls
+end

@@ -1,0 +1,82 @@
+when "jrp_guard_refused != 1" -> :early
+when "jrp_wife_agreed == 1" -> :agreed
+when "jrp_wife_interviewed == 1" -> :proposal_check
+text "Стас: Я разбираю исчезновения Глеба. Нашёл уведомление об удержании и записку Миши." key=jrp/investigation/wife/open first=jrp/stas
+text "Лида: Записку я не передавала. Миша сам сунул ему в карман на последней встрече." key=jrp/investigation/wife/child second=jrp/wife
+text "Лида: Он приходил пьяным. Один раз повёл сына через весь город искать открытую таверну. Я перестала их отпускать вдвоём. Потом Глеб перестал приносить деньги." key=jrp/investigation/wife/reason second=jrp/wife
+text "Стас: Удержание уже идёт через казначейство?" key=jrp/investigation/wife/court first=jrp/stas
+text "Лида: То, что успевают удержать. Остальное он пропивает, чтобы мне не досталось. Как будто Мишу тоже можно вычеркнуть вместе со мной." key=jrp/investigation/wife/motive second=jrp/wife
+text "Лида: Сына я от него не прячу. Но трезвый день, при человеке, которому Миша доверяет. И выплаты не в обмен на свидание с ребёнком." key=jrp/investigation/wife/boundaries second=jrp/wife
+flag jrp_wife_interviewed 1
+:proposal_check
+when "jrp_guard_agreed == 1" -> :proposal
+ptext "Условия Лиды записаны: трезвая встреча при свидетеле, после смены; содержание сына независимо от общения. Сверьте показания коллег и торговца, понаблюдайте у мельницы, затем вернитесь к Глебу." key=jrp/investigation/wife/record
+goto -> :progress
+:proposal
+text "Стас: Глеб согласился оставить удержание и попросил больше не давать ему в долг. Старший готов быть рядом на первой встрече, после сдачи смены." key=jrp/investigation/wife/offer first=jrp/stas
+select "Как передать предложение?" key=jrp/investigation/wife/ask
+option "Зафиксировать условия Лиды. Решение о встрече остаётся за ней" key=jrp/investigation/wife/agree -> :confirm
+option "Сначала уточнить детали у Глеба" key=jrp/investigation/wife/later -> :later
+:confirm
+text "Лида: В воскресенье, во дворе. Час. Миша сам решит, сколько захочет разговаривать. При запахе спиртного встреча закончится." key=jrp/investigation/wife/consent second=jrp/wife
+text "Стас: И ни одна выплата от этой встречи не зависит." key=jrp/investigation/wife/not_bargain first=jrp/stas
+text "Лида: Вот это запиши первым." key=jrp/investigation/wife/yes second=jrp/wife
+flag jrp_wife_agreed 1
+ptext "Лида согласилась на первую встречу при своих условиях. Передайте их Глебу у западных ворот; он должен оставаться на службе до сдачи смены." key=jrp/investigation/wife/final
+goto -> :progress
+:later
+text "Лида: Тогда не обещай ему за меня. Я подожду конкретного ответа." key=jrp/investigation/wife/late second=jrp/wife
+goto -> :progress
+:agreed
+text "Лида: Воскресенье, двор, старший рядом. И пусть Миша увидит отца, а не очередное обещание." key=jrp/investigation/wife/agreed second=jrp/wife
+goto -> :progress
+:early
+text "Лида: Если о Глебе — сначала спросите Глеба. Я не его переводчик." key=jrp/investigation/wife/early second=jrp/wife
+goto -> :progress
+:progress
+when "jrp_case_complete == 1" -> :progress_11
+when "jrp_guard_reformed == 1" -> :progress_10
+when "jrp_wife_agreed == 1" -> :progress_9
+when "jrp_guard_agreed == 1" -> :progress_8
+when "jrp_colleagues_interviewed == 1 && jrp_vendor_interviewed == 1 && jrp_wife_interviewed == 1 && jrp_cycle_observed == 1" -> :progress_7
+when "jrp_guard_refused == 1" -> :progress_6
+when "jrp_reset_done == 1" -> :progress_5
+when "jrp_clues_complete == 1" -> :progress_4
+when "jrp_clue_body == 1 || jrp_clue_bottles == 1 || jrp_clue_note == 1" -> :progress_3
+when "jrp_mill_visited == 1" -> :progress_2
+when "jrp_dispatched == 1" -> :progress_1
+action quest.set_data_status quest_id=jrp_guard_case level=0
+end
+:progress_11
+action quest.set_data_status quest_id=jrp_guard_case level=11
+end
+:progress_10
+action quest.set_data_status quest_id=jrp_guard_case level=10
+end
+:progress_9
+action quest.set_data_status quest_id=jrp_guard_case level=9
+end
+:progress_8
+action quest.set_data_status quest_id=jrp_guard_case level=8
+end
+:progress_7
+action quest.set_data_status quest_id=jrp_guard_case level=7
+end
+:progress_6
+action quest.set_data_status quest_id=jrp_guard_case level=6
+end
+:progress_5
+action quest.set_data_status quest_id=jrp_guard_case level=5
+end
+:progress_4
+action quest.set_data_status quest_id=jrp_guard_case level=4
+end
+:progress_3
+action quest.set_data_status quest_id=jrp_guard_case level=3
+end
+:progress_2
+action quest.set_data_status quest_id=jrp_guard_case level=2
+end
+:progress_1
+action quest.set_data_status quest_id=jrp_guard_case level=1
+end

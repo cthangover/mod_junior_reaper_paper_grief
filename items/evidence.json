@@ -1,0 +1,32 @@
+{
+  "Kind": "item",
+  "Items": [
+    {
+      "Id": "jrp/evidence_body",
+      "Name": "jrp/investigation/evidence/body/name",
+      "Description": "jrp/investigation/evidence/body/desc",
+      "Cost": 0,
+      "Sprite": "jrp/evidence_body",
+      "ItemType": "Quest,CantDrop",
+      "ItemAction": "null"
+    },
+    {
+      "Id": "jrp/evidence_bottles",
+      "Name": "jrp/investigation/evidence/bottles/name",
+      "Description": "jrp/investigation/evidence/bottles/desc",
+      "Cost": 0,
+      "Sprite": "jrp/evidence_bottles",
+      "ItemType": "Quest,CantDrop",
+      "ItemAction": "null"
+    },
+    {
+      "Id": "jrp/evidence_note",
+      "Name": "jrp/investigation/evidence/note/name",
+      "Description": "jrp/investigation/evidence/note/desc",
+      "Cost": 0,
+      "Sprite": "jrp/evidence_note",
+      "ItemType": "Quest,CantDrop",
+      "ItemAction": "null"
+    }
+  ]
+}

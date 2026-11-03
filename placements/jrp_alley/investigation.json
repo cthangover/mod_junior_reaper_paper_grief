@@ -1,0 +1,64 @@
+{
+  "Kind": "rpg_placement",
+  "Items": [
+    {
+      "Id": "jrp_alley/west_house",
+      "Object": "junior_reaper_paper_grief/jrp_world/townhouse",
+      "X": 1,
+      "Y": 0
+    },
+    {
+      "Id": "jrp_alley/east_house",
+      "Object": "junior_reaper_paper_grief/jrp_world/townhouse",
+      "X": 8,
+      "Y": 0
+    },
+    {
+      "Id": "jrp_alley/clue",
+      "Object": "junior_reaper_paper_grief/jrp_world/barrel",
+      "X": 6,
+      "Y": 4,
+      "Name": "jrp/world/object/alley_clue",
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/investigation/alley_clue"
+      }
+    },
+    {
+      "Id": "jrp_alley/barrel",
+      "Object": "junior_reaper_paper_grief/jrp_world/barrel",
+      "X": 11,
+      "Y": 8
+    },
+    {
+      "Id": "jrp_alley/lamp",
+      "Object": "junior_reaper_paper_grief/jrp_world/lamp",
+      "X": 3,
+      "Y": 8
+    },
+    {
+      "Id": "jrp_alley/beacon_gates_edge_north",
+      "Object": "junior_reaper_paper_grief/jrp_world/wayfinding_lantern",
+      "X": 0,
+      "Y": 5
+    },
+    {
+      "Id": "jrp_alley/beacon_gates_edge_south",
+      "Object": "junior_reaper_paper_grief/jrp_world/wayfinding_lantern",
+      "X": 0,
+      "Y": 8
+    },
+    {
+      "Id": "jrp_alley/beacon_mill_edge_north",
+      "Object": "junior_reaper_paper_grief/jrp_world/wayfinding_lantern",
+      "X": 13,
+      "Y": 5
+    },
+    {
+      "Id": "jrp_alley/beacon_mill_edge_south",
+      "Object": "junior_reaper_paper_grief/jrp_world/wayfinding_lantern",
+      "X": 13,
+      "Y": 8
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+when "jrp_guard_reformed == 1" -> :reformed
+when "jrp_reset_done != 1" -> :missing
+when "jrp_guard_refused != 1" -> :refusal
+when "jrp_wife_agreed == 1" -> :final
+when "jrp_guard_agreed == 1" -> :waiting
+when "jrp_colleagues_interviewed == 1 && jrp_vendor_interviewed == 1 && jrp_wife_interviewed == 1 && jrp_cycle_observed == 1" -> :offer
+ptext "Глеб: По службе — к старшему. Обо мне — ни к кому." key=jrp/investigation/guard/dismiss
+text "Стас: Ладно. Сначала соберу то, что можно проверить без твоего согласия." key=jrp/investigation/guard/not_yet first=jrp/stas
+goto -> :progress
+:refusal
+text "Стас: Глеб? Я из Бюро. Почему ты уходишь к мельнице?" key=jrp/investigation/guard/question first=jrp/stas
+ptext "Глеб: Я стою на посту. Ты видел, чтобы я уходил?" key=jrp/investigation/guard/refusal
+text "Стас: Я видел пять актов." key=jrp/investigation/guard/records first=jrp/stas
+ptext "Глеб: Вот с актами и разговаривай." key=jrp/investigation/guard/not_talking
+flag jrp_guard_refused 1
+ptext "Глеб не отвечает. Можно опросить его коллег у ворот, торговца на рынке и Лиду в доме за рынком — в любом порядке. Наблюдать за его уходом удобнее из укрытия во дворе мельницы." key=jrp/investigation/guard/next
+goto -> :progress
+:offer
+text "Стас: Два дня у мельницы. Рыночное спиртное. Весь остаток жалованья. Лида подтвердила: ты перестал платить на Мишу." key=jrp/investigation/guard/facts first=jrp/stas
+ptext "Глеб: Она забрала сына. Я решил — от меня ей больше ничего. Пусть хоть казначейство подавится." key=jrp/investigation/guard/motive
+text "Стас: Деньги забирает лавочник. Без денег остаётся Миша. А твою смену закрывают люди, которых потом убивают у лавок." key=jrp/investigation/guard/son first=jrp/stas
+ptext "Глеб разжимает пальцы. На ладони отпечатался ремень от ножен." key=jrp/investigation/guard/silence
+select "Что предложить Глебу?" key=jrp/investigation/guard/choice
+option "Выплаты отдельно. Трезвая встреча с сыном при свидетеле" key=jrp/investigation/guard/plan -> :agree
+option "Пока не предлагать решение" key=jrp/investigation/guard/think -> :later
+:agree
+ptext "Глеб: Она меня к нему не пустит." key=jrp/investigation/guard/boundary
+text "Стас: Спросим. Её согласие — не моя подпись. С твоей стороны нужны выплаты и трезвость. Сейчас, а не после встречи." key=jrp/investigation/guard/consent first=jrp/stas
+ptext "Глеб: Удержание пусть идёт. И скажи лавочнику — больше мне в долг не давать. Без жалоб, я сам прошу." key=jrp/investigation/guard/accept
+ptext "Старший забирает подписанную Глебом записку лавочнику и передаёт посыльному. Это просьба самого покупателя, а не запрет Бюро." key=jrp/investigation/guard/credit
+flag jrp_credit_stopped 1
+flag jrp_guard_agreed 1
+ptext "Глеб согласился на условия. Передайте их Лиде в доме за рынком; решение о первой встрече остаётся за ней." key=jrp/investigation/guard/visit_wife
+goto -> :progress
+:later
+ptext "Глеб снова берётся за ремень. Разговор можно продолжить, когда Стас будет готов предложить условия." key=jrp/investigation/guard/later
+goto -> :progress
+:waiting
+ptext "Глеб: Я сказал — удержание оставьте. Но не обещай Мише, пока с Лидой не поговоришь." key=jrp/investigation/guard/waiting
+goto -> :progress
+:final
+text "Стас: В воскресенье после смены. Во дворе, при твоём старшем. Только трезвым. Выплаты идут независимо от встречи." key=jrp/investigation/guard/final_stas first=jrp/stas
+ptext "Глеб: Понял. Смену сдам по книге. Мельница подождёт." key=jrp/investigation/guard/final_guard
+flag jrp_guard_reformed 1
+flag jrp_guard_alive 1
+flag jrp_guard_on_post 1
+ptext "[Чат игроков] Великий Герой: стража вернулась. Лавки снова не трогаются. Ну и скукота." key=jrp/investigation/guard/chat
+ptext "Глеб остался на посту. Вернитесь в Бюро и отправьте итоговый отчёт с рабочего стола Стаса." key=jrp/investigation/guard/report
+goto -> :progress
+:reformed
+ptext "Глеб: Пост принят. До сдачи смены никуда не уйду. Мише скажи… Нет. Сам скажу в воскресенье." key=jrp/investigation/guard/reformed
+goto -> :progress
+:missing
+ptext "Глеб не вернулся. Сначала нужно осмотреть мельницу и восстановить стражника через Бюро." key=jrp/investigation/guard/missing
+goto -> :progress
+:progress
+when "jrp_case_complete == 1" -> :progress_11
+when "jrp_guard_reformed == 1" -> :progress_10
+when "jrp_wife_agreed == 1" -> :progress_9
+when "jrp_guard_agreed == 1" -> :progress_8
+when "jrp_colleagues_interviewed == 1 && jrp_vendor_interviewed == 1 && jrp_wife_interviewed == 1 && jrp_cycle_observed == 1" -> :progress_7
+when "jrp_guard_refused == 1" -> :progress_6
+when "jrp_reset_done == 1" -> :progress_5
+when "jrp_clues_complete == 1" -> :progress_4
+when "jrp_clue_body == 1 || jrp_clue_bottles == 1 || jrp_clue_note == 1" -> :progress_3
+when "jrp_mill_visited == 1" -> :progress_2
+when "jrp_dispatched == 1" -> :progress_1
+action quest.set_data_status quest_id=jrp_guard_case level=0
+end
+:progress_11
+action quest.set_data_status quest_id=jrp_guard_case level=11
+end
+:progress_10
+action quest.set_data_status quest_id=jrp_guard_case level=10
+end
+:progress_9
+action quest.set_data_status quest_id=jrp_guard_case level=9
+end
+:progress_8
+action quest.set_data_status quest_id=jrp_guard_case level=8
+end
+:progress_7
+action quest.set_data_status quest_id=jrp_guard_case level=7
+end
+:progress_6
+action quest.set_data_status quest_id=jrp_guard_case level=6
+end
+:progress_5
+action quest.set_data_status quest_id=jrp_guard_case level=5
+end
+:progress_4
+action quest.set_data_status quest_id=jrp_guard_case level=4
+end
+:progress_3
+action quest.set_data_status quest_id=jrp_guard_case level=3
+end
+:progress_2
+action quest.set_data_status quest_id=jrp_guard_case level=2
+end
+:progress_1
+action quest.set_data_status quest_id=jrp_guard_case level=1
+end

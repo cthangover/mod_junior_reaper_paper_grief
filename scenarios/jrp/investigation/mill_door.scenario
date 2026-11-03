@@ -1,0 +1,14 @@
+when "jrp_reset_done == 1" -> :snapshot
+ptext "Дверь приоткрыта. Внутри тот самый стражник из дела № 001." key=jrp/investigation/milldoor/first
+switch_scene jrp_mill_inside
+end
+:snapshot
+ptext "Восстановленный стражник сейчас у ворот. Здесь доступен сохранённый слепок первого осмотра: он не меняет живого человека." key=jrp/investigation/milldoor/snapshot
+select ""
+option "Открыть материалы осмотра" key=jrp/investigation/milldoor/view -> :enter
+option "Остаться во дворе" key=jrp/investigation/milldoor/stay -> :stay
+:enter
+switch_scene jrp_mill_inside
+end
+:stay
+end

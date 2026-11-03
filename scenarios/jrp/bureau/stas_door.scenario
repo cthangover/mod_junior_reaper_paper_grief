@@ -1,0 +1,7 @@
+when "jrp_case_complete == 1" -> :open
+ptext "На служебном пропуске: «Рабочее место — кабинет Смерти. Отдельный кабинет после первого закрытого дела». Дверь пока опломбирована." key=jrp/bureau/door/locked
+end
+:open
+flag jrp_personal_office 1
+action rpg.teleport map=jrp_stas_office x=4 y=4 dir=Up
+end

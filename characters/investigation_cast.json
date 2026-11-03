@@ -1,0 +1,41 @@
+{
+  "Kind": "character",
+  "Items": [
+    {
+      "Id": "jrp_guard",
+      "Name": "jrp/world/character/guard",
+      "Image": "characters/jrp_world/guard",
+      "Level": 1,
+      "Point": 1,
+      "Health": 20,
+      "Defence": 0,
+      "Attack": 0,
+      "Actions": [],
+      "Charset": "jrp/guard"
+    },
+    {
+      "Id": "jrp_colleague",
+      "Name": "jrp/world/character/colleague",
+      "Image": "characters/jrp_world/colleague",
+      "Level": 1,
+      "Point": 1,
+      "Health": 20,
+      "Defence": 0,
+      "Attack": 0,
+      "Actions": [],
+      "Charset": "jrp/colleague"
+    },
+    {
+      "Id": "jrp_vendor",
+      "Name": "jrp/world/character/vendor",
+      "Image": "characters/jrp_world/merchant",
+      "Level": 1,
+      "Point": 1,
+      "Health": 20,
+      "Defence": 0,
+      "Attack": 0,
+      "Actions": [],
+      "Charset": "jrp/merchant"
+    }
+  ]
+}

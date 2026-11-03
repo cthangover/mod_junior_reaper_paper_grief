@@ -1,0 +1,2158 @@
+{
+  "description": "Full original first case plus separate Bureau offices, locked/unlocked door, personal desk and save/load.",
+  "steps": [
+    {
+      "do": "scene",
+      "id": "jrp_arrival"
+    },
+    {
+      "do": "shot",
+      "name": "01_stas_arrival_ru"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "scene",
+      "id": "jrp_office"
+    },
+    {
+      "do": "map",
+      "width": 8,
+      "height": 8,
+      "tile_size": 128,
+      "zoom": 0.5
+    },
+    {
+      "do": "quest",
+      "level": 0,
+      "status": "Progress",
+      "why": "journal reaches stage 0"
+    },
+    {
+      "do": "item",
+      "id": "jrp/evidence_body",
+      "count": 0,
+      "why": "new game starts without collected evidence jrp/evidence_body"
+    },
+    {
+      "do": "item",
+      "id": "jrp/evidence_bottles",
+      "count": 0,
+      "why": "new game starts without collected evidence jrp/evidence_bottles"
+    },
+    {
+      "do": "item",
+      "id": "jrp/evidence_note",
+      "count": 0,
+      "why": "new game starts without collected evidence jrp/evidence_note"
+    },
+    {
+      "do": "shot",
+      "name": "01b_office_native128"
+    },
+    {
+      "do": "place",
+      "x": 6,
+      "y": 3,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "shot",
+      "name": "01c_office_death_portrait"
+    },
+    {
+      "do": "advance",
+      "choices": [
+        0
+      ]
+    },
+    {
+      "do": "flag",
+      "id": "jrp_weapon_confiscated",
+      "value": "1",
+      "why": "jrp_weapon_confiscated reaches 1"
+    },
+    {
+      "do": "flag",
+      "id": "jrp_briefed",
+      "value": "1",
+      "why": "jrp_briefed reaches 1"
+    },
+    {
+      "do": "item",
+      "id": "jrp/claim_receipt",
+      "count": 1,
+      "why": "opening grants exactly one jrp/claim_receipt"
+    },
+    {
+      "do": "item",
+      "id": "jrp/case_file",
+      "count": 1,
+      "why": "opening grants exactly one jrp/case_file"
+    },
+    {
+      "do": "item",
+      "id": "jrp/starter_sword",
+      "count": 0,
+      "why": "starter weapon was confiscated"
+    },
+    {
+      "do": "place",
+      "x": 1,
+      "y": 4,
+      "dir": "Left"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "flag",
+      "id": "jrp_coffee_offered",
+      "value": "1",
+      "why": "jrp_coffee_offered reaches 1"
+    },
+    {
+      "do": "snapshot",
+      "name": "unrelated_opening",
+      "keys": [
+        "jrp_weapon_confiscated",
+        "jrp_briefed",
+        "jrp_coffee_offered",
+        "item:jrp/claim_receipt",
+        "item:jrp/case_file",
+        "item:jrp/starter_sword"
+      ]
+    },
+    {
+      "do": "place",
+      "x": 6,
+      "y": 6,
+      "dir": "Down"
+    },
+    {
+      "do": "key",
+      "key": "S",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_bureau_hall"
+    },
+    {
+      "do": "map",
+      "width": 20,
+      "height": 5,
+      "tile_size": 128,
+      "zoom": 0.5
+    },
+    {
+      "do": "shot",
+      "name": "bureau_corridor"
+    },
+    {
+      "do": "place",
+      "x": 13,
+      "y": 1,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "shot",
+      "name": "personal_office_locked"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "flag_not",
+      "id": "jrp_personal_office",
+      "value": "1",
+      "why": "personal office is not awarded before the first closed case"
+    },
+    {
+      "do": "scene",
+      "id": "jrp_bureau_hall"
+    },
+    {
+      "do": "place",
+      "x": 18,
+      "y": 3,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": [
+        0
+      ]
+    },
+    {
+      "do": "scene",
+      "id": "jrp_gates"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "cell",
+      "x": 11,
+      "y": 16,
+      "dir": "Down",
+      "why": "the Bureau portal lands beside its paired capital portal"
+    },
+    {
+      "do": "quest",
+      "level": 1,
+      "status": "Progress",
+      "why": "journal reaches stage 1"
+    },
+    {
+      "do": "shot",
+      "name": "02_capital_gates"
+    },
+    {
+      "do": "hidden",
+      "id": "jrp_gates/guard",
+      "value": true,
+      "why": "the dead guard is absent from his post before reset"
+    },
+    {
+      "do": "place",
+      "x": 31,
+      "y": 16,
+      "dir": "Right"
+    },
+    {
+      "do": "key",
+      "key": "D",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_alley"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 12,
+      "y": 6,
+      "dir": "Right"
+    },
+    {
+      "do": "key",
+      "key": "D",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_mill_yard"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "shot",
+      "name": "03_mill_yard"
+    },
+    {
+      "do": "place",
+      "x": 12,
+      "y": 6,
+      "dir": "Right"
+    },
+    {
+      "do": "key",
+      "key": "D",
+      "ticks": 1
+    },
+    {
+      "do": "cell",
+      "x": 12,
+      "y": 6,
+      "dir": "Right",
+      "why": "the river bank blocks walking into water"
+    },
+    {
+      "do": "shot",
+      "name": "mill_river_bank_blocked"
+    },
+    {
+      "do": "place",
+      "x": 9,
+      "y": 6,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "scene",
+      "id": "jrp_mill_inside"
+    },
+    {
+      "do": "quest",
+      "level": 2,
+      "status": "Progress",
+      "why": "journal reaches stage 2"
+    },
+    {
+      "do": "shot",
+      "name": "04_mill_investigation"
+    },
+    {
+      "do": "click",
+      "x": 0.4075,
+      "y": 0.5105524820574163
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "flag",
+      "id": "jrp_clue_body",
+      "value": "1",
+      "why": "jrp_clue_body reaches 1"
+    },
+    {
+      "do": "item",
+      "id": "jrp/evidence_body",
+      "count": 1,
+      "why": "first inspection grants exactly one inventory evidence item jrp/evidence_body"
+    },
+    {
+      "do": "quest",
+      "level": 3,
+      "status": "Progress",
+      "why": "journal reaches stage 3"
+    },
+    {
+      "do": "shot",
+      "name": "05_clue_body"
+    },
+    {
+      "do": "click",
+      "x": 0.4075,
+      "y": 0.5105524820574163
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "quest",
+      "level": 3,
+      "status": "Progress",
+      "why": "journal reaches stage 3"
+    },
+    {
+      "do": "flag_not",
+      "id": "jrp_clues_complete",
+      "value": "1",
+      "why": "repeating one clue cannot complete all three objectives"
+    },
+    {
+      "do": "item",
+      "id": "jrp/evidence_body",
+      "count": 1,
+      "why": "repeat body inspection cannot duplicate inventory evidence"
+    },
+    {
+      "do": "click",
+      "x": 0.6829999999999999,
+      "y": 0.5237430846291866
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "flag",
+      "id": "jrp_clue_bottles",
+      "value": "1",
+      "why": "jrp_clue_bottles reaches 1"
+    },
+    {
+      "do": "item",
+      "id": "jrp/evidence_bottles",
+      "count": 1,
+      "why": "first inspection grants exactly one inventory evidence item jrp/evidence_bottles"
+    },
+    {
+      "do": "quest",
+      "level": 3,
+      "status": "Progress",
+      "why": "journal reaches stage 3"
+    },
+    {
+      "do": "shot",
+      "name": "05_clue_bottles"
+    },
+    {
+      "do": "click",
+      "x": 0.8600000000000002,
+      "y": 0.36281773325358857
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "flag",
+      "id": "jrp_clue_note",
+      "value": "1",
+      "why": "jrp_clue_note reaches 1"
+    },
+    {
+      "do": "item",
+      "id": "jrp/evidence_note",
+      "count": 1,
+      "why": "first inspection grants exactly one inventory evidence item jrp/evidence_note"
+    },
+    {
+      "do": "quest",
+      "level": 4,
+      "status": "Progress",
+      "why": "journal reaches stage 4"
+    },
+    {
+      "do": "shot",
+      "name": "05_clue_note"
+    },
+    {
+      "do": "flag",
+      "id": "jrp_clues_complete",
+      "value": "1",
+      "why": "jrp_clues_complete reaches 1"
+    },
+    {
+      "do": "panel",
+      "id": "journal"
+    },
+    {
+      "do": "shot",
+      "name": "06_journal_all_clues"
+    },
+    {
+      "do": "panel",
+      "id": "journal"
+    },
+    {
+      "do": "snapshot",
+      "name": "clue_evidence",
+      "keys": [
+        "jrp_clue_body",
+        "jrp_clue_bottles",
+        "jrp_clue_note",
+        "jrp_clues_complete",
+        "item:jrp/evidence_body",
+        "item:jrp/evidence_bottles",
+        "item:jrp/evidence_note"
+      ]
+    },
+    {
+      "do": "click",
+      "x": 0.8600000000000002,
+      "y": 0.36281773325358857
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "quest",
+      "level": 4,
+      "status": "Progress",
+      "why": "journal reaches stage 4"
+    },
+    {
+      "do": "same",
+      "name": "clue_evidence",
+      "why": "repeating a clue preserves the evidence"
+    },
+    {
+      "do": "click",
+      "x": 0.1225,
+      "y": 0.31796968450956936
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": [
+        1
+      ]
+    },
+    {
+      "do": "scene",
+      "id": "jrp_mill_yard"
+    },
+    {
+      "do": "cell",
+      "x": 9,
+      "y": 6,
+      "dir": "Down",
+      "why": "leaving mill interior returns to its threshold"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "save"
+    },
+    {
+      "do": "menu"
+    },
+    {
+      "do": "load"
+    },
+    {
+      "do": "restored"
+    },
+    {
+      "do": "same",
+      "name": "clue_evidence",
+      "why": "all three clues survive a real save/load"
+    },
+    {
+      "do": "place",
+      "x": 1,
+      "y": 8,
+      "dir": "Left"
+    },
+    {
+      "do": "key",
+      "key": "A",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_alley"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 1,
+      "y": 6,
+      "dir": "Left"
+    },
+    {
+      "do": "key",
+      "key": "A",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_gates"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 11,
+      "y": 14,
+      "dir": "Down"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": [
+        0
+      ]
+    },
+    {
+      "do": "scene",
+      "id": "jrp_bureau_hall"
+    },
+    {
+      "do": "cell",
+      "x": 17,
+      "y": 3,
+      "dir": "Left",
+      "why": "returning between worlds lands at the corridor portal"
+    },
+    {
+      "do": "place",
+      "x": 5,
+      "y": 1,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_office"
+    },
+    {
+      "do": "place",
+      "x": 5,
+      "y": 6,
+      "dir": "Left"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": [
+        0
+      ]
+    },
+    {
+      "do": "quest",
+      "level": 5,
+      "status": "Progress",
+      "why": "journal reaches stage 5"
+    },
+    {
+      "do": "flag",
+      "id": "jrp_reset_done",
+      "value": "1",
+      "why": "jrp_reset_done reaches 1"
+    },
+    {
+      "do": "flag",
+      "id": "jrp_guard_alive",
+      "value": "1",
+      "why": "jrp_guard_alive reaches 1"
+    },
+    {
+      "do": "same",
+      "name": "clue_evidence",
+      "why": "selective reset preserves collected evidence"
+    },
+    {
+      "do": "same",
+      "name": "unrelated_opening",
+      "why": "selective reset preserves unrelated opening and inventory"
+    },
+    {
+      "do": "panel",
+      "id": "journal"
+    },
+    {
+      "do": "shot",
+      "name": "07_journal_after_selective_reset"
+    },
+    {
+      "do": "panel",
+      "id": "journal"
+    },
+    {
+      "do": "place",
+      "x": 6,
+      "y": 6,
+      "dir": "Down"
+    },
+    {
+      "do": "key",
+      "key": "S",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_bureau_hall"
+    },
+    {
+      "do": "map",
+      "width": 20,
+      "height": 5,
+      "tile_size": 128,
+      "zoom": 0.5
+    },
+    {
+      "do": "shot",
+      "name": "bureau_corridor"
+    },
+    {
+      "do": "place",
+      "x": 18,
+      "y": 3,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": [
+        0
+      ]
+    },
+    {
+      "do": "scene",
+      "id": "jrp_gates"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "cell",
+      "x": 11,
+      "y": 16,
+      "dir": "Down",
+      "why": "the Bureau portal lands beside its paired capital portal"
+    },
+    {
+      "do": "hidden",
+      "id": "jrp_gates/guard",
+      "value": false,
+      "why": "selective reset returns the living guard to the map"
+    },
+    {
+      "do": "shot",
+      "name": "07b_gate_alive_after_reset"
+    },
+    {
+      "do": "place",
+      "x": 22,
+      "y": 12,
+      "dir": "Up"
+    },
+    {
+      "do": "shot",
+      "name": "gate_guard_scale_132"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "flag",
+      "id": "jrp_guard_refused",
+      "value": "1",
+      "why": "jrp_guard_refused reaches 1"
+    },
+    {
+      "do": "quest",
+      "level": 6,
+      "status": "Progress",
+      "why": "journal reaches stage 6"
+    },
+    {
+      "do": "shot",
+      "name": "08_guard_first_refusal"
+    },
+    {
+      "do": "place",
+      "x": 17,
+      "y": 14,
+      "dir": "Up"
+    },
+    {
+      "do": "shot",
+      "name": "gate_colleague_scale_140"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "flag",
+      "id": "jrp_colleagues_interviewed",
+      "value": "1",
+      "why": "jrp_colleagues_interviewed reaches 1"
+    },
+    {
+      "do": "quest",
+      "level": 6,
+      "status": "Progress",
+      "why": "journal reaches stage 6"
+    },
+    {
+      "do": "place",
+      "x": 15,
+      "y": 31,
+      "dir": "Down"
+    },
+    {
+      "do": "key",
+      "key": "S",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_market"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "shot",
+      "name": "09_market"
+    },
+    {
+      "do": "place",
+      "x": 4,
+      "y": 7,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "flag",
+      "id": "jrp_vendor_interviewed",
+      "value": "1",
+      "why": "jrp_vendor_interviewed reaches 1"
+    },
+    {
+      "do": "quest",
+      "level": 6,
+      "status": "Progress",
+      "why": "journal reaches stage 6"
+    },
+    {
+      "do": "place",
+      "x": 10,
+      "y": 5,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "wait",
+      "ticks": 5
+    },
+    {
+      "do": "next"
+    },
+    {
+      "do": "shot",
+      "name": "10a_wife_portrait_first_dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "scene",
+      "id": "jrp_wife_house"
+    },
+    {
+      "do": "flag",
+      "id": "jrp_wife_interviewed",
+      "value": "1",
+      "why": "jrp_wife_interviewed reaches 1"
+    },
+    {
+      "do": "quest",
+      "level": 6,
+      "status": "Progress",
+      "why": "journal reaches stage 6"
+    },
+    {
+      "do": "shot",
+      "name": "10_wife_interview"
+    },
+    {
+      "do": "click",
+      "x": 0.08499999999999999,
+      "y": 0.2678453947368421
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "scene",
+      "id": "jrp_market"
+    },
+    {
+      "do": "cell",
+      "x": 10,
+      "y": 5,
+      "dir": "Down",
+      "why": "leaving wife house returns to its threshold"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 12,
+      "y": 7,
+      "dir": "Right"
+    },
+    {
+      "do": "key",
+      "key": "D",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_gates"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 31,
+      "y": 16,
+      "dir": "Right"
+    },
+    {
+      "do": "key",
+      "key": "D",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_alley"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 12,
+      "y": 6,
+      "dir": "Right"
+    },
+    {
+      "do": "key",
+      "key": "D",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_mill_yard"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 5,
+      "y": 8,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": [
+        0
+      ]
+    },
+    {
+      "do": "flag",
+      "id": "jrp_cycle_observed",
+      "value": "1",
+      "why": "jrp_cycle_observed reaches 1"
+    },
+    {
+      "do": "flag",
+      "id": "jrp_guard_alive",
+      "value": "1",
+      "why": "jrp_guard_alive reaches 1"
+    },
+    {
+      "do": "quest",
+      "level": 7,
+      "status": "Progress",
+      "why": "journal reaches stage 7"
+    },
+    {
+      "do": "shot",
+      "name": "11_cycle_observed"
+    },
+    {
+      "do": "panel",
+      "id": "journal"
+    },
+    {
+      "do": "shot",
+      "name": "12_journal_witnesses_and_cycle"
+    },
+    {
+      "do": "panel",
+      "id": "journal"
+    },
+    {
+      "do": "place",
+      "x": 1,
+      "y": 8,
+      "dir": "Left"
+    },
+    {
+      "do": "key",
+      "key": "A",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_alley"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 1,
+      "y": 6,
+      "dir": "Left"
+    },
+    {
+      "do": "key",
+      "key": "A",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_gates"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 22,
+      "y": 12,
+      "dir": "Up"
+    },
+    {
+      "do": "shot",
+      "name": "gate_guard_scale_205"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": [
+        0
+      ]
+    },
+    {
+      "do": "flag",
+      "id": "jrp_guard_agreed",
+      "value": "1",
+      "why": "jrp_guard_agreed reaches 1"
+    },
+    {
+      "do": "quest",
+      "level": 8,
+      "status": "Progress",
+      "why": "journal reaches stage 8"
+    },
+    {
+      "do": "place",
+      "x": 15,
+      "y": 31,
+      "dir": "Down"
+    },
+    {
+      "do": "key",
+      "key": "S",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_market"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 10,
+      "y": 5,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": [
+        0
+      ]
+    },
+    {
+      "do": "scene",
+      "id": "jrp_wife_house"
+    },
+    {
+      "do": "flag",
+      "id": "jrp_wife_agreed",
+      "value": "1",
+      "why": "jrp_wife_agreed reaches 1"
+    },
+    {
+      "do": "quest",
+      "level": 9,
+      "status": "Progress",
+      "why": "journal reaches stage 9"
+    },
+    {
+      "do": "shot",
+      "name": "13_wife_agreement"
+    },
+    {
+      "do": "click",
+      "x": 0.515,
+      "y": 0.46306631279904303
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "quest",
+      "level": 9,
+      "status": "Progress",
+      "why": "journal reaches stage 9"
+    },
+    {
+      "do": "click",
+      "x": 0.08499999999999999,
+      "y": 0.2678453947368421
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "scene",
+      "id": "jrp_market"
+    },
+    {
+      "do": "cell",
+      "x": 10,
+      "y": 5,
+      "dir": "Down",
+      "why": "leaving wife house returns to its threshold"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 12,
+      "y": 7,
+      "dir": "Right"
+    },
+    {
+      "do": "key",
+      "key": "D",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_gates"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 22,
+      "y": 12,
+      "dir": "Up"
+    },
+    {
+      "do": "shot",
+      "name": "gate_guard_scale_237"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "flag",
+      "id": "jrp_guard_reformed",
+      "value": "1",
+      "why": "jrp_guard_reformed reaches 1"
+    },
+    {
+      "do": "quest",
+      "level": 10,
+      "status": "Progress",
+      "why": "journal reaches stage 10"
+    },
+    {
+      "do": "shot",
+      "name": "14_guard_back_at_post"
+    },
+    {
+      "do": "place",
+      "x": 11,
+      "y": 14,
+      "dir": "Down"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": [
+        0
+      ]
+    },
+    {
+      "do": "scene",
+      "id": "jrp_bureau_hall"
+    },
+    {
+      "do": "cell",
+      "x": 17,
+      "y": 3,
+      "dir": "Left",
+      "why": "returning between worlds lands at the corridor portal"
+    },
+    {
+      "do": "place",
+      "x": 5,
+      "y": 1,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_office"
+    },
+    {
+      "do": "place",
+      "x": 5,
+      "y": 6,
+      "dir": "Left"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": [
+        0
+      ]
+    },
+    {
+      "do": "flag",
+      "id": "jrp_report_masked",
+      "value": "1",
+      "why": "jrp_report_masked reaches 1"
+    },
+    {
+      "do": "flag",
+      "id": "jrp_case_complete",
+      "value": "1",
+      "why": "jrp_case_complete reaches 1"
+    },
+    {
+      "do": "quest",
+      "level": 11,
+      "status": "End",
+      "why": "journal reaches stage 11"
+    },
+    {
+      "do": "shot",
+      "name": "15_report_complete"
+    },
+    {
+      "do": "panel",
+      "id": "journal"
+    },
+    {
+      "do": "shot",
+      "name": "16_journal_completed"
+    },
+    {
+      "do": "panel",
+      "id": "journal"
+    },
+    {
+      "do": "snapshot",
+      "name": "completed_case",
+      "keys": [
+        "jrp_weapon_confiscated",
+        "jrp_briefed",
+        "jrp_coffee_offered",
+        "item:jrp/claim_receipt",
+        "item:jrp/case_file",
+        "item:jrp/starter_sword",
+        "jrp_clue_body",
+        "jrp_clue_bottles",
+        "jrp_clue_note",
+        "jrp_clues_complete",
+        "jrp_reset_done",
+        "jrp_guard_alive",
+        "jrp_guard_refused",
+        "jrp_colleagues_interviewed",
+        "jrp_vendor_interviewed",
+        "jrp_wife_interviewed",
+        "jrp_cycle_observed",
+        "jrp_guard_agreed",
+        "jrp_wife_agreed",
+        "jrp_guard_reformed",
+        "jrp_report_masked",
+        "jrp_case_complete",
+        "quest.level",
+        "quest.status",
+        "item:jrp/evidence_body",
+        "item:jrp/evidence_bottles",
+        "item:jrp/evidence_note"
+      ]
+    },
+    {
+      "do": "place",
+      "x": 5,
+      "y": 6,
+      "dir": "Left"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "same",
+      "name": "completed_case",
+      "why": "repeat report cannot duplicate items or reset progress"
+    },
+    {
+      "do": "place",
+      "x": 6,
+      "y": 6,
+      "dir": "Down"
+    },
+    {
+      "do": "key",
+      "key": "S",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_bureau_hall"
+    },
+    {
+      "do": "map",
+      "width": 20,
+      "height": 5,
+      "tile_size": 128,
+      "zoom": 0.5
+    },
+    {
+      "do": "shot",
+      "name": "bureau_corridor"
+    },
+    {
+      "do": "place",
+      "x": 18,
+      "y": 3,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": [
+        0
+      ]
+    },
+    {
+      "do": "scene",
+      "id": "jrp_gates"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "cell",
+      "x": 11,
+      "y": 16,
+      "dir": "Down",
+      "why": "the Bureau portal lands beside its paired capital portal"
+    },
+    {
+      "do": "place",
+      "x": 22,
+      "y": 12,
+      "dir": "Up"
+    },
+    {
+      "do": "shot",
+      "name": "gate_guard_scale_273"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 17,
+      "y": 14,
+      "dir": "Up"
+    },
+    {
+      "do": "shot",
+      "name": "gate_colleague_scale_278"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "same",
+      "name": "completed_case",
+      "why": "repeat guard and colleague conversations preserve completed progress"
+    },
+    {
+      "do": "place",
+      "x": 31,
+      "y": 16,
+      "dir": "Right"
+    },
+    {
+      "do": "key",
+      "key": "D",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_alley"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 12,
+      "y": 6,
+      "dir": "Right"
+    },
+    {
+      "do": "key",
+      "key": "D",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_mill_yard"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 9,
+      "y": 6,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "advance",
+      "choices": [
+        0
+      ]
+    },
+    {
+      "do": "scene",
+      "id": "jrp_mill_inside"
+    },
+    {
+      "do": "click",
+      "x": 0.4075,
+      "y": 0.5105524820574163
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "item",
+      "id": "jrp/evidence_body",
+      "count": 1,
+      "why": "re-entering mill and repeating body cannot duplicate evidence"
+    },
+    {
+      "do": "click",
+      "x": 0.6829999999999999,
+      "y": 0.5237430846291866
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "item",
+      "id": "jrp/evidence_bottles",
+      "count": 1,
+      "why": "re-entering mill and repeating bottles cannot duplicate evidence"
+    },
+    {
+      "do": "click",
+      "x": 0.8600000000000002,
+      "y": 0.36281773325358857
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "item",
+      "id": "jrp/evidence_note",
+      "count": 1,
+      "why": "re-entering mill and repeating note cannot duplicate evidence"
+    },
+    {
+      "do": "quest",
+      "level": 11,
+      "status": "End",
+      "why": "re-entered mill cannot regress the completed journal"
+    },
+    {
+      "do": "same",
+      "name": "completed_case",
+      "why": "mill scene re-entry preserves completed progress and inventory"
+    },
+    {
+      "do": "shot",
+      "name": "16b_completed_mill_revisit"
+    },
+    {
+      "do": "click",
+      "x": 0.1225,
+      "y": 0.31796968450956936
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "scene",
+      "id": "jrp_mill_yard"
+    },
+    {
+      "do": "cell",
+      "x": 9,
+      "y": 6,
+      "dir": "Down",
+      "why": "revisited mill exits to its threshold"
+    },
+    {
+      "do": "place",
+      "x": 1,
+      "y": 8,
+      "dir": "Left"
+    },
+    {
+      "do": "key",
+      "key": "A",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_alley"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 1,
+      "y": 6,
+      "dir": "Left"
+    },
+    {
+      "do": "key",
+      "key": "A",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_gates"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 15,
+      "y": 31,
+      "dir": "Down"
+    },
+    {
+      "do": "key",
+      "key": "S",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_market"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 4,
+      "y": 7,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 10,
+      "y": 5,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "scene",
+      "id": "jrp_wife_house"
+    },
+    {
+      "do": "click",
+      "x": 0.08499999999999999,
+      "y": 0.2678453947368421
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "scene",
+      "id": "jrp_market"
+    },
+    {
+      "do": "cell",
+      "x": 10,
+      "y": 5,
+      "dir": "Down",
+      "why": "leaving wife house returns to its threshold"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "same",
+      "name": "completed_case",
+      "why": "repeat merchant and wife conversations preserve completed progress"
+    },
+    {
+      "do": "place",
+      "x": 12,
+      "y": 7,
+      "dir": "Right"
+    },
+    {
+      "do": "key",
+      "key": "D",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_gates"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 11,
+      "y": 14,
+      "dir": "Down"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": [
+        0
+      ]
+    },
+    {
+      "do": "scene",
+      "id": "jrp_bureau_hall"
+    },
+    {
+      "do": "cell",
+      "x": 17,
+      "y": 3,
+      "dir": "Left",
+      "why": "returning between worlds lands at the corridor portal"
+    },
+    {
+      "do": "place",
+      "x": 5,
+      "y": 1,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_office"
+    },
+    {
+      "do": "save"
+    },
+    {
+      "do": "menu"
+    },
+    {
+      "do": "load"
+    },
+    {
+      "do": "restored"
+    },
+    {
+      "do": "same",
+      "name": "completed_case",
+      "why": "completed case survives a real save/load"
+    },
+    {
+      "do": "quest",
+      "level": 11,
+      "status": "End",
+      "why": "journal reaches stage 11"
+    },
+    {
+      "do": "shot",
+      "name": "17_completed_case_reloaded"
+    },
+    {
+      "do": "flag",
+      "id": "jrp_personal_office",
+      "value": "1",
+      "why": "first accepted report awards Stas his own office"
+    },
+    {
+      "do": "quest",
+      "level": 11,
+      "status": "End",
+      "why": "office award retains the completed case"
+    },
+    {
+      "do": "place",
+      "x": 6,
+      "y": 6,
+      "dir": "Down"
+    },
+    {
+      "do": "key",
+      "key": "S",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_bureau_hall"
+    },
+    {
+      "do": "place",
+      "x": 13,
+      "y": 1,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_stas_office"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "map",
+      "width": 6,
+      "height": 6,
+      "tile_size": 128,
+      "zoom": 0.5
+    },
+    {
+      "do": "shot",
+      "name": "personal_office_awarded"
+    },
+    {
+      "do": "place",
+      "x": 4,
+      "y": 3,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "flag",
+      "id": "jrp_personal_desk_used",
+      "value": "1",
+      "why": "the personal desk is a real interaction"
+    },
+    {
+      "do": "quest",
+      "level": 11,
+      "status": "End",
+      "why": "working at the new desk does not create another first case"
+    },
+    {
+      "do": "save"
+    },
+    {
+      "do": "menu"
+    },
+    {
+      "do": "load"
+    },
+    {
+      "do": "restored"
+    },
+    {
+      "do": "scene",
+      "id": "jrp_stas_office"
+    },
+    {
+      "do": "shot",
+      "name": "personal_office_loaded"
+    },
+    {
+      "do": "place",
+      "x": 4,
+      "y": 4,
+      "dir": "Down"
+    },
+    {
+      "do": "key",
+      "key": "S",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_bureau_hall"
+    },
+    {
+      "do": "place",
+      "x": 5,
+      "y": 1,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_office"
+    },
+    {
+      "do": "shot",
+      "name": "death_office_after_promotion"
+    },
+    {
+      "do": "place",
+      "x": 6,
+      "y": 6,
+      "dir": "Down"
+    },
+    {
+      "do": "key",
+      "key": "S",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_bureau_hall"
+    },
+    {
+      "do": "place",
+      "x": 13,
+      "y": 1,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_stas_office"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "flag",
+      "id": "jrp_personal_office",
+      "value": "1",
+      "why": "assigned office stays open on repeat visit"
+    },
+    {
+      "do": "quest",
+      "level": 11,
+      "status": "End",
+      "why": "repeat room entry preserves the first-case ending"
+    }
+  ]
+}

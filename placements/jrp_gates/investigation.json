@@ -1,0 +1,41 @@
+{
+  "Kind": "rpg_placement",
+  "Items": [
+    {
+      "Id": "jrp_gates/district",
+      "Object": "junior_reaper_paper_grief/jrp_world/gate_district",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Id": "jrp_gates/guard",
+      "Object": "junior_reaper_paper_grief/jrp_world/guard",
+      "X": 22,
+      "Y": 11
+    },
+    {
+      "Id": "jrp_gates/colleagues",
+      "Object": "junior_reaper_paper_grief/jrp_world/colleague",
+      "X": 17,
+      "Y": 13
+    },
+    {
+      "Id": "jrp_gates/empty_post",
+      "Object": "junior_reaper_paper_grief/jrp_world/empty_post",
+      "X": 23,
+      "Y": 11
+    },
+    {
+      "Id": "jrp_gates/return_office",
+      "Object": "junior_reaper_paper_grief/jrp_world/bureau_return",
+      "X": 11,
+      "Y": 15
+    },
+    {
+      "Id": "jrp_gates/barrel",
+      "Object": "junior_reaper_paper_grief/jrp_world/barrel",
+      "X": 16,
+      "Y": 14
+    }
+  ]
+}

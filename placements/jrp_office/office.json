@@ -1,0 +1,17 @@
+{
+  "Kind": "rpg_placement",
+  "Items": [
+    {
+      "Id": "jrp_office/room",
+      "Object": "junior_reaper_paper_grief/interior/office",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Id": "jrp_office/death",
+      "Object": "junior_reaper_paper_grief/npc/death",
+      "X": 6,
+      "Y": 2
+    }
+  ]
+}

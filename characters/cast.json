@@ -1,0 +1,29 @@
+{
+  "Kind": "character",
+  "Items": [
+    {
+      "Id": "jrp_stas",
+      "Name": "jrp/character/stas/name",
+      "Charset": "jrp/stas",
+      "Image": "characters/jrp/stas",
+      "Level": 1,
+      "Point": 1,
+      "Health": 20,
+      "Defence": 0,
+      "Attack": 0,
+      "Actions": []
+    },
+    {
+      "Id": "jrp_death",
+      "Name": "jrp/character/death/name",
+      "Image": "characters/jrp/death",
+      "Level": 1,
+      "Point": 1,
+      "Health": 20,
+      "Defence": 0,
+      "Attack": 0,
+      "Actions": [],
+      "Charset": "jrp/death"
+    }
+  ]
+}

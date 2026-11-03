@@ -1,0 +1,14 @@
+scene: jrp_gates
+channel: ambient
+actor.b: jrp_gates/bark_responder
+anchor: b
+on: speech.finished
+cue: jrp_strange_clothes
+source_actor: jrp_gates/colleagues
+condition: can_hear("b", "source")
+cooldown: 15
+---
+:reply
+action npc.look who=b target=source
+text "Может, у него работа такая. На нашей форме тоже никто не смеётся." who=b key=jrp/barks/company/reply duration=4
+end

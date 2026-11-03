@@ -1,0 +1,40 @@
+{
+  "Items": [
+    {
+      "id": "jrp_wife_talk",
+      "layer": "foreground",
+      "zIndex": 10,
+      "cursor": "PointingHand",
+      "hitArea": {
+        "type": "rect",
+        "x": 0.36,
+        "y": 0.27839787679425837,
+        "width": 0.31,
+        "height": 0.36933687200956933
+      },
+      "actions": {
+        "onClick": {
+          "scenario": "scenarios/jrp/investigation/wife.scenario"
+        }
+      }
+    },
+    {
+      "id": "jrp_wife_exit",
+      "layer": "foreground",
+      "zIndex": 10,
+      "cursor": "PointingHand",
+      "hitArea": {
+        "type": "rect",
+        "x": 0.01,
+        "y": 0.019862066387559815,
+        "width": 0.15,
+        "height": 0.49596665669856455
+      },
+      "actions": {
+        "onClick": {
+          "scenario": "scenarios/jrp/investigation/wife_exit.scenario"
+        }
+      }
+    }
+  ]
+}

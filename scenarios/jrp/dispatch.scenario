@@ -1,0 +1,26 @@
+when "jrp_briefed != 1" -> :unbriefed
+when "jrp_case_complete == 1" -> :finished
+select "Межмировой портал · дело № 001" key=jrp/investigation/dispatch/ask
+option "В столицу: к пустующему посту стражника" key=jrp/investigation/dispatch/go -> :go
+option "Остаться в офисе" key=jrp/investigation/dispatch/stay -> :stay
+:go
+when "jrp_dispatched == 1" -> :depart
+flag jrp_dispatched 1
+action quest.set_data_status quest_id=jrp_guard_case level=1
+ptext "Диспетчер: Портал настроен на западные ворота столицы. Оттуда к старой мельнице. Обратный портал — у поста." key=jrp/investigation/dispatch/registered
+text "Стас: В графе «вооружение» опять прочерк?" key=jrp/investigation/dispatch/unarmed first=jrp/stas
+ptext "Диспетчер: В графе «допуск к разговорам» ограничений нет." key=jrp/investigation/dispatch/tools
+:depart
+action rpg.teleport map=jrp_gates x=11 y=16 dir=Down
+end
+:stay
+end
+:unbriefed
+ptext "Диспетчер: Сначала получите поручение. Без номера дела вы просто гуляете в рабочее время." key=jrp/investigation/dispatch/unbriefed
+end
+:finished
+ptext "Дело закрыто. Дорога в столицу остаётся открыта: можно проверить пост и поговорить с участниками." key=jrp/investigation/dispatch/finished
+select ""
+option "Вернуться в столицу" key=jrp/investigation/dispatch/revisit -> :depart
+option "Остаться в Бюро" key=jrp/investigation/dispatch/done -> :stay
+end

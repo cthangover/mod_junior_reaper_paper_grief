@@ -1,0 +1,63 @@
+when "jrp_clue_body == 1" -> :again
+ptext "Порезов и следов борьбы нет. Оружие в ножнах. Под ладонью — пятно рвоты." key=jrp/investigation/body/marks
+text "Стас: Не похоже на бой. Запишу признаки, а не готовый диагноз." key=jrp/investigation/body/cause first=jrp/stas
+ptext "В дело внесено: внешних ран нет; возможна интоксикация. Нужно сопоставить с остальными находками." key=jrp/investigation/body/record
+action item.add id=jrp/evidence_body
+flag jrp_clue_body 1
+when "jrp_clue_body == 1 && jrp_clue_bottles == 1 && jrp_clue_note == 1" -> :complete
+goto -> :progress
+:complete
+when "jrp_clues_complete == 1" -> :progress
+flag jrp_clues_complete 1
+ptext "Три находки зафиксированы. Теперь — в Бюро, к рабочему столу Стаса: запросить восстановление Глеба, сохранив материалы осмотра." key=jrp/investigation/clues/complete
+goto -> :progress
+:again
+ptext "Внешних ран нет. Признаки возможной интоксикации записаны в деле." key=jrp/investigation/clue_body/again
+goto -> :progress
+:progress
+when "jrp_case_complete == 1" -> :progress_11
+when "jrp_guard_reformed == 1" -> :progress_10
+when "jrp_wife_agreed == 1" -> :progress_9
+when "jrp_guard_agreed == 1" -> :progress_8
+when "jrp_colleagues_interviewed == 1 && jrp_vendor_interviewed == 1 && jrp_wife_interviewed == 1 && jrp_cycle_observed == 1" -> :progress_7
+when "jrp_guard_refused == 1" -> :progress_6
+when "jrp_reset_done == 1" -> :progress_5
+when "jrp_clues_complete == 1" -> :progress_4
+when "jrp_clue_body == 1 || jrp_clue_bottles == 1 || jrp_clue_note == 1" -> :progress_3
+when "jrp_mill_visited == 1" -> :progress_2
+when "jrp_dispatched == 1" -> :progress_1
+action quest.set_data_status quest_id=jrp_guard_case level=0
+end
+:progress_11
+action quest.set_data_status quest_id=jrp_guard_case level=11
+end
+:progress_10
+action quest.set_data_status quest_id=jrp_guard_case level=10
+end
+:progress_9
+action quest.set_data_status quest_id=jrp_guard_case level=9
+end
+:progress_8
+action quest.set_data_status quest_id=jrp_guard_case level=8
+end
+:progress_7
+action quest.set_data_status quest_id=jrp_guard_case level=7
+end
+:progress_6
+action quest.set_data_status quest_id=jrp_guard_case level=6
+end
+:progress_5
+action quest.set_data_status quest_id=jrp_guard_case level=5
+end
+:progress_4
+action quest.set_data_status quest_id=jrp_guard_case level=4
+end
+:progress_3
+action quest.set_data_status quest_id=jrp_guard_case level=3
+end
+:progress_2
+action quest.set_data_status quest_id=jrp_guard_case level=2
+end
+:progress_1
+action quest.set_data_status quest_id=jrp_guard_case level=1
+end

@@ -1,0 +1,201 @@
+{
+  "Kind": "rpg_object",
+  "Items": [
+    {
+      "Id": "junior_reaper_paper_grief/furniture/stas_desk",
+      "Name": "jrp/object/stas_desk/name",
+      "Form": "sprite",
+      "Category": "furniture",
+      "Footprint": {
+        "Size": [
+          3,
+          2
+        ],
+        "Solid": [
+          "###",
+          "###"
+        ]
+      },
+      "Parts": [
+        {
+          "Image": "furniture/jrp_desk",
+          "Geometry": "upright"
+        }
+      ],
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/desk"
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/furniture/briefing_desk",
+      "Name": "jrp/object/briefing_desk/name",
+      "Form": "sprite",
+      "Category": "furniture",
+      "Footprint": {
+        "Size": [
+          3,
+          2
+        ],
+        "Solid": [
+          "###",
+          "###"
+        ]
+      },
+      "Parts": [
+        {
+          "Image": "furniture/jrp_desk",
+          "Geometry": "upright"
+        }
+      ],
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/desk"
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/furniture/archive",
+      "Name": "jrp/object/archive/name",
+      "Form": "sprite",
+      "Category": "furniture",
+      "Footprint": {
+        "Size": [
+          2,
+          3
+        ],
+        "Solid": [
+          "##",
+          "##",
+          "##"
+        ]
+      },
+      "Parts": [
+        {
+          "Image": "furniture/jrp_archive",
+          "Geometry": "upright"
+        }
+      ],
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/desk"
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/furniture/confiscation",
+      "Name": "jrp/object/confiscation/name",
+      "Form": "sprite",
+      "Category": "furniture",
+      "Footprint": {
+        "Size": [
+          2,
+          3
+        ],
+        "Solid": [
+          "##",
+          "##",
+          "##"
+        ]
+      },
+      "Parts": [
+        {
+          "Image": "furniture/jrp_archive",
+          "Geometry": "upright"
+        }
+      ],
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/evidence"
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/furniture/coffee",
+      "Name": "jrp/object/coffee/name",
+      "Form": "sprite",
+      "Category": "furniture",
+      "Footprint": {
+        "Size": [
+          2,
+          2
+        ],
+        "Solid": [
+          "##",
+          "##"
+        ]
+      },
+      "Parts": [
+        {
+          "Image": "furniture/jrp_coffee",
+          "Geometry": "upright"
+        }
+      ],
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/coffee"
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/furniture/dispatch",
+      "Name": "jrp/object/dispatch/name",
+      "Form": "sprite",
+      "Category": "furniture",
+      "Footprint": {
+        "Size": [
+          3,
+          2
+        ],
+        "Solid": [
+          "###",
+          "###"
+        ]
+      },
+      "Parts": [
+        {
+          "Image": "furniture/jrp_desk",
+          "Geometry": "upright"
+        }
+      ],
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/dispatch"
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/npc/death",
+      "Name": "jrp/character/death/name",
+      "Form": "actor",
+      "Category": "npc",
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/death"
+      },
+      "Charset": "jrp/death",
+      "Facing": "Down",
+      "Column": 1,
+      "States": [
+        {
+          "Id": "hood_down",
+          "When": "jrp_death_hood_down == 1",
+          "Charset": "jrp/death_hood_down"
+        }
+      ]
+    },
+    {
+      "Id": "junior_reaper_paper_grief/marker/exit",
+      "Name": "jrp/object/exit/name",
+      "Form": "sprite",
+      "Category": "marker",
+      "Solid": false,
+      "Footprint": {
+        "Size": [
+          2,
+          1
+        ]
+      },
+      "Parts": [],
+      "Interact": {
+        "Trigger": "Step",
+        "Scenario": "jrp/dispatch"
+      }
+    }
+  ]
+}

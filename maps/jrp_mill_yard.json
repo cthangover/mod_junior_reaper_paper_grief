@@ -1,0 +1,61 @@
+{
+  "Kind": "rpg_map",
+  "Items": [
+    {
+      "Id": "jrp_mill_yard",
+      "Name": "jrp/world/map/jrp_mill_yard",
+      "Width": 14,
+      "Height": 12,
+      "TileSize": 128,
+      "PatchSize": 512,
+      "Zoom": 0.5,
+      "Spawn": {
+        "X": 1,
+        "Y": 8,
+        "Dir": "Up"
+      },
+      "Ambient": "#dcd9cc",
+      "LightMode": "day",
+      "Legend": {},
+      "Collision": [
+        "##############",
+        "##############",
+        "##############",
+        "##############",
+        "##############",
+        "####........##",
+        "#............#",
+        "#............#",
+        ".............#",
+        ".............#",
+        "#............#",
+        "##############"
+      ],
+      "Events": [
+        {
+          "Id": "entrance",
+          "X": 9,
+          "Y": 5,
+          "Width": 2,
+          "Name": "jrp/world/object/mill_door",
+          "Trigger": "Use",
+          "Scenario": "jrp/investigation/mill_door"
+        },
+        {
+          "Id": "to_alley",
+          "X": 0,
+          "Y": 8,
+          "Height": 2,
+          "Name": "jrp/world/object/to_alley",
+          "Trigger": "Step",
+          "Teleport": {
+            "Map": "jrp_alley",
+            "X": 12,
+            "Y": 6,
+            "Dir": "Left"
+          }
+        }
+      ]
+    }
+  ]
+}

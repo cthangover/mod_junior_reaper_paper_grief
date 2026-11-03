@@ -1,0 +1,2 @@
+action rpg.teleport map=jrp_market x=10 y=5 dir=Down
+end

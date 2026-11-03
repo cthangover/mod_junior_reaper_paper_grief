@@ -1,0 +1,12 @@
+{
+  "Kind": "rpg_object",
+  "Items": [
+    {
+      "Id": "junior_reaper_paper_grief/character/jrp_vendor",
+      "Form": "actor",
+      "Category": "character",
+      "Charset": "jrp/merchant",
+      "Name": "jrp/world/character/vendor"
+    }
+  ]
+}

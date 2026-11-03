@@ -1,0 +1,76 @@
+when "jrp_guard_reformed == 1" -> :resolved
+when "jrp_cycle_observed == 1" -> :again
+when "jrp_guard_refused != 1" -> :early
+select "Наблюдать за дорогой к мельнице, не показываясь Глебу? В деле пройдут два игровых дня." key=jrp/investigation/observe/ask
+option "Остаться в укрытии и проследить за Глебом" key=jrp/investigation/observe/watch -> :watch
+option "Пока уйти" key=jrp/investigation/observe/later -> :later
+:watch
+ptext "Первый день. Глеб покидает пост после полудня. С рынка несёт свёрток, в таверну не заходит. К вечеру у мельницы остаются две пустые бутылки." key=jrp/investigation/observe/day1
+ptext "Ночью он не возвращается. У ворот Великий Герой выбивает витрину. Торговец зовёт стражу, которой нет." key=jrp/investigation/observe/night
+ptext "Второй день. Ещё одна покупка на рынке. Глеб садится у двери мельницы. Когда пытается встать, ноги перестают держать." key=jrp/investigation/observe/day2
+text "Стас: Я вызвал помощь. Не ещё один акт — помощь." key=jrp/investigation/observe/help first=jrp/stas
+text "Смерть: Вызов вижу. На этот раз снова поздно." key=jrp/investigation/observe/not_enough second=jrp/death
+ptext "В дело попадает непрерывная запись двух дней: Глеб пьёт до интоксикации, остаётся без помощи и умирает. Нападения игроков на него не было." key=jrp/investigation/observe/proof
+text "Смерть: По твоей заявке верну его к смене ещё раз. Но причину ты уже видел. Одним восстановлением это не закрыть." key=jrp/investigation/observe/restore second=jrp/death
+flag jrp_cycle_observed 1
+flag jrp_guard_alive 1
+ptext "Глеб восстановлен у ворот. Запись наблюдения сохранена. Опросите коллег, торговца и Лиду в любом порядке; затем предложите Глебу выход из этого круга." key=jrp/investigation/observe/next
+goto -> :progress
+:early
+ptext "Наблюдать пока не за кем: сначала осмотрите мельницу, восстановите Глеба в Бюро и попробуйте поговорить с ним у ворот." key=jrp/investigation/observe/early
+goto -> :progress
+:later
+end
+:again
+ptext "Двухдневная запись уже в деле: рынок, мельница, интоксикация. Повторять чужую смерть ради второй копии записи Стас не собирается." key=jrp/investigation/observe/again
+goto -> :progress
+:resolved
+ptext "Дорога пуста. Глеб остаётся у ворот до сдачи смены. Повторять наблюдение больше незачем." key=jrp/investigation/observe/resolved
+goto -> :progress
+:progress
+when "jrp_case_complete == 1" -> :progress_11
+when "jrp_guard_reformed == 1" -> :progress_10
+when "jrp_wife_agreed == 1" -> :progress_9
+when "jrp_guard_agreed == 1" -> :progress_8
+when "jrp_colleagues_interviewed == 1 && jrp_vendor_interviewed == 1 && jrp_wife_interviewed == 1 && jrp_cycle_observed == 1" -> :progress_7
+when "jrp_guard_refused == 1" -> :progress_6
+when "jrp_reset_done == 1" -> :progress_5
+when "jrp_clues_complete == 1" -> :progress_4
+when "jrp_clue_body == 1 || jrp_clue_bottles == 1 || jrp_clue_note == 1" -> :progress_3
+when "jrp_mill_visited == 1" -> :progress_2
+when "jrp_dispatched == 1" -> :progress_1
+action quest.set_data_status quest_id=jrp_guard_case level=0
+end
+:progress_11
+action quest.set_data_status quest_id=jrp_guard_case level=11
+end
+:progress_10
+action quest.set_data_status quest_id=jrp_guard_case level=10
+end
+:progress_9
+action quest.set_data_status quest_id=jrp_guard_case level=9
+end
+:progress_8
+action quest.set_data_status quest_id=jrp_guard_case level=8
+end
+:progress_7
+action quest.set_data_status quest_id=jrp_guard_case level=7
+end
+:progress_6
+action quest.set_data_status quest_id=jrp_guard_case level=6
+end
+:progress_5
+action quest.set_data_status quest_id=jrp_guard_case level=5
+end
+:progress_4
+action quest.set_data_status quest_id=jrp_guard_case level=4
+end
+:progress_3
+action quest.set_data_status quest_id=jrp_guard_case level=3
+end
+:progress_2
+action quest.set_data_status quest_id=jrp_guard_case level=2
+end
+:progress_1
+action quest.set_data_status quest_id=jrp_guard_case level=1
+end

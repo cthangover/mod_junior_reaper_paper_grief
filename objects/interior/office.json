@@ -1,0 +1,74 @@
+{
+  "Kind": "rpg_object",
+  "Items": [
+    {
+      "Id": "junior_reaper_paper_grief/interior/office",
+      "Name": "jrp/bureau/map/jrp_office",
+      "Form": "sprite",
+      "Category": "interior",
+      "Solid": false,
+      "Footprint": {
+        "Size": [
+          8,
+          8
+        ]
+      },
+      "Anchor": [
+        0,
+        0
+      ],
+      "Parts": [
+        {
+          "Image": "interior/death_office",
+          "Geometry": "upright",
+          "Only": "isometric",
+          "At": [
+            -9.0,
+            -3.703125
+          ],
+          "Size": [
+            18.0,
+            12.0
+          ],
+          "DrawOrder": "BelowCharacters"
+        },
+        {
+          "Image": "interior/death_office_main_desk",
+          "Geometry": "upright",
+          "Only": "isometric",
+          "At": [
+            -9.0,
+            -3.703125
+          ],
+          "Size": [
+            18.0,
+            12.0
+          ],
+          "DrawOrder": "ByPosition",
+          "SortOffset": [
+            4.5,
+            3
+          ]
+        },
+        {
+          "Image": "interior/death_office_assistant_desk",
+          "Geometry": "upright",
+          "Only": "isometric",
+          "At": [
+            -9.0,
+            -3.703125
+          ],
+          "Size": [
+            18.0,
+            12.0
+          ],
+          "DrawOrder": "ByPosition",
+          "SortOffset": [
+            3.5,
+            6.5
+          ]
+        }
+      ]
+    }
+  ]
+}

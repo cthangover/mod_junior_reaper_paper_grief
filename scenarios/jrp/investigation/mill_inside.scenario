@@ -1,0 +1,72 @@
+scene: jrp_mill_inside
+priority: 10
+is_one_run: false
+save_allowed: true
+---
+light_use_time false
+interactive_clear
+interactive_add jrp_mill_body
+interactive_add jrp_mill_bottles
+interactive_add jrp_mill_note
+interactive_add jrp_mill_exit
+when "jrp_reset_done == 1" -> :archive
+when "jrp_mill_visited == 1" -> :repeat
+flag jrp_mill_visited 1
+title "Старая мельница · осмотр" key=jrp/investigation/mill/title
+text "Смерть: На этот вызов уже можно не спешить. На соседние — ещё можно." key=jrp/investigation/mill/no_rush second=jrp/death
+text "Стас: Я осмотрю место. Тебя позову, когда будут факты." key=jrp/investigation/mill/stay first=jrp/stas
+ptext "Осмотрите тело, бутылки и бумагу у стола. Подсвеченные предметы открываются щелчком; выход — у двери." key=jrp/investigation/mill/how
+goto -> :progress
+:repeat
+ptext "Тело, бутылки и записка ещё на месте. В журнал попадёт каждая осмотренная улика." key=jrp/investigation/mill/repeat
+goto -> :progress
+:archive
+ptext "Сохранённый слепок осмотра до восстановления. Изображение тела — материал дела; живой Глеб находится у ворот." key=jrp/investigation/mill/archive
+goto -> :progress
+:progress
+when "jrp_case_complete == 1" -> :progress_11
+when "jrp_guard_reformed == 1" -> :progress_10
+when "jrp_wife_agreed == 1" -> :progress_9
+when "jrp_guard_agreed == 1" -> :progress_8
+when "jrp_colleagues_interviewed == 1 && jrp_vendor_interviewed == 1 && jrp_wife_interviewed == 1 && jrp_cycle_observed == 1" -> :progress_7
+when "jrp_guard_refused == 1" -> :progress_6
+when "jrp_reset_done == 1" -> :progress_5
+when "jrp_clues_complete == 1" -> :progress_4
+when "jrp_clue_body == 1 || jrp_clue_bottles == 1 || jrp_clue_note == 1" -> :progress_3
+when "jrp_mill_visited == 1" -> :progress_2
+when "jrp_dispatched == 1" -> :progress_1
+action quest.set_data_status quest_id=jrp_guard_case level=0
+end
+:progress_11
+action quest.set_data_status quest_id=jrp_guard_case level=11
+end
+:progress_10
+action quest.set_data_status quest_id=jrp_guard_case level=10
+end
+:progress_9
+action quest.set_data_status quest_id=jrp_guard_case level=9
+end
+:progress_8
+action quest.set_data_status quest_id=jrp_guard_case level=8
+end
+:progress_7
+action quest.set_data_status quest_id=jrp_guard_case level=7
+end
+:progress_6
+action quest.set_data_status quest_id=jrp_guard_case level=6
+end
+:progress_5
+action quest.set_data_status quest_id=jrp_guard_case level=5
+end
+:progress_4
+action quest.set_data_status quest_id=jrp_guard_case level=4
+end
+:progress_3
+action quest.set_data_status quest_id=jrp_guard_case level=3
+end
+:progress_2
+action quest.set_data_status quest_id=jrp_guard_case level=2
+end
+:progress_1
+action quest.set_data_status quest_id=jrp_guard_case level=1
+end

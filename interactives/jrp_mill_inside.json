@@ -1,0 +1,94 @@
+{
+  "Items": [
+    {
+      "id": "jrp_mill_body",
+      "layer": "foreground",
+      "zIndex": 10,
+      "cursor": "PointingHand",
+      "hitArea": {
+        "type": "rect",
+        "x": 0.285,
+        "y": 0.41558014354066986,
+        "width": 0.245,
+        "height": 0.18994467703349283
+      },
+      "actions": {
+        "onClick": {
+          "scenario": "scenarios/jrp/investigation/clue_body.scenario"
+        }
+      },
+      "texture": "jrp_mill_body_overlay",
+      "highlight": {
+        "color": "#f2c77b33",
+        "scale": 1,
+        "duration": 0.12
+      }
+    },
+    {
+      "id": "jrp_mill_bottles",
+      "layer": "foreground",
+      "zIndex": 10,
+      "cursor": "PointingHand",
+      "hitArea": {
+        "type": "rect",
+        "x": 0.6329999999999999,
+        "y": 0.43140886662679423,
+        "width": 0.10000000000000002,
+        "height": 0.18466843600478466
+      },
+      "actions": {
+        "onClick": {
+          "scenario": "scenarios/jrp/investigation/clue_bottles.scenario"
+        }
+      },
+      "texture": "jrp_mill_bottles_overlay",
+      "highlight": {
+        "color": "#f2c77b33",
+        "scale": 1,
+        "duration": 0.12
+      }
+    },
+    {
+      "id": "jrp_mill_note",
+      "layer": "foreground",
+      "zIndex": 10,
+      "cursor": "PointingHand",
+      "hitArea": {
+        "type": "rect",
+        "x": 0.8100000000000002,
+        "y": 0.30477908193779907,
+        "width": 0.10000000000000002,
+        "height": 0.11607730263157895
+      },
+      "actions": {
+        "onClick": {
+          "scenario": "scenarios/jrp/investigation/clue_note.scenario"
+        }
+      },
+      "texture": "jrp_mill_note_overlay",
+      "highlight": {
+        "color": "#f2c77b33",
+        "scale": 1,
+        "duration": 0.12
+      }
+    },
+    {
+      "id": "jrp_mill_exit",
+      "layer": "foreground",
+      "zIndex": 10,
+      "cursor": "PointingHand",
+      "hitArea": {
+        "type": "rect",
+        "x": 0.04,
+        "y": 0.1095581638755981,
+        "width": 0.165,
+        "height": 0.41682304126794256
+      },
+      "actions": {
+        "onClick": {
+          "scenario": "scenarios/jrp/investigation/mill_exit.scenario"
+        }
+      }
+    }
+  ]
+}

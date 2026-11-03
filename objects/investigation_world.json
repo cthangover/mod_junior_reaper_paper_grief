@@ -1,0 +1,372 @@
+{
+  "Kind": "rpg_object",
+  "Items": [
+    {
+      "Id": "junior_reaper_paper_grief/jrp_world/ground_paving",
+      "Name": "jrp/world/object/ground_paving",
+      "Category": "ground",
+      "Form": "surface",
+      "Surface": {
+        "Image": "jrp_world/ground_paving",
+        "Diffuse": true,
+        "DiffuseStrength": 3
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/jrp_world/ground_grass",
+      "Name": "jrp/world/object/ground_grass",
+      "Category": "ground",
+      "Form": "surface",
+      "Surface": {
+        "Image": "jrp_world/ground_grass",
+        "Diffuse": true,
+        "DiffuseStrength": 3
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/jrp_world/ground_earth",
+      "Name": "jrp/world/object/ground_earth",
+      "Category": "ground",
+      "Form": "surface",
+      "Surface": {
+        "Image": "jrp_world/ground_earth",
+        "Diffuse": true,
+        "DiffuseStrength": 3
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/jrp_world/gatehouse",
+      "Name": "jrp/world/object/gatehouse",
+      "Category": "building",
+      "Form": "sprite",
+      "Footprint": {
+        "Size": [
+          6,
+          4
+        ],
+        "Solid": [
+          "######",
+          "######",
+          "######",
+          "######"
+        ]
+      },
+      "Parts": [
+        {
+          "Image": "jrp_world/gatehouse",
+          "Geometry": "upright"
+        }
+      ]
+    },
+    {
+      "Id": "junior_reaper_paper_grief/jrp_world/mill",
+      "Name": "jrp/world/object/mill",
+      "Category": "building",
+      "Form": "sprite",
+      "Footprint": {
+        "Size": [
+          5,
+          4
+        ],
+        "Solid": [
+          "#####",
+          "#####",
+          "#####",
+          "#####"
+        ]
+      },
+      "Parts": [
+        {
+          "Image": "jrp_world/mill",
+          "Geometry": "upright"
+        }
+      ]
+    },
+    {
+      "Id": "junior_reaper_paper_grief/jrp_world/townhouse",
+      "Name": "jrp/world/object/townhouse",
+      "Category": "building",
+      "Form": "sprite",
+      "Footprint": {
+        "Size": [
+          5,
+          4
+        ],
+        "Solid": [
+          "#####",
+          "#####",
+          "#####",
+          "#####"
+        ]
+      },
+      "Parts": [
+        {
+          "Image": "jrp_world/townhouse",
+          "Geometry": "upright"
+        }
+      ]
+    },
+    {
+      "Id": "junior_reaper_paper_grief/jrp_world/stall",
+      "Name": "jrp/world/object/stall",
+      "Category": "decor",
+      "Form": "sprite",
+      "Footprint": {
+        "Size": [
+          3,
+          3
+        ],
+        "Solid": [
+          "###",
+          "###",
+          "###"
+        ]
+      },
+      "Parts": [
+        {
+          "Image": "jrp_world/stall",
+          "Geometry": "upright"
+        }
+      ]
+    },
+    {
+      "Id": "junior_reaper_paper_grief/jrp_world/barrel",
+      "Name": "jrp/world/object/barrel",
+      "Category": "decor",
+      "Form": "sprite",
+      "Footprint": {
+        "Size": [
+          1,
+          1
+        ]
+      },
+      "Parts": [
+        {
+          "Image": "jrp_world/barrel",
+          "Geometry": "upright"
+        }
+      ]
+    },
+    {
+      "Id": "junior_reaper_paper_grief/jrp_world/lamp",
+      "Name": "jrp/world/object/lamp",
+      "Category": "decor",
+      "Form": "sprite",
+      "Footprint": {
+        "Size": [
+          1,
+          1
+        ]
+      },
+      "Parts": [
+        {
+          "Image": "jrp_world/lamp",
+          "Geometry": "upright",
+          "At": [
+            -0.625,
+            -5.75
+          ],
+          "Size": [
+            2.25,
+            6.75
+          ]
+        }
+      ],
+      "Anchor": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "Id": "junior_reaper_paper_grief/jrp_world/guard",
+      "Name": "jrp/world/object/guard",
+      "Category": "npc",
+      "Form": "actor",
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/investigation/guard"
+      },
+      "States": [
+        {
+          "Id": "absent",
+          "When": "jrp_reset_done != 1",
+          "Hidden": true
+        }
+      ],
+      "Charset": "jrp/guard",
+      "Facing": "Down",
+      "Column": 1
+    },
+    {
+      "Id": "junior_reaper_paper_grief/jrp_world/colleague",
+      "Name": "jrp/world/object/colleague",
+      "Category": "npc",
+      "Form": "actor",
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/investigation/colleagues"
+      },
+      "Charset": "jrp/colleague",
+      "Facing": "Down",
+      "Column": 1
+    },
+    {
+      "Id": "junior_reaper_paper_grief/jrp_world/merchant",
+      "Name": "jrp/world/object/merchant",
+      "Category": "npc",
+      "Form": "actor",
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/investigation/merchant"
+      },
+      "Charset": "jrp/merchant",
+      "Facing": "Down",
+      "Column": 1
+    },
+    {
+      "Id": "junior_reaper_paper_grief/jrp_world/empty_post",
+      "Name": "jrp/world/object/empty_post",
+      "Category": "decor",
+      "Form": "sprite",
+      "Footprint": {
+        "Size": [
+          1,
+          1
+        ]
+      },
+      "Parts": [
+        {
+          "Image": "jrp_world/lamp",
+          "Geometry": "upright",
+          "At": [
+            -0.625,
+            -5.75
+          ],
+          "Size": [
+            2.25,
+            6.75
+          ]
+        }
+      ],
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/investigation/gate_post"
+      },
+      "Anchor": [
+        0.5,
+        1
+      ],
+      "Light": {
+        "Radius": 2.2,
+        "Color": "#e8ca8b",
+        "At": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/jrp_world/bureau_return",
+      "Name": "jrp/world/object/bureau_return",
+      "Category": "decor",
+      "Form": "sprite",
+      "Footprint": {
+        "Size": [
+          1,
+          1
+        ]
+      },
+      "Parts": [
+        {
+          "Image": "bureau/world_portal",
+          "Geometry": "upright",
+          "At": [
+            -1.5,
+            -5
+          ],
+          "Size": [
+            4,
+            6
+          ]
+        }
+      ],
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/investigation/return_office"
+      },
+      "Anchor": [
+        0.5,
+        1
+      ],
+      "Light": {
+        "Radius": 3,
+        "Color": "#51cbdc",
+        "At": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/jrp_world/observe",
+      "Name": "jrp/world/object/observe",
+      "Category": "decor",
+      "Form": "sprite",
+      "Footprint": {
+        "Size": [
+          1,
+          1
+        ]
+      },
+      "Parts": [
+        {
+          "Image": "jrp_world/barrel",
+          "Geometry": "upright"
+        }
+      ],
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/observe_cycle"
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/jrp_world/wayfinding_lantern",
+      "Name": "jrp/world/object/wayfinding_lantern",
+      "Category": "light",
+      "Form": "sprite",
+      "Solid": false,
+      "Footprint": {
+        "Size": [
+          1,
+          1
+        ]
+      },
+      "Anchor": [
+        0.5,
+        1
+      ],
+      "Parts": [
+        {
+          "Image": "jrp_world/lamp",
+          "Geometry": "upright",
+          "At": [
+            -0.625,
+            -5.75
+          ],
+          "Size": [
+            2.25,
+            6.75
+          ]
+        }
+      ],
+      "Light": {
+        "Radius": 0.9,
+        "Color": "#f2ce87",
+        "At": [
+          0.5,
+          0.5
+        ]
+      }
+    }
+  ]
+}

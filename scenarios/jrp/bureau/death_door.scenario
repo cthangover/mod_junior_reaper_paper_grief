@@ -1,0 +1,2 @@
+action rpg.teleport map=jrp_office x=6 y=6 dir=Up
+end

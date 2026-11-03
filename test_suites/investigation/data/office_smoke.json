@@ -1,0 +1,228 @@
+{
+  "description": "Compact Death office, corridor, locked personal door and real dispatch transition.",
+  "steps": [
+    {
+      "do": "scene",
+      "id": "jrp_arrival"
+    },
+    {
+      "do": "shot",
+      "name": "01_stas_arrival_ru"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "scene",
+      "id": "jrp_office"
+    },
+    {
+      "do": "map",
+      "width": 8,
+      "height": 8,
+      "tile_size": 128,
+      "zoom": 0.5
+    },
+    {
+      "do": "quest",
+      "level": 0,
+      "status": "Progress",
+      "why": "journal reaches stage 0"
+    },
+    {
+      "do": "item",
+      "id": "jrp/evidence_body",
+      "count": 0,
+      "why": "new game starts without collected evidence jrp/evidence_body"
+    },
+    {
+      "do": "item",
+      "id": "jrp/evidence_bottles",
+      "count": 0,
+      "why": "new game starts without collected evidence jrp/evidence_bottles"
+    },
+    {
+      "do": "item",
+      "id": "jrp/evidence_note",
+      "count": 0,
+      "why": "new game starts without collected evidence jrp/evidence_note"
+    },
+    {
+      "do": "shot",
+      "name": "01b_office_native128"
+    },
+    {
+      "do": "place",
+      "x": 6,
+      "y": 3,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "shot",
+      "name": "01c_office_death_portrait"
+    },
+    {
+      "do": "advance",
+      "choices": [
+        0
+      ]
+    },
+    {
+      "do": "flag",
+      "id": "jrp_weapon_confiscated",
+      "value": "1",
+      "why": "jrp_weapon_confiscated reaches 1"
+    },
+    {
+      "do": "flag",
+      "id": "jrp_briefed",
+      "value": "1",
+      "why": "jrp_briefed reaches 1"
+    },
+    {
+      "do": "item",
+      "id": "jrp/claim_receipt",
+      "count": 1,
+      "why": "opening grants exactly one jrp/claim_receipt"
+    },
+    {
+      "do": "item",
+      "id": "jrp/case_file",
+      "count": 1,
+      "why": "opening grants exactly one jrp/case_file"
+    },
+    {
+      "do": "item",
+      "id": "jrp/starter_sword",
+      "count": 0,
+      "why": "starter weapon was confiscated"
+    },
+    {
+      "do": "place",
+      "x": 1,
+      "y": 4,
+      "dir": "Left"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "flag",
+      "id": "jrp_coffee_offered",
+      "value": "1",
+      "why": "jrp_coffee_offered reaches 1"
+    },
+    {
+      "do": "snapshot",
+      "name": "unrelated_opening",
+      "keys": [
+        "jrp_weapon_confiscated",
+        "jrp_briefed",
+        "jrp_coffee_offered",
+        "item:jrp/claim_receipt",
+        "item:jrp/case_file",
+        "item:jrp/starter_sword"
+      ]
+    },
+    {
+      "do": "place",
+      "x": 6,
+      "y": 6,
+      "dir": "Down"
+    },
+    {
+      "do": "key",
+      "key": "S",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_bureau_hall"
+    },
+    {
+      "do": "map",
+      "width": 20,
+      "height": 5,
+      "tile_size": 128,
+      "zoom": 0.5
+    },
+    {
+      "do": "shot",
+      "name": "bureau_corridor"
+    },
+    {
+      "do": "place",
+      "x": 13,
+      "y": 1,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "shot",
+      "name": "personal_office_locked"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "flag_not",
+      "id": "jrp_personal_office",
+      "value": "1",
+      "why": "personal office is not awarded before the first closed case"
+    },
+    {
+      "do": "scene",
+      "id": "jrp_bureau_hall"
+    },
+    {
+      "do": "place",
+      "x": 18,
+      "y": 3,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "dialog"
+    },
+    {
+      "do": "advance",
+      "choices": [
+        0
+      ]
+    },
+    {
+      "do": "scene",
+      "id": "jrp_gates"
+    }
+  ]
+}

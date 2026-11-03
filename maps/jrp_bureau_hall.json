@@ -1,0 +1,61 @@
+{
+  "Kind": "rpg_map",
+  "Items": [
+    {
+      "Id": "jrp_bureau_hall",
+      "Name": "jrp/bureau/map/jrp_bureau_hall",
+      "Width": 20,
+      "Height": 5,
+      "TileSize": 128,
+      "PatchSize": 512,
+      "Zoom": 0.5,
+      "Spawn": {
+        "X": 5,
+        "Y": 2,
+        "Dir": "Up"
+      },
+      "Ambient": "#ffffff",
+      "LightMode": "day",
+      "Legend": {},
+      "Collision": [
+        "#ooooooooooooo.ooooo",
+        "#...oo...........ooo",
+        "#...............oo##",
+        "#...................",
+        "oooooooooooooooooooo"
+      ],
+      "Events": [
+        {
+          "Id": "death_door",
+          "X": 4,
+          "Y": 0,
+          "Width": 2,
+          "Name": "jrp/bureau/object/death_door",
+          "Solid": true,
+          "Trigger": "Use",
+          "Scenario": "jrp/bureau/death_door"
+        },
+        {
+          "Id": "teleport_to_rpg",
+          "X": 18,
+          "Y": 2,
+          "Width": 2,
+          "Name": "jrp/bureau/object/teleport_to_rpg",
+          "Solid": true,
+          "Trigger": "Use",
+          "Scenario": "jrp/dispatch"
+        },
+        {
+          "Id": "stas_door",
+          "X": 12,
+          "Y": 0,
+          "Width": 2,
+          "Name": "jrp/bureau/object/stas_door",
+          "Solid": true,
+          "Trigger": "Use",
+          "Scenario": "jrp/bureau/stas_door"
+        }
+      ]
+    }
+  ]
+}

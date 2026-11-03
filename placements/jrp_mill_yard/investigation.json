@@ -1,0 +1,53 @@
+{
+  "Kind": "rpg_placement",
+  "Items": [
+    {
+      "Id": "jrp_mill_yard/watermill",
+      "Object": "junior_reaper_paper_grief/jrp_world/mill_riverside",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Id": "jrp_mill_yard/observe",
+      "Object": "junior_reaper_paper_grief/jrp_world/observe",
+      "X": 5,
+      "Y": 7
+    },
+    {
+      "Id": "jrp_mill_yard/barrel",
+      "Object": "junior_reaper_paper_grief/jrp_world/barrel",
+      "X": 12,
+      "Y": 7
+    },
+    {
+      "Id": "jrp_mill_yard/barrel_2",
+      "Object": "junior_reaper_paper_grief/jrp_world/barrel",
+      "X": 12,
+      "Y": 8
+    },
+    {
+      "Id": "jrp_mill_yard/lamp",
+      "Object": "junior_reaper_paper_grief/jrp_world/lamp",
+      "X": 6,
+      "Y": 9
+    },
+    {
+      "Id": "jrp_mill_yard/beacon_alley_edge_north",
+      "Object": "junior_reaper_paper_grief/jrp_world/wayfinding_lantern",
+      "X": 0,
+      "Y": 7
+    },
+    {
+      "Id": "jrp_mill_yard/beacon_alley_edge_south",
+      "Object": "junior_reaper_paper_grief/jrp_world/wayfinding_lantern",
+      "X": 0,
+      "Y": 10
+    },
+    {
+      "Id": "jrp_mill_yard/beacon_mill_threshold",
+      "Object": "junior_reaper_paper_grief/jrp_world/wayfinding_lantern",
+      "X": 9,
+      "Y": 5
+    }
+  ]
+}

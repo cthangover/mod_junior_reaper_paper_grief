@@ -1,0 +1,27 @@
+{
+  "id": "junior_reaper_paper_grief",
+  "name": "Junior Reaper & Paper Grief",
+  "version": "0.2.0",
+  "author": "ct",
+  "description": "Расследование повторных смертей стражника: фэнтезийный RPG-мир, осмотр мельницы мышью, сброс, свидетели и решение семейной причины.",
+  "category": "story",
+  "depends": [
+    "rpg>=1",
+    "tile_isometric_base>=1",
+    "dialog_base>=1",
+    "characters_base>=1",
+    "items_base>=1",
+    "quests_base>=1",
+    "interactive_base>=1",
+    "ui_base>=1",
+    "npc_barks_base>=0.1"
+  ],
+  "test_suites": [
+    {
+      "id": "investigation",
+      "activate": [
+        "--itest=jrp_investigation"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "Kind": "rpg_placement",
+  "Items": [
+    {
+      "Id": "jrp_bureau_hall/room",
+      "Object": "junior_reaper_paper_grief/interior/bureau_hall",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Id": "jrp_bureau_hall/dispatch",
+      "Object": "junior_reaper_paper_grief/bureau/dispatch",
+      "X": 17,
+      "Y": 0,
+      "Footprint": {
+        "Size": [
+          3,
+          2
+        ]
+      },
+      "Interact": null
+    }
+  ]
+}

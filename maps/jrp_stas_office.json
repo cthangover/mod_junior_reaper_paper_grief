@@ -1,0 +1,52 @@
+{
+  "Kind": "rpg_map",
+  "Items": [
+    {
+      "Id": "jrp_stas_office",
+      "Name": "jrp/bureau/map/jrp_stas_office",
+      "Width": 6,
+      "Height": 6,
+      "TileSize": 128,
+      "PatchSize": 512,
+      "Zoom": 0.5,
+      "Spawn": {
+        "X": 4,
+        "Y": 4,
+        "Dir": "Up"
+      },
+      "Ambient": "#ffffff",
+      "LightMode": "day",
+      "Legend": {},
+      "Collision": [
+        "######",
+        "#....#",
+        "#.....",
+        "#.....",
+        "#.....",
+        "#....."
+      ],
+      "Events": [
+        {
+          "Id": "desk",
+          "X": 2,
+          "Y": 1,
+          "Width": 3,
+          "Height": 2,
+          "Name": "jrp/bureau/object/personal_desk",
+          "Solid": true,
+          "Trigger": "Use",
+          "Scenario": "jrp/bureau/personal_desk"
+        },
+        {
+          "Id": "exit",
+          "X": 4,
+          "Y": 5,
+          "Width": 2,
+          "Name": "jrp/bureau/object/office_exit",
+          "Trigger": "Step",
+          "Scenario": "jrp/bureau/stas_exit"
+        }
+      ]
+    }
+  ]
+}

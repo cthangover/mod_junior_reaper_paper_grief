@@ -1,0 +1,18 @@
+scene: jrp_gates
+channel: ambient
+actor.a: jrp_gates/colleagues
+anchor: a
+condition: near("a", "player", 4) && jrp_case_complete != 1
+cooldown: 30
+---
+:notice
+action npc.look who=a target=player
+text "Что за странная одежда?" who=a cue=jrp_strange_clothes key=jrp/barks/company/clothes duration=3
+when "!near(\"a\", \"player\", 6)" wait=true timeout=8 else=stayed -> :left
+:stayed
+text "И стоит. Наверное, по служебному вопросу." who=a key=jrp/barks/company/stayed duration=3
+goto -> :done
+:left
+text "Ушёл куда-то…" who=a key=jrp/barks/company/left duration=3
+:done
+end

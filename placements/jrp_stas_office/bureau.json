@@ -1,0 +1,11 @@
+{
+  "Kind": "rpg_placement",
+  "Items": [
+    {
+      "Id": "jrp_stas_office/room",
+      "Object": "junior_reaper_paper_grief/interior/stas_office",
+      "X": 0,
+      "Y": 0
+    }
+  ]
+}

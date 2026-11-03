@@ -1,0 +1,8 @@
+select ""
+option "Пройти через портал в Бюро Некроуслуг" key=jrp/investigation/return/office -> :office
+option "Остаться в столице" key=jrp/investigation/return/stay -> :stay
+:office
+action rpg.teleport map=jrp_bureau_hall x=17 y=3 dir=Left
+end
+:stay
+end

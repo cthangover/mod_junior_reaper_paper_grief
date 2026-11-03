@@ -1,0 +1,27 @@
+scene: jrp_arrival
+priority: 10
+is_one_run: true
+save_allowed: true
+---
+light_use_time false
+action party.add id=jrp_stas
+title "Обеденный перерыв" key=jrp/arrival/title
+text "Стас: Ещё одну ячейку — и обед." key=jrp/arrival/1 first=jrp/stas
+ptext "Коллега: Ты уже ешь." key=jrp/arrival/2
+text "Стас: Это параллельная задача." key=jrp/arrival/3 first=jrp/stas
+ptext "Куриная косточка. Вдох не получился. Таблица осталась открытой." key=jrp/arrival/4
+title "Новый мир. Выдача инвентаря" key=jrp/arrival/title2
+background jrp/threshold
+action item.add id=jrp/starter_sword
+ptext "Голос: Добро пожаловать в мир меча и магии. Ваш стартовый меч." key=jrp/arrival/5
+text "Стас: То есть я умер. А здесь можно начать заново?" key=jrp/arrival/6 first=jrp/stas
+text "Смерть: Меч сюда. В базе ошибка. Ты не Избранный." key=jrp/arrival/7 second=jrp/death
+action item.remove id=jrp/starter_sword
+action item.add id=jrp/claim_receipt
+flag jrp_weapon_confiscated 1
+text "Стас: А кто?" key=jrp/arrival/8 first=jrp/stas
+text "Смерть: Младший менеджер по реанимации. Квитанцию не теряй." key=jrp/arrival/9 second=jrp/death
+text "Стас: С испытательным сроком?" key=jrp/arrival/10 first=jrp/stas
+text "Смерть: Уже идёт. За мной, в офис." key=jrp/arrival/11 second=jrp/death
+switch_scene jrp_office
+end

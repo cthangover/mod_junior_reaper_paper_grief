@@ -1,0 +1,9 @@
+when "jrp_route_found == 1" -> :again
+flag jrp_route_found 1
+ptext "Свёрток пахнет дешёвым спиртным. На сургуче — клеймо рыночной лавки." key=jrp/investigation/alley/wrapper
+ptext "Один след ведёт от рынка к мельнице. Обратного почти не видно." key=jrp/investigation/alley/footprints
+text "Стас: Пока это маршрут. Не причина смерти." key=jrp/investigation/alley/assumption first=jrp/stas
+end
+:again
+ptext "Клеймо рыночной лавки, следы к мельнице. Показания торговца пригодятся, когда будет с чем спрашивать." key=jrp/investigation/alley/again
+end

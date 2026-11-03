@@ -1,0 +1,23 @@
+{
+  "Kind": "quest",
+  "Items": [
+    {
+      "Id": "jrp_guard_case",
+      "Name": "jrp/investigation/quest/guard/name",
+      "StatusToDescription": {
+        "0": "jrp/investigation/quest/guard/0",
+        "1": "jrp/investigation/quest/guard/1",
+        "2": "jrp/investigation/quest/guard/2",
+        "3": "jrp/investigation/quest/guard/3",
+        "4": "jrp/investigation/quest/guard/4",
+        "5": "jrp/investigation/quest/guard/5",
+        "6": "jrp/investigation/quest/guard/6",
+        "7": "jrp/investigation/quest/guard/7",
+        "8": "jrp/investigation/quest/guard/8",
+        "9": "jrp/investigation/quest/guard/9",
+        "10": "jrp/investigation/quest/guard/10",
+        "11": "jrp/investigation/quest/guard/11"
+      }
+    }
+  ]
+}

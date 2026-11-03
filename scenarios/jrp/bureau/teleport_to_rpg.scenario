@@ -1,0 +1,2 @@
+action rpg.teleport map=jrp_gates x=12 y=16 dir=Down
+end

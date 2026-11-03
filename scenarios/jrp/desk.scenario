@@ -1,0 +1,126 @@
+when "jrp_case_complete == 1" -> :finished
+when "jrp_guard_reformed == 1" -> :report
+when "jrp_reset_done == 1" -> :in_progress
+when "jrp_clues_complete == 1" -> :reset
+when "jrp_dossier_read == 1" -> :again
+flag jrp_dossier_read 1
+ptext "Дело № 001. Один и тот же стражник, пять смертей. Место обнаружения — старая мельница. Причина во всех пяти актах: «уточняется»." key=jrp/investigation/desk/file
+text "Стас: Добавлю столбец «что мы вообще знаем». Пока пустой." key=jrp/investigation/desk/columns first=jrp/stas
+ptext "Для выезда выйдите из кабинета Смерти в коридор и подойдите к стойке диспетчерской. В столице начните с пустого поста; к мельнице ведёт переулок." key=jrp/investigation/desk/route
+end
+:again
+ptext "Для восстановления нужны три зафиксированные улики с мельницы: тело, бутылки и бумага у стола. Маршрут в столицу — через Бюро выездов." key=jrp/investigation/desk/again
+goto -> :progress
+:reset
+ptext "На столе сходятся три записи: ран нет, спиртное куплено на рынке, в кармане — уведомление об алиментах. Пока это рабочая версия." key=jrp/investigation/desk/reset_summary
+select "Восстановить Глеба для опроса? Материалы осмотра и весь прогресс дела сохранятся." key=jrp/investigation/desk/reset_ask
+option "Восстановить только стражника. Сохранить улики" key=jrp/investigation/desk/reset_confirm -> :do_reset
+option "Сначала перечитать материалы" key=jrp/investigation/desk/reset_later -> :later
+:later
+ptext "Тело без следов боя. Две даты на бутылках. Судебное удержание и детская записка. Следующий шаг — разговор с живым стражником." key=jrp/investigation/desk/retained
+goto -> :progress
+:do_reset
+when "jrp_reset_done == 1" -> :in_progress
+flag jrp_reset_done 1
+flag jrp_guard_alive 1
+text "Смерть: Восстановила. Глеб у западных ворот. Если спросит, откуда ты всё знаешь, покажи служебный допуск, а не его некролог." key=jrp/investigation/desk/reset_death second=jrp/death
+text "Стас: У него память осталась?" key=jrp/investigation/desk/reset_memory first=jrp/stas
+text "Смерть: До прошлого вечера. У тебя — все записи. Даже те, которые начальству лучше не читать." key=jrp/investigation/desk/reset_scope second=jrp/death
+ptext "Восстановление завершено. Улики сохранены, меч остаётся изъятым. Вернитесь к Глебу у столичных ворот." key=jrp/investigation/desk/reset_done
+goto -> :progress
+:in_progress
+when "jrp_guard_agreed == 1 && jrp_wife_agreed != 1" -> :wife_pending
+when "jrp_wife_agreed == 1" -> :guard_pending
+when "jrp_guard_refused != 1" -> :ask_guard
+when "jrp_colleagues_interviewed == 1 && jrp_vendor_interviewed == 1 && jrp_wife_interviewed == 1 && jrp_cycle_observed == 1" -> :propose
+ptext "В деле не хватает живых показаний. Коллеги Глеба — у ворот, продавец — на рынке, Лида — дома за рынком. Отдельно проследите за Глебом из укрытия во дворе мельницы." key=jrp/investigation/desk/interviews
+goto -> :progress
+:ask_guard
+ptext "Глеб восстановлен и находится у ворот. Начните с разговора с ним; не стоит выдавать догадку за признание." key=jrp/investigation/desk/ask_guard
+goto -> :progress
+:propose
+ptext "Причина подтверждена показаниями и наблюдением. Вернитесь к Глебу: предложите прямые выплаты на сына, трезвую встречу и подмену на время разговора." key=jrp/investigation/desk/propose
+goto -> :progress
+:wife_pending
+ptext "Глеб согласился на условия. Теперь нужно согласие Лиды: встреча без опьянения, при свидетеле, выплаты отдельно от общения с ребёнком." key=jrp/investigation/desk/wife_pending
+goto -> :progress
+:guard_pending
+ptext "Лида согласилась на первую встречу. Передайте условия Глебу у ворот и убедитесь, что он остаётся на посту." key=jrp/investigation/desk/guard_pending
+goto -> :progress
+:report
+ptext "Начальник: По вашему участку смертность упала. Это не то, на что мы выделяли штатную единицу. Жду объяснительную." key=jrp/investigation/report/supervisor
+text "Стас: Одна живая смена — и уже перерасход показателей." key=jrp/investigation/report/no_extra first=jrp/stas
+select "Как оформить результат дела?" key=jrp/investigation/report/ask
+option "Провести повторные записи как исправление дублей учёта" key=jrp/investigation/report/mask -> :mask
+option "Отложить отправку и сверить материалы" key=jrp/investigation/report/later -> :review
+:review
+ptext "Глеб на посту. Отпуск спиртного в долг прекращён по его просьбе. Выплаты сыну отделены от встреч. Можно отправлять отчёт." key=jrp/investigation/report/review
+goto -> :progress
+:mask
+when "jrp_case_complete == 1" -> :finished
+flag jrp_report_masked 1
+flag jrp_case_complete 1
+flag jrp_death_window 1
+action quest.set_data_status quest_id=jrp_guard_case level=11
+action quest.set_status quest_id=jrp_guard_case status=End
+ptext "В отчёте: «Повторные записи устранены в рамках сверки реестра. Прогноз нагрузки без изменений». Причины живого человека в таблицу не попали." key=jrp/investigation/report/sent
+text "Смерть: Впервые за неделю пейджер молчит." key=jrp/investigation/report/death second=jrp/death
+text "Стас: Кофе успеем?" key=jrp/investigation/report/coffee first=jrp/stas
+text "Смерть: Пять минут. И никаких показателей." key=jrp/investigation/report/five second=jrp/death
+ptext "Дело № 001 закрыто. Глеб жив и на посту. С Лидой согласованы условия первой встречи с сыном. В Бюро отправлен отчёт о сверке реестра." key=jrp/investigation/report/closed
+flag jrp_personal_office 1
+ptext "Начальник, по громкой связи: Дело принято. Сотруднику выделить отдельный кабинет. Мебель — по описи." key=jrp/bureau/award/order
+text "Стас: То есть испытательный срок закончился?" key=jrp/bureau/award/stas first=jrp/stas
+text "Смерть: Нет. Просто я теперь могу дойти до картотеки." key=jrp/bureau/award/death second=jrp/death
+ptext "Личный кабинет Стаса открыт. Его дверь — дальше по коридору Бюро, за кабинетом Смерти." key=jrp/bureau/award/route
+end
+:finished
+ptext "Дело № 001 закрыто. Отчёт отправлен один раз; исправленные дубли не превращаются в новые смерти. У кофейного столика ждёт свободных пять минут." key=jrp/investigation/desk/finished
+end
+:progress
+when "jrp_case_complete == 1" -> :progress_11
+when "jrp_guard_reformed == 1" -> :progress_10
+when "jrp_wife_agreed == 1" -> :progress_9
+when "jrp_guard_agreed == 1" -> :progress_8
+when "jrp_colleagues_interviewed == 1 && jrp_vendor_interviewed == 1 && jrp_wife_interviewed == 1 && jrp_cycle_observed == 1" -> :progress_7
+when "jrp_guard_refused == 1" -> :progress_6
+when "jrp_reset_done == 1" -> :progress_5
+when "jrp_clues_complete == 1" -> :progress_4
+when "jrp_clue_body == 1 || jrp_clue_bottles == 1 || jrp_clue_note == 1" -> :progress_3
+when "jrp_mill_visited == 1" -> :progress_2
+when "jrp_dispatched == 1" -> :progress_1
+action quest.set_data_status quest_id=jrp_guard_case level=0
+end
+:progress_11
+action quest.set_data_status quest_id=jrp_guard_case level=11
+end
+:progress_10
+action quest.set_data_status quest_id=jrp_guard_case level=10
+end
+:progress_9
+action quest.set_data_status quest_id=jrp_guard_case level=9
+end
+:progress_8
+action quest.set_data_status quest_id=jrp_guard_case level=8
+end
+:progress_7
+action quest.set_data_status quest_id=jrp_guard_case level=7
+end
+:progress_6
+action quest.set_data_status quest_id=jrp_guard_case level=6
+end
+:progress_5
+action quest.set_data_status quest_id=jrp_guard_case level=5
+end
+:progress_4
+action quest.set_data_status quest_id=jrp_guard_case level=4
+end
+:progress_3
+action quest.set_data_status quest_id=jrp_guard_case level=3
+end
+:progress_2
+action quest.set_data_status quest_id=jrp_guard_case level=2
+end
+:progress_1
+action quest.set_data_status quest_id=jrp_guard_case level=1
+end

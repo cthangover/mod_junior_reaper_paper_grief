@@ -1,0 +1,19 @@
+{
+  "Kind": "rpg_placement",
+  "Items": [
+    {
+      "Id": "jrp_gates/bark_responder",
+      "Object": "junior_reaper_paper_grief/jrp_world/colleague",
+      "X": 18,
+      "Y": 13,
+      "Interact": null
+    },
+    {
+      "Id": "jrp_gates/bark_clerk",
+      "Object": "junior_reaper_paper_grief/jrp_world/colleague",
+      "X": 19,
+      "Y": 14,
+      "Interact": null
+    }
+  ]
+}

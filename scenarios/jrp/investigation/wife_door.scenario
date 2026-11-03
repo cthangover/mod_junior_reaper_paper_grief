@@ -1,0 +1,6 @@
+when "jrp_guard_refused == 1" -> :enter
+ptext "За дверью: «Если от Глеба — сначала поговорите с ним. Я больше не буду отвечать вместо него». Сначала восстановите стражника и попробуйте расспросить." key=jrp/investigation/wifedoor/early
+end
+:enter
+switch_scene jrp_wife_house
+end

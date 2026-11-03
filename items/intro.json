@@ -1,0 +1,32 @@
+{
+  "Kind": "item",
+  "Items": [
+    {
+      "Id": "jrp/starter_sword",
+      "Name": "jrp/item/starter_sword/name",
+      "Description": "jrp/item/starter_sword/desc",
+      "Cost": 0,
+      "Sprite": "jrp/starter_sword",
+      "ItemType": "Quest,CantDrop",
+      "ItemAction": "null"
+    },
+    {
+      "Id": "jrp/claim_receipt",
+      "Name": "jrp/item/claim_receipt/name",
+      "Description": "jrp/item/claim_receipt/desc",
+      "Cost": 0,
+      "Sprite": "jrp/claim_receipt",
+      "ItemType": "Quest,CantDrop",
+      "ItemAction": "null"
+    },
+    {
+      "Id": "jrp/case_file",
+      "Name": "jrp/item/case_file/name",
+      "Description": "jrp/item/case_file/desc",
+      "Cost": 0,
+      "Sprite": "jrp/case_file",
+      "ItemType": "Quest,CantDrop",
+      "ItemAction": "null"
+    }
+  ]
+}

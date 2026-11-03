@@ -1,0 +1,58 @@
+{
+  "Kind": "rpg_object",
+  "Items": [
+    {
+      "Id": "junior_reaper_paper_grief/bureau/dispatch",
+      "Name": "jrp/bureau/object/world_portal",
+      "Form": "sprite",
+      "Category": "furniture",
+      "Solid": true,
+      "Footprint": {
+        "Size": [
+          2,
+          3
+        ]
+      },
+      "Parts": [
+        {
+          "Id": null,
+          "Image": "bureau/world_portal",
+          "Crop": null,
+          "At": [
+            -1,
+            -3
+          ],
+          "Size": [
+            4,
+            6
+          ],
+          "Geometry": "upright",
+          "Along": "x",
+          "Points": null,
+          "Only": null,
+          "DrawOrder": "ByPosition",
+          "SortOffset": [
+            0.62977123,
+            1.2099233
+          ]
+        }
+      ],
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/dispatch"
+      },
+      "Light": {
+        "Radius": 3,
+        "Color": "#51cbdc",
+        "At": [
+          1,
+          2.5
+        ]
+      },
+      "Anchor": [
+        1.5,
+        1.5
+      ]
+    }
+  ]
+}
