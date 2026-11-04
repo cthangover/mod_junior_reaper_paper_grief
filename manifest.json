@@ -22,6 +22,12 @@
       "activate": [
         "--itest=jrp_investigation"
       ]
+    },
+    {
+      "id": "toolbar_lamp",
+      "activate": [
+        "--itest=stas_lamp"
+      ]
     }
   ]
 }

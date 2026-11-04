@@ -1,0 +1,11 @@
+{
+  "name": "Stas shared toolbar lamp drag and drop",
+  "sources": [
+    "src/*.cs"
+  ],
+  "depends": [
+    "time_base>=1",
+    "rpg>=1",
+    "ui_base>=1"
+  ]
+}
