@@ -1,0 +1,9 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/bread
+anchor: a
+condition: near("a", "player", 7)
+cooldown: 46
+---
+text "Домой пойду через переулок. Там хоть ничего не продают." who=a key=jrp/market/bread/1 duration=4
+end

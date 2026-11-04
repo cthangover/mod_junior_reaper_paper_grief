@@ -2,28 +2,22 @@
   "Kind": "rpg_placement",
   "Items": [
     {
-      "Id": "jrp_market/wife_house",
-      "Object": "junior_reaper_paper_grief/jrp_world/townhouse",
-      "X": 8,
+      "Id": "jrp_market/square",
+      "Object": "junior_reaper_paper_grief/jrp_world/market_square",
+      "X": 0,
       "Y": 0
-    },
-    {
-      "Id": "jrp_market/ale_stall",
-      "Object": "junior_reaper_paper_grief/jrp_world/stall",
-      "X": 2,
-      "Y": 2
     },
     {
       "Id": "jrp_market/vendor",
       "Object": "junior_reaper_paper_grief/jrp_world/merchant",
-      "X": 4,
-      "Y": 6
+      "X": 6,
+      "Y": 9
     },
     {
       "Id": "jrp_market/ale_barrel",
       "Object": "junior_reaper_paper_grief/jrp_world/barrel",
-      "X": 2,
-      "Y": 6
+      "X": 5,
+      "Y": 9
     },
     {
       "Id": "jrp_market/barrel",
@@ -36,24 +30,6 @@
       "Object": "junior_reaper_paper_grief/jrp_world/lamp",
       "X": 9,
       "Y": 8
-    },
-    {
-      "Id": "jrp_market/beacon_gates_edge_north",
-      "Object": "junior_reaper_paper_grief/jrp_world/wayfinding_lantern",
-      "X": 13,
-      "Y": 6
-    },
-    {
-      "Id": "jrp_market/beacon_gates_edge_south",
-      "Object": "junior_reaper_paper_grief/jrp_world/wayfinding_lantern",
-      "X": 13,
-      "Y": 9
-    },
-    {
-      "Id": "jrp_market/beacon_wife_threshold",
-      "Object": "junior_reaper_paper_grief/jrp_world/wayfinding_lantern",
-      "X": 10,
-      "Y": 4
     }
   ]
 }

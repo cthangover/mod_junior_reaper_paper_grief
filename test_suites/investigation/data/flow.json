@@ -891,8 +891,8 @@
     },
     {
       "do": "place",
-      "x": 4,
-      "y": 7,
+      "x": 6,
+      "y": 10,
       "dir": "Up"
     },
     {
@@ -921,8 +921,8 @@
     },
     {
       "do": "place",
-      "x": 10,
-      "y": 5,
+      "x": 11,
+      "y": 4,
       "dir": "Up"
     },
     {
@@ -983,8 +983,8 @@
     },
     {
       "do": "cell",
-      "x": 10,
-      "y": 5,
+      "x": 11,
+      "y": 4,
       "dir": "Down",
       "why": "leaving wife house returns to its threshold"
     },
@@ -994,8 +994,8 @@
     },
     {
       "do": "place",
-      "x": 12,
-      "y": 7,
+      "x": 14,
+      "y": 2,
       "dir": "Right"
     },
     {
@@ -1198,8 +1198,8 @@
     },
     {
       "do": "place",
-      "x": 10,
-      "y": 5,
+      "x": 11,
+      "y": 4,
       "dir": "Up"
     },
     {
@@ -1269,8 +1269,8 @@
     },
     {
       "do": "cell",
-      "x": 10,
-      "y": 5,
+      "x": 11,
+      "y": 4,
       "dir": "Down",
       "why": "leaving wife house returns to its threshold"
     },
@@ -1280,8 +1280,8 @@
     },
     {
       "do": "place",
-      "x": 12,
-      "y": 7,
+      "x": 14,
+      "y": 2,
       "dir": "Right"
     },
     {
@@ -1808,8 +1808,8 @@
     },
     {
       "do": "place",
-      "x": 4,
-      "y": 7,
+      "x": 6,
+      "y": 10,
       "dir": "Up"
     },
     {
@@ -1826,8 +1826,8 @@
     },
     {
       "do": "place",
-      "x": 10,
-      "y": 5,
+      "x": 11,
+      "y": 4,
       "dir": "Up"
     },
     {
@@ -1861,8 +1861,8 @@
     },
     {
       "do": "cell",
-      "x": 10,
-      "y": 5,
+      "x": 11,
+      "y": 4,
       "dir": "Down",
       "why": "leaving wife house returns to its threshold"
     },
@@ -1877,8 +1877,8 @@
     },
     {
       "do": "place",
-      "x": 12,
-      "y": 7,
+      "x": 14,
+      "y": 2,
       "dir": "Right"
     },
     {

@@ -4,50 +4,36 @@
     {
       "Id": "jrp_market",
       "Name": "jrp/world/map/jrp_market",
-      "Width": 14,
-      "Height": 12,
+      "Width": 16,
+      "Height": 16,
       "TileSize": 128,
       "PatchSize": 512,
       "Zoom": 0.5,
       "Spawn": {
-        "X": 12,
-        "Y": 7,
-        "Dir": "Up"
+        "X": 14,
+        "Y": 2,
+        "Dir": "Down"
       },
       "Ambient": "#dcd9cc",
       "LightMode": "day",
-      "Legend": {
-        "p": "junior_reaper_paper_grief/jrp_world/ground_paving",
-        "g": "junior_reaper_paper_grief/jrp_world/ground_grass",
-        "e": "junior_reaper_paper_grief/jrp_world/ground_earth"
-      },
-      "Ground": [
-        "gggggggggggggg",
-        "gggggggggggggg",
-        "ggggggggppppgg",
-        "ggggggggppppgg",
-        "pppppppppppppp",
-        "pppppppppppppp",
-        "pppppppppppppp",
-        "pppppppppppppp",
-        "pppppppppppppp",
-        "pppppppppppppp",
-        "gggggggggggggg",
-        "gggggggggggggg"
-      ],
+      "Legend": {},
       "Collision": [
-        "##############",
-        "#............#",
-        "#............#",
-        "#............#",
-        "#............#",
-        "#............#",
-        "#............#",
-        "#.............",
-        "#.............",
-        "#............#",
-        "#............#",
-        "##############"
+        "##############..",
+        "#############...",
+        "#############...",
+        "#############...",
+        "###########.....",
+        "########........",
+        "#######.........",
+        "######..........",
+        "#####...........",
+        "#####...........",
+        "####............",
+        "###.............",
+        "###.............",
+        "................",
+        "................",
+        "#..............."
       ],
       "Events": [
         {

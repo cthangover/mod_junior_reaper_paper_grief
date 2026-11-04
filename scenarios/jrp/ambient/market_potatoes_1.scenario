@@ -1,0 +1,9 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/potatoes
+anchor: a
+condition: near("a", "player", 7)
+cooldown: 46
+---
+text "Взяла бы ещё укропу. Но тогда придётся брать и сметану." who=a key=jrp/market/potatoes/1 duration=4
+end

@@ -1,0 +1,23 @@
+{
+  "Kind": "rpg_placement",
+  "Items": [
+    {
+      "Id": "jrp_market/potatoes",
+      "Object": "junior_reaper_paper_grief/npc/market_potatoes",
+      "X": 1,
+      "Y": 15
+    },
+    {
+      "Id": "jrp_market/prices",
+      "Object": "junior_reaper_paper_grief/npc/market_prices",
+      "X": 14,
+      "Y": 1
+    },
+    {
+      "Id": "jrp_market/bread",
+      "Object": "junior_reaper_paper_grief/npc/market_bread",
+      "X": 1,
+      "Y": 15
+    }
+  ]
+}

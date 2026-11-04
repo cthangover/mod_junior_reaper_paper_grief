@@ -1,0 +1,9 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/prices
+anchor: a
+condition: near("a", "player", 7)
+cooldown: 35
+---
+text "Это цена за мешок? А, за горсть. Понятно." who=a key=jrp/market/prices/0 duration=4
+end

@@ -1,0 +1,9 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/bread
+anchor: a
+condition: near("a", "player", 7)
+cooldown: 35
+---
+text "За хлебом вышел. Почему опять с полной сумкой?" who=a key=jrp/market/bread/0 duration=4
+end

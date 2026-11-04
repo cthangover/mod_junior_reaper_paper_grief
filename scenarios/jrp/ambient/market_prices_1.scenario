@@ -1,0 +1,9 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/prices
+anchor: a
+condition: near("a", "player", 7)
+cooldown: 46
+---
+text "На капусту скидка есть? Она же вчерашнюю цену помнит." who=a key=jrp/market/prices/1 duration=4
+end

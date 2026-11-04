@@ -1,2 +1,2 @@
-action rpg.teleport map=jrp_market x=10 y=5 dir=Down
+action rpg.teleport map=jrp_market x=11 y=4 dir=Down
 end
