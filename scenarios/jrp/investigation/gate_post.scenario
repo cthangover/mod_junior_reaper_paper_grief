@@ -3,11 +3,11 @@ when "jrp_reset_done == 1" -> :returned
 when "jrp_post_examined == 1" -> :again
 flag jrp_post_examined 1
 ptext "Последняя запись: «Принял смену». Ни сдачи поста, ни разрешения отлучиться." key=jrp/investigation/post/log
-ptext "За будкой — смятый бумажный свёрток и следы к узкому переулку. Дальше начинается дорога к старой мельнице." key=jrp/investigation/post/trail
+ptext "За будкой — смятый бумажный свёрток и следы к старой мельнице." key=jrp/investigation/post/trail
 text "Стас: Пятый труп. И ни одного вопроса, куда он уходит перед этим." key=jrp/investigation/post/sixth first=jrp/stas
 end
 :again
-ptext "Следы ведут через переулок к старой мельнице. Глеб на пост не вернулся." key=jrp/investigation/post/again
+ptext "Следы ведут от ворот к старой мельнице. Глеб на пост не вернулся." key=jrp/investigation/post/again
 end
 :returned
 ptext "После восстановления Глеб снова у ворот. Теперь можно спросить его самого." key=jrp/investigation/post/returned

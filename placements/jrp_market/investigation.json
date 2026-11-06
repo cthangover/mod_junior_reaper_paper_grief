@@ -10,25 +10,13 @@
     {
       "Id": "jrp_market/vendor",
       "Object": "junior_reaper_paper_grief/jrp_world/merchant",
-      "X": 6,
-      "Y": 9
-    },
-    {
-      "Id": "jrp_market/ale_barrel",
-      "Object": "junior_reaper_paper_grief/jrp_world/barrel",
-      "X": 5,
-      "Y": 9
+      "X": 12,
+      "Y": 14
     },
     {
       "Id": "jrp_market/barrel",
       "Object": "junior_reaper_paper_grief/jrp_world/barrel",
       "X": 1,
-      "Y": 8
-    },
-    {
-      "Id": "jrp_market/lamp",
-      "Object": "junior_reaper_paper_grief/jrp_world/lamp",
-      "X": 9,
       "Y": 8
     }
   ]

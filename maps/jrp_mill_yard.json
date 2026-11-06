@@ -4,56 +4,92 @@
     {
       "Id": "jrp_mill_yard",
       "Name": "jrp/world/map/jrp_mill_yard",
-      "Width": 14,
-      "Height": 12,
+      "Width": 25,
+      "Height": 20,
       "TileSize": 128,
       "PatchSize": 512,
       "Zoom": 0.5,
       "Spawn": {
-        "X": 1,
-        "Y": 8,
+        "X": 2,
+        "Y": 6,
         "Dir": "Up"
       },
       "Ambient": "#dcd9cc",
-      "LightMode": "day",
+      "LightMode": "cycle",
       "Legend": {},
       "Collision": [
-        "##############",
-        "##############",
-        "##############",
-        "##############",
-        "##############",
-        "####........##",
-        "#............#",
-        "#............#",
-        ".............#",
-        ".............#",
-        "#............#",
-        "##############"
+        "############oo.##########",
+        "#oo#######oooo..#########",
+        "#ooo##oooooooo..#########",
+        "#ooooooooooooo...########",
+        "#ooooooooooooo...########",
+        "#oooooo..o.ooo....#######",
+        "#...oo.....ooo.....######",
+        "##..oo......oo.....######",
+        "###.........oo.....######",
+        "####........oo......#####",
+        "#####...oooo.o.....######",
+        "######oooooooo....#######",
+        "#######..o.......########",
+        "########.###....#########",
+        "#########......##########",
+        "##########....###########",
+        "###########..############",
+        "#########################",
+        "#########################",
+        "#########################"
       ],
       "Events": [
         {
           "Id": "entrance",
-          "X": 9,
-          "Y": 5,
+          "X": 12,
+          "Y": 0,
           "Width": 2,
           "Name": "jrp/world/object/mill_door",
           "Trigger": "Use",
-          "Scenario": "jrp/investigation/mill_door"
+          "Scenario": "jrp/investigation/mill_door",
+          "Height": 1
         },
         {
           "Id": "to_alley",
           "X": 0,
-          "Y": 8,
-          "Height": 2,
-          "Name": "jrp/world/object/to_alley",
+          "Y": 4,
+          "Height": 4,
+          "Name": "jrp/world/object/to_gates",
           "Trigger": "Step",
           "Teleport": {
-            "Map": "jrp_alley",
-            "X": 12,
-            "Y": 6,
+            "Map": "jrp_gates",
+            "X": 30,
+            "Y": 11,
             "Dir": "Left"
-          }
+          },
+          "Width": 2
+        }
+      ],
+      "Lights": [
+        {
+          "id": "junior_reaper_paper_grief/light_1",
+          "x": 0.37493393,
+          "y": -0.070219606,
+          "radius": 8,
+          "influence": 1,
+          "color": "#ffcc66"
+        },
+        {
+          "id": "junior_reaper_paper_grief/light_2",
+          "x": 0.5044986,
+          "y": -0.17819017,
+          "radius": 8,
+          "influence": 1,
+          "color": "#ffcc66"
+        },
+        {
+          "id": "junior_reaper_paper_grief/light_3",
+          "x": 0.11850369,
+          "y": -0.015109658,
+          "radius": 8,
+          "influence": 1,
+          "color": "#ffcc66"
         }
       ]
     }

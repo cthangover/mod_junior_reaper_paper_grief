@@ -1,0 +1,86 @@
+{
+  "description": "Direct gates/mill transitions and relocated clue.",
+  "steps": [
+    {
+      "do": "scene",
+      "id": "jrp_gates"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "place",
+      "x": 30,
+      "y": 11,
+      "dir": "Right"
+    },
+    {
+      "do": "key",
+      "key": "D",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_mill_yard"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "cell",
+      "x": 2,
+      "y": 6,
+      "dir": "Right",
+      "why": "gates lead directly to the safe mill-yard arrival"
+    },
+    {
+      "do": "place",
+      "x": 3,
+      "y": 6,
+      "dir": "Up"
+    },
+    {
+      "do": "key",
+      "key": "E",
+      "ticks": 1
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "flag",
+      "id": "jrp_route_found",
+      "value": "1",
+      "why": "relocated clue remains available without the alley"
+    },
+    {
+      "do": "place",
+      "x": 2,
+      "y": 6,
+      "dir": "Left"
+    },
+    {
+      "do": "key",
+      "key": "A",
+      "ticks": 1
+    },
+    {
+      "do": "scene",
+      "id": "jrp_gates"
+    },
+    {
+      "do": "advance",
+      "choices": []
+    },
+    {
+      "do": "cell",
+      "x": 30,
+      "y": 11,
+      "dir": "Left",
+      "why": "mill returns directly outside the gates portal; no teleport loop"
+    }
+  ]
+}

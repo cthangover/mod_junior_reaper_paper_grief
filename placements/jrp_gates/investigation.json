@@ -4,8 +4,40 @@
     {
       "Id": "jrp_gates/district",
       "Object": "junior_reaper_paper_grief/jrp_world/gate_district",
-      "X": 0,
-      "Y": 0
+      "X": 1,
+      "Y": 0,
+      "Parts": [
+        {
+          "Image": "jrp_world/gate_district",
+          "At": [
+            -21,
+            -4.6875
+          ],
+          "Size": [
+            42,
+            28
+          ],
+          "Geometry": "upright",
+          "Along": "x",
+          "Only": "isometric",
+          "DrawOrder": "BelowCharacters"
+        },
+        {
+          "Image": "jrp_world/gate_district",
+          "At": [
+            0,
+            0
+          ],
+          "Size": [
+            34,
+            34
+          ],
+          "Geometry": "ground",
+          "Along": "x",
+          "Only": "topdown",
+          "DrawOrder": "BelowCharacters"
+        }
+      ]
     },
     {
       "Id": "jrp_gates/guard",
@@ -20,22 +52,10 @@
       "Y": 13
     },
     {
-      "Id": "jrp_gates/empty_post",
-      "Object": "junior_reaper_paper_grief/jrp_world/empty_post",
-      "X": 23,
-      "Y": 11
-    },
-    {
       "Id": "jrp_gates/return_office",
       "Object": "junior_reaper_paper_grief/jrp_world/bureau_return",
       "X": 11,
       "Y": 15
-    },
-    {
-      "Id": "jrp_gates/barrel",
-      "Object": "junior_reaper_paper_grief/jrp_world/barrel",
-      "X": 16,
-      "Y": 14
     }
   ]
 }

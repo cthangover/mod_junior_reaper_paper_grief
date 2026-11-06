@@ -4,8 +4,6 @@ is_one_run: true
 save_allowed: true
 ---
 title "Столица · западный пост" key=jrp/investigation/gates/title
-ptext "В журнале караула — фамилия Глеба. В будке — остывшая кружка. У ворот никого." key=jrp/investigation/gates/empty
-ptext "[Чат игроков] Великий Герой: стражи нет. Можно вскрывать лавки, пока не вернулся." key=jrp/investigation/gates/chat
-text "Стас: А те, кто в лавках, знают, что у них сейчас «можно»?" key=jrp/investigation/gates/locals first=jrp/stas
-ptext "Осмотрите пустой пост. Дорога через переулок ведёт к мельнице; на рынке можно расспросить торговцев. Обратный переход в Бюро — у ворот." key=jrp/investigation/gates/route
+ptext "В журнале караула — фамилия Глеба. В будке — остывшая кружка. Стражника на посту нет." key=jrp/investigation/gates/empty
+ptext "Осмотрите пустой пост. Дорога от ворот ведёт прямо к мельнице; на рынке можно расспросить торговцев. Обратный переход в Бюро — у ворот." key=jrp/investigation/gates/route
 end

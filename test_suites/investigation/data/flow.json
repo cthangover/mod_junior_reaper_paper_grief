@@ -253,27 +253,8 @@
     },
     {
       "do": "place",
-      "x": 31,
-      "y": 16,
-      "dir": "Right"
-    },
-    {
-      "do": "key",
-      "key": "D",
-      "ticks": 1
-    },
-    {
-      "do": "scene",
-      "id": "jrp_alley"
-    },
-    {
-      "do": "advance",
-      "choices": []
-    },
-    {
-      "do": "place",
-      "x": 12,
-      "y": 6,
+      "x": 30,
+      "y": 11,
       "dir": "Right"
     },
     {
@@ -581,26 +562,7 @@
     },
     {
       "do": "place",
-      "x": 1,
-      "y": 8,
-      "dir": "Left"
-    },
-    {
-      "do": "key",
-      "key": "A",
-      "ticks": 1
-    },
-    {
-      "do": "scene",
-      "id": "jrp_alley"
-    },
-    {
-      "do": "advance",
-      "choices": []
-    },
-    {
-      "do": "place",
-      "x": 1,
+      "x": 2,
       "y": 6,
       "dir": "Left"
     },
@@ -1013,27 +975,8 @@
     },
     {
       "do": "place",
-      "x": 31,
-      "y": 16,
-      "dir": "Right"
-    },
-    {
-      "do": "key",
-      "key": "D",
-      "ticks": 1
-    },
-    {
-      "do": "scene",
-      "id": "jrp_alley"
-    },
-    {
-      "do": "advance",
-      "choices": []
-    },
-    {
-      "do": "place",
-      "x": 12,
-      "y": 6,
+      "x": 30,
+      "y": 11,
       "dir": "Right"
     },
     {
@@ -1105,26 +1048,7 @@
     },
     {
       "do": "place",
-      "x": 1,
-      "y": 8,
-      "dir": "Left"
-    },
-    {
-      "do": "key",
-      "key": "A",
-      "ticks": 1
-    },
-    {
-      "do": "scene",
-      "id": "jrp_alley"
-    },
-    {
-      "do": "advance",
-      "choices": []
-    },
-    {
-      "do": "place",
-      "x": 1,
+      "x": 2,
       "y": 6,
       "dir": "Left"
     },
@@ -1603,27 +1527,8 @@
     },
     {
       "do": "place",
-      "x": 31,
-      "y": 16,
-      "dir": "Right"
-    },
-    {
-      "do": "key",
-      "key": "D",
-      "ticks": 1
-    },
-    {
-      "do": "scene",
-      "id": "jrp_alley"
-    },
-    {
-      "do": "advance",
-      "choices": []
-    },
-    {
-      "do": "place",
-      "x": 12,
-      "y": 6,
+      "x": 30,
+      "y": 11,
       "dir": "Right"
     },
     {
@@ -1751,26 +1656,7 @@
     },
     {
       "do": "place",
-      "x": 1,
-      "y": 8,
-      "dir": "Left"
-    },
-    {
-      "do": "key",
-      "key": "A",
-      "ticks": 1
-    },
-    {
-      "do": "scene",
-      "id": "jrp_alley"
-    },
-    {
-      "do": "advance",
-      "choices": []
-    },
-    {
-      "do": "place",
-      "x": 1,
+      "x": 2,
       "y": 6,
       "dir": "Left"
     },
