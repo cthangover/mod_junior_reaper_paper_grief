@@ -1,0 +1,17 @@
+scene: jrp_gates
+channel: ambient
+actor.p: jrp_gates/online_paladin
+actor.m: jrp_gates/online_mage
+actor.d: jrp_gates/online_dragon
+anchor: p
+condition: near("p", "player", 9) && jrp_reset_done != 1
+priority: -10
+cooldown: 65
+once: true
+---
+text "Стражи нет. Можно вскрывать лавки, пока не вернулся." who=p key=jrp/players/guard/absent duration=5
+text "Ты же паладин. У тебя клятва." who=m key=jrp/players/guard/oath duration=4
+text "Клятва запрещает грабить при свидетелях. Я читал описание." who=p key=jrp/players/guard/loophole duration=5
+text "Торговец считается?" who=d key=jrp/players/guard/witness duration=3
+text "Только если у него есть кнопка «пожаловаться»." who=p key=jrp/players/guard/interface duration=4
+end

@@ -1,0 +1,26 @@
+scene: jrp_gates
+channel: ambient
+actor.p: jrp_gates/online_paladin
+actor.m: jrp_gates/online_mage
+actor.d: jrp_gates/online_dragon
+anchor: p
+condition: near("p", "player", 3)
+priority: -20
+cooldown: 65
+once: true
+---
+action npc.look who=p target=player
+action npc.look who=m target=player
+text "О, новый НПС. Без меча. Наверняка выдаёт цепочку." who=p key=jrp/players/notice/quest duration=4
+text "В этих штанах? Скорее закрывает." who=m key=jrp/players/notice/clothes duration=3
+text "Он на нас смотрит. Может, слышит?" who=d key=jrp/players/notice/listens duration=4
+text "Не пиши в общий чат — и не услышит." who=p key=jrp/players/notice/safe duration=4
+when "!near(\"p\", \"player\", 5)" wait=true timeout=6 else=stayed -> :left
+:stayed
+text "Стоит, слушает. У этого диалога, кажется, мы кнопки." who=m key=jrp/players/notice/stayed duration=5
+goto -> :done
+:left
+text "Ушёл. Даже награду за знакомство не выдал." who=d key=jrp/players/notice/left duration=4
+:done
+flag jrp_players_noticed_stas 1
+end

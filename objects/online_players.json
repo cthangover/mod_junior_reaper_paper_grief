@@ -1,0 +1,35 @@
+{
+  "Kind": "rpg_object",
+  "Items": [
+    {
+      "Id": "junior_reaper_paper_grief/npc/online_paladin",
+      "Name": "jrp/players/paladin/name",
+      "Form": "actor",
+      "Category": "npc",
+      "Charset": "jrp/online_paladin",
+      "Facing": "Down",
+      "Column": 1,
+      "Solid": true
+    },
+    {
+      "Id": "junior_reaper_paper_grief/npc/online_mage",
+      "Name": "jrp/players/mage/name",
+      "Form": "actor",
+      "Category": "npc",
+      "Charset": "jrp/online_mage",
+      "Facing": "Left",
+      "Column": 1,
+      "Solid": true
+    },
+    {
+      "Id": "junior_reaper_paper_grief/npc/online_dragon",
+      "Name": "jrp/players/dragon/name",
+      "Form": "actor",
+      "Category": "npc",
+      "Charset": "jrp/online_dragon",
+      "Facing": "Up",
+      "Column": 1,
+      "Solid": true
+    }
+  ]
+}

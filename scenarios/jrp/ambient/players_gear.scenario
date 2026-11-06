@@ -1,0 +1,17 @@
+scene: jrp_gates
+channel: ambient
+actor.p: jrp_gates/online_paladin
+actor.m: jrp_gates/online_mage
+actor.d: jrp_gates/online_dragon
+anchor: p
+condition: near("p", "player", 8)
+priority: 10
+cooldown: 90
+once: false
+---
+text "Крылья у тебя хоть летают?" who=d key=jrp/players/gear/wings duration=3
+text "Нет. Плюс двенадцать к величию." who=p key=jrp/players/gear/stats duration=3
+text "И минус одна дверь по ширине." who=m key=jrp/players/gear/door duration=3
+text "Мой сет с дракона. Сорок заходов." who=d key=jrp/players/gear/dragon duration=4
+text "Мой — с зарплаты. Один заход, зато месяц без обедов." who=m key=jrp/players/gear/credit duration=5
+end

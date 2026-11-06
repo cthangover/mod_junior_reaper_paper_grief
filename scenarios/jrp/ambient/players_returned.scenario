@@ -1,0 +1,16 @@
+scene: jrp_gates
+channel: ambient
+actor.p: jrp_gates/online_paladin
+actor.m: jrp_gates/online_mage
+actor.d: jrp_gates/online_dragon
+anchor: p
+condition: near("p", "player", 9) && jrp_reset_done == 1
+priority: -15
+cooldown: 65
+once: true
+---
+text "Стражник вернулся. Лавки отменяются?" who=d key=jrp/players/returned/guard duration=4
+text "Я вообще-то проверял безопасность города." who=p key=jrp/players/returned/morals duration=4
+text "Тогда верни безопасность из рюкзака." who=m key=jrp/players/returned/protocol duration=4
+text "Пойдём к боссу. Он хотя бы знает, за что его бьют." who=d key=jrp/players/returned/leave duration=5
+end

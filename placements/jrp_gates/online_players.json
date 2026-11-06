@@ -1,0 +1,23 @@
+{
+  "Kind": "rpg_placement",
+  "Items": [
+    {
+      "Id": "jrp_gates/online_paladin",
+      "Object": "junior_reaper_paper_grief/npc/online_paladin",
+      "X": 21,
+      "Y": 17
+    },
+    {
+      "Id": "jrp_gates/online_mage",
+      "Object": "junior_reaper_paper_grief/npc/online_mage",
+      "X": 24,
+      "Y": 18
+    },
+    {
+      "Id": "jrp_gates/online_dragon",
+      "Object": "junior_reaper_paper_grief/npc/online_dragon",
+      "X": 22,
+      "Y": 20
+    }
+  ]
+}

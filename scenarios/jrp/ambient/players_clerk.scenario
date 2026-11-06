@@ -1,0 +1,16 @@
+scene: jrp_gates
+channel: ambient
+actor.p: jrp_gates/online_paladin
+actor.m: jrp_gates/online_mage
+actor.d: jrp_gates/online_dragon
+anchor: p
+condition: near("p", "player", 4) && jrp_players_noticed_stas == 1
+priority: 5
+cooldown: 100
+once: false
+---
+action npc.look who=p target=player
+text "Эй, в рубашке! Где тут самое слабое место в охране?" who=p key=jrp/players/clerk/form duration=5
+text "Ты сначала спроси, он охрана или проверка." who=m key=jrp/players/clerk/check duration=4
+text "Проверка. Видишь, оружия нет. Таким потом все должны." who=d key=jrp/players/clerk/report duration=5
+end
