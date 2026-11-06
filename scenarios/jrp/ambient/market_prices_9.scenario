@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/prices
+anchor: a
+variation: market_prices
+condition: near("a", "player", 7)
+cooldown: 30
+---
+delay 1
+text "Ладно. Одну луковицу." who=a key=jrp/market/prices/9 duration=3
+delay 1.6
+text "И не заворачивайте: упаковка меня разорит." who=a key=jrp/market/prices/9/after duration=3
+delay 1
+end

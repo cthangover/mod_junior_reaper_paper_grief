@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/prices
+anchor: a
+variation: market_prices
+condition: near("a", "player", 7)
+cooldown: 33
+---
+delay 1.5
+text "Можно взвесить без гирь?" who=a key=jrp/market/prices/7 duration=3
+delay 2.4
+text "Они у вас уж больно упитанные." who=a key=jrp/market/prices/7/after duration=3
+delay 2
+end

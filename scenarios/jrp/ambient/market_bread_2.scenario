@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/bread
+anchor: a
+variation: market_bread
+condition: near("a", "player", 7)
+cooldown: 32
+---
+delay 2
+text "Хлеб тёплый. До дома не донесу." who=a key=jrp/market/bread/2 duration=3
+delay 2
+text "Точнее, донесу. Но не весь." who=a key=jrp/market/bread/2/after duration=3
+delay 3
+end

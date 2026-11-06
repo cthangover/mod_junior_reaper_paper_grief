@@ -2,8 +2,13 @@ scene: jrp_market
 channel: ambient
 actor.a: jrp_market/potatoes
 anchor: a
+variation: market_potatoes
 condition: near("a", "player", 7)
-cooldown: 35
+cooldown: 18
 ---
-text "О, картошечка! Молоденькая…" who=a key=jrp/market/potatoes/0 duration=4
+delay 1
+text "О, картошечка! Молоденькая…" who=a key=jrp/market/potatoes/0 duration=3
+delay 1.2
+text "Старую вчера взяла. До сих пор недовольная лежит." who=a key=jrp/market/potatoes/0/after duration=3
+delay 1
 end

@@ -2,8 +2,13 @@ scene: jrp_market
 channel: ambient
 actor.a: jrp_market/bread
 anchor: a
+variation: market_bread
 condition: near("a", "player", 7)
-cooldown: 46
+cooldown: 25
 ---
-text "Домой пойду через переулок. Там хоть ничего не продают." who=a key=jrp/market/bread/1 duration=4
+delay 1.5
+text "Домой пойду через переулок." who=a key=jrp/market/bread/1 duration=3
+delay 1.6
+text "Там хоть ничего не продают." who=a key=jrp/market/bread/1/after duration=3
+delay 2
 end

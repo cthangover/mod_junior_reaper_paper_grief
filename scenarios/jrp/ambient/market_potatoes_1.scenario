@@ -2,8 +2,13 @@ scene: jrp_market
 channel: ambient
 actor.a: jrp_market/potatoes
 anchor: a
+variation: market_potatoes
 condition: near("a", "player", 7)
-cooldown: 46
+cooldown: 25
 ---
-text "Взяла бы ещё укропу. Но тогда придётся брать и сметану." who=a key=jrp/market/potatoes/1 duration=4
+delay 1.5
+text "Взяла бы ещё укропу." who=a key=jrp/market/potatoes/1 duration=3
+delay 1.6
+text "Но тогда придётся брать и сметану." who=a key=jrp/market/potatoes/1/after duration=3
+delay 2
 end

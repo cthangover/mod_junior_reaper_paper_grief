@@ -2,8 +2,13 @@ scene: jrp_market
 channel: ambient
 actor.a: jrp_market/bread
 anchor: a
+variation: market_bread
 condition: near("a", "player", 7)
-cooldown: 35
+cooldown: 18
 ---
-text "За хлебом вышел. Почему опять с полной сумкой?" who=a key=jrp/market/bread/0 duration=4
+delay 1
+text "За хлебом вышел." who=a key=jrp/market/bread/0 duration=3
+delay 1.2
+text "Почему опять с полной сумкой?" who=a key=jrp/market/bread/0/after duration=3
+delay 1
 end

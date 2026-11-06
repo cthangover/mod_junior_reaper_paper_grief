@@ -2,8 +2,13 @@ scene: jrp_market
 channel: ambient
 actor.a: jrp_market/prices
 anchor: a
+variation: market_prices
 condition: near("a", "player", 7)
-cooldown: 46
+cooldown: 25
 ---
-text "На капусту скидка есть? Она же вчерашнюю цену помнит." who=a key=jrp/market/prices/1 duration=4
+delay 1.5
+text "На капусту скидка есть?" who=a key=jrp/market/prices/1 duration=3
+delay 1.6
+text "Она же вчерашнюю цену помнит." who=a key=jrp/market/prices/1/after duration=3
+delay 2
 end

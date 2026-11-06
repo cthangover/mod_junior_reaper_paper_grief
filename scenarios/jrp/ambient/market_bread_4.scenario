@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/bread
+anchor: a
+variation: market_bread
+condition: near("a", "player", 7)
+cooldown: 29
+---
+delay 1.5
+text "У этого прилавка пахнет пирогами." who=a key=jrp/market/bread/4 duration=3
+delay 1.2
+text "Постой-ка. Это из моей сумки." who=a key=jrp/market/bread/4/after duration=3
+delay 2
+end

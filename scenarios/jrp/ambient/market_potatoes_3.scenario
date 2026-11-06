@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/potatoes
+anchor: a
+variation: market_potatoes
+condition: near("a", "player", 7)
+cooldown: 22
+---
+delay 1
+text "Помидоры мягкие. Это спелые?" who=a key=jrp/market/potatoes/3 duration=3
+delay 2.4
+text "Или их уже кто-то долго убеждал?" who=a key=jrp/market/potatoes/3/after duration=3
+delay 1
+end

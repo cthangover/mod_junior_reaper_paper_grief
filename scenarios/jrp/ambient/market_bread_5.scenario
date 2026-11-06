@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/bread
+anchor: a
+variation: market_bread
+condition: near("a", "player", 7)
+cooldown: 19
+---
+delay 2
+text "Кусочек на пробу можно?" who=a key=jrp/market/bread/5 duration=3
+delay 1.6
+text "Второй не надо. Я ещё первый не купил." who=a key=jrp/market/bread/5/after duration=3
+delay 3
+end

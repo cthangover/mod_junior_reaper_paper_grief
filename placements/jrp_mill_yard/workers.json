@@ -1,0 +1,17 @@
+{
+  "Kind": "rpg_placement",
+  "Items": [
+    {
+      "Id": "jrp_mill_yard/worker",
+      "Object": "junior_reaper_paper_grief/npc/mill_worker",
+      "X": 2,
+      "Y": 2
+    },
+    {
+      "Id": "jrp_mill_yard/loader",
+      "Object": "junior_reaper_paper_grief/npc/mill_loader",
+      "X": 15,
+      "Y": 8
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/prices
+anchor: a
+variation: market_prices
+condition: near("a", "player", 7)
+cooldown: 19
+---
+delay 2
+text "Почём пустая корзина?" who=a key=jrp/market/prices/5 duration=3
+delay 1.6
+text "С товаром я её сегодня точно не унесу." who=a key=jrp/market/prices/5/after duration=3
+delay 3
+end

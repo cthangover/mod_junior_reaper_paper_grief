@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/potatoes
+anchor: a
+variation: market_potatoes
+condition: near("a", "player", 7)
+cooldown: 30
+---
+delay 1
+text "Ещё кружок — и домой." who=a key=jrp/market/potatoes/9 duration=3
+delay 1.6
+text "На прошлом кружке я тоже так решила." who=a key=jrp/market/potatoes/9/after duration=3
+delay 1
+end

@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/prices
+anchor: a
+variation: market_prices
+condition: near("a", "player", 7)
+cooldown: 26
+---
+delay 1
+text "За такую свёклу дают расписку?" who=a key=jrp/market/prices/6 duration=3
+delay 2
+text "Хотелось бы дома объяснить расход." who=a key=jrp/market/prices/6/after duration=3
+delay 1
+end

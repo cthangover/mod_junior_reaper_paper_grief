@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/prices
+anchor: a
+variation: market_prices
+condition: near("a", "player", 7)
+cooldown: 22
+---
+delay 1
+text "Я не торгуюсь. Я уточняю." who=a key=jrp/market/prices/3 duration=3
+delay 2.4
+text "Который уже раз уточняю — цена всё та же." who=a key=jrp/market/prices/3/after duration=3
+delay 1
+end

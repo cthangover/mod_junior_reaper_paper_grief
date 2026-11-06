@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/bread
+anchor: a
+variation: market_bread
+condition: near("a", "player", 7)
+cooldown: 22
+---
+delay 1
+text "Жена сказала: ничего лишнего." who=a key=jrp/market/bread/3 duration=3
+delay 2.4
+text "Надо выяснить, считается ли сыр лишним к хлебу." who=a key=jrp/market/bread/3/after duration=3
+delay 1
+end

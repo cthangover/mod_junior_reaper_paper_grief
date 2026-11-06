@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/bread
+anchor: a
+variation: market_bread
+condition: near("a", "player", 7)
+cooldown: 23
+---
+delay 2
+text "Сначала домой, потом за квасом." who=a key=jrp/market/bread/8 duration=3
+delay 1.2
+text "Нет. Тогда ведь два раза идти." who=a key=jrp/market/bread/8/after duration=3
+delay 3
+end

@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/prices
+anchor: a
+variation: market_prices
+condition: near("a", "player", 7)
+cooldown: 23
+---
+delay 2
+text "Пройду ещё раз, сравню цены." who=a key=jrp/market/prices/8 duration=3
+delay 1.2
+text "В прошлый раз подорожало, пока сравнивал." who=a key=jrp/market/prices/8/after duration=3
+delay 3
+end

@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/prices
+anchor: a
+variation: market_prices
+condition: near("a", "player", 7)
+cooldown: 29
+---
+delay 1.5
+text "Грибы местные?" who=a key=jrp/market/prices/4 duration=3
+delay 1.2
+text "Тогда чего стоят, как будто из столицы пешком шли?" who=a key=jrp/market/prices/4/after duration=3
+delay 2
+end

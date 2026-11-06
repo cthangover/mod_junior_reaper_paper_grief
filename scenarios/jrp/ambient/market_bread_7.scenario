@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/bread
+anchor: a
+variation: market_bread
+condition: near("a", "player", 7)
+cooldown: 33
+---
+delay 1.5
+text "Три раза мимо прошёл — значит, не нужен мне этот сыр." who=a key=jrp/market/bread/7 duration=3
+delay 2.4
+text "В четвёртый раз проверю для верности." who=a key=jrp/market/bread/7/after duration=3
+delay 2
+end

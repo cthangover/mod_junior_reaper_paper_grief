@@ -1,0 +1,39 @@
+{
+  "Kind": "rpg_object",
+  "Items": [
+    {
+      "Id": "junior_reaper_paper_grief/npc/mill_worker",
+      "Name": "jrp/mill/worker/name",
+      "Form": "actor",
+      "Category": "npc",
+      "Charset": "jrp/market_man",
+      "Facing": "Left",
+      "Column": 1,
+      "Solid": false
+    },
+    {
+      "Id": "junior_reaper_paper_grief/npc/mill_loader",
+      "Name": "jrp/mill/loader/name",
+      "Form": "actor",
+      "Category": "npc",
+      "Charset": "jrp/market_man",
+      "Facing": "Up",
+      "Column": 1,
+      "Solid": false,
+      "Route": {
+        "Steps": [
+          "left",
+          "left",
+          "wait:5",
+          "right",
+          "right",
+          "wait:6"
+        ],
+        "Every": 1.4,
+        "Speed": 1.1,
+        "Repeat": true,
+        "RetryBlocked": true
+      }
+    }
+  ]
+}

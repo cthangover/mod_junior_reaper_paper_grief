@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/potatoes
+anchor: a
+variation: market_potatoes
+condition: near("a", "player", 7)
+cooldown: 29
+---
+delay 1.5
+text "За капустой вернусь на обратном пути." who=a key=jrp/market/potatoes/4 duration=3
+delay 1.2
+text "Пусть пока сама свой вес носит." who=a key=jrp/market/potatoes/4/after duration=3
+delay 2
+end

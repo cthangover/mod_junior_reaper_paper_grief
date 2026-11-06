@@ -1,0 +1,13 @@
+scene: jrp_mill_yard
+channel: ambient
+actor.w: jrp_mill_yard/worker
+actor.l: jrp_mill_yard/loader
+anchor: w
+condition: near("w", "player", 8)
+cooldown: 75
+---
+text "План по муке подняли. Реку предупредить забыли." who=w key=jrp/players/mill/plan duration=4
+text "Я за мешки отвечаю. За безопасность — табличка." who=l key=jrp/players/mill/safety duration=4
+action npc.look who=w target=player
+text "Вы по работе? Тогда осторожнее. У нас это самое опасное." who=w key=jrp/players/mill/visitor duration=5
+end

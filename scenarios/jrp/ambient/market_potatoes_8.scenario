@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/potatoes
+anchor: a
+variation: market_potatoes
+condition: near("a", "player", 7)
+cooldown: 23
+---
+delay 2
+text "Яблоки хорошие. Только мелкие." who=a key=jrp/market/potatoes/8 duration=3
+delay 1.2
+text "Зато совесть не мучает, когда третье берёшь." who=a key=jrp/market/potatoes/8/after duration=3
+delay 3
+end

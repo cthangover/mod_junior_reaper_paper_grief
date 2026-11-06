@@ -1,0 +1,14 @@
+scene: jrp_market
+channel: ambient
+actor.a: jrp_market/prices
+anchor: a
+variation: market_prices
+condition: near("a", "player", 7)
+cooldown: 32
+---
+delay 2
+text "У соседнего прилавка дешевле." who=a key=jrp/market/prices/2 duration=3
+delay 2
+text "Правда, там пока только прилавок." who=a key=jrp/market/prices/2/after duration=3
+delay 3
+end
