@@ -64,6 +64,16 @@
             "Dir": "Left"
           },
           "Width": 2
+        },
+        {
+          "Id": "observe",
+          "X": 0,
+          "Y": 1,
+          "Name": "jrp/world/object/observe",
+          "Trigger": "Use",
+          "Scenario": "jrp/observe_cycle",
+          "Width": 3,
+          "Height": 2
         }
       ],
       "Lights": [
