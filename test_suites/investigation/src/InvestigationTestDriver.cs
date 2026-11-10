@@ -29,6 +29,7 @@ namespace Cthangover.Mods.JuniorReaper.Tests
         private readonly List<JsonElement> steps = new();
         private readonly Dictionary<string, Dictionary<string, string>> snapshots = new();
         private readonly string shots;
+        private readonly double timeoutSeconds = 600;
         private string startupFailure;
         private string saveSlot;
         private string savedScene;
@@ -61,6 +62,8 @@ namespace Cthangover.Mods.JuniorReaper.Tests
             try
             {
                 using var doc = JsonDocument.Parse(File.ReadAllText(routeFile));
+                if (doc.RootElement.TryGetProperty("timeout_seconds", out var timeout))
+                    timeoutSeconds = Math.Clamp(timeout.GetDouble(), 1, 1800);
                 foreach (var step in doc.RootElement.GetProperty("steps").EnumerateArray()) steps.Add(step.Clone());
             }
             catch (Exception ex) { startupFailure = "route could not be read: " + ex.Message; }
@@ -75,7 +78,7 @@ namespace Cthangover.Mods.JuniorReaper.Tests
             elapsed += 0.1;
             try
             {
-                Require(elapsed < 600, "route timeout at step " + index + ": " + CurrentStep());
+                Require(elapsed < timeoutSeconds, "route timeout at step " + index + ": " + CurrentStep());
                 if (startupFailure != null) throw new InvalidOperationException(startupFailure);
                 if (!Boot.IsReady || string.IsNullOrEmpty(SceneManager.GetCurrentSceneName())) return;
                 if (!started)
@@ -153,8 +156,10 @@ namespace Cthangover.Mods.JuniorReaper.Tests
                 case "flag_not": Check(Flag(S(step, "id")) != S(step, "value"), S(step, "why")); return true;
                 case "flag": Check(Flag(S(step, "id")) == S(step, "value"), S(step, "why")); return true;
                 case "quest":
-                    Check(Quest.Data.Status == I(step, "level"), S(step, "why"));
-                    if (step.TryGetProperty("status", out var status)) Check(Quest.Status.ToString() == status.GetString(), "quest status is " + status.GetString());
+                    var checkedQuest = step.TryGetProperty("id", out var questId)
+                        ? (QuestBase)QuestFactory.Instance.Get(questId.GetString()) : Quest;
+                    Check(checkedQuest.Data.Status == I(step, "level"), S(step, "why"));
+                    if (step.TryGetProperty("status", out var status)) Check(checkedQuest.Status.ToString() == status.GetString(), "quest status is " + status.GetString());
                     return true;
                 case "item":
                     Check(GameData.Instance.Runtime.Inventory.CheckCount(S(step, "id")) == I(step, "count"), S(step, "why"));

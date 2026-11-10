@@ -1,0 +1,41 @@
+{
+  "Kind": "rpg_placement",
+  "Items": [
+    {
+      "Id": "jrp_ash_village/room",
+      "Object": "junior_reaper_paper_grief/case2/village",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Id": "jrp_ash_village/forewoman",
+      "Object": "junior_reaper_paper_grief/case2/forewoman",
+      "X": 11,
+      "Y": 17
+    },
+    {
+      "Id": "jrp_ash_village/healer",
+      "Object": "junior_reaper_paper_grief/case2/healer",
+      "X": 10,
+      "Y": 14
+    },
+    {
+      "Id": "jrp_ash_village/vendor",
+      "Object": "junior_reaper_paper_grief/case2/village_vendor",
+      "X": 15,
+      "Y": 15
+    },
+    {
+      "Id": "jrp_ash_village/builder",
+      "Object": "junior_reaper_paper_grief/case2/village_builder",
+      "X": 14,
+      "Y": 20
+    },
+    {
+      "Id": "jrp_ash_village/carrier",
+      "Object": "junior_reaper_paper_grief/case2/village_carrier",
+      "X": 14,
+      "Y": 13
+    }
+  ]
+}

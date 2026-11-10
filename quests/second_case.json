@@ -1,0 +1,23 @@
+{
+  "Kind": "quest",
+  "Items": [
+    {
+      "Id": "jrp_dragon_case",
+      "Name": "jrp/case2/quest/name",
+      "StatusToDescription": {
+        "0": "jrp/case2/quest/0",
+        "1": "jrp/case2/quest/1",
+        "2": "jrp/case2/quest/2",
+        "3": "jrp/case2/quest/3",
+        "4": "jrp/case2/quest/4",
+        "5": "jrp/case2/quest/5",
+        "6": "jrp/case2/quest/6",
+        "7": "jrp/case2/quest/7",
+        "8": "jrp/case2/quest/8",
+        "9": "jrp/case2/quest/9",
+        "10": "jrp/case2/quest/10",
+        "11": "jrp/case2/quest/11"
+      }
+    }
+  ]
+}

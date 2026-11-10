@@ -1,3 +1,4 @@
+when "jrp_dragon_started == 1" -> :case2_dispatch
 when "jrp_briefed != 1" -> :unbriefed
 when "jrp_case_complete == 1" -> :finished
 select "Межмировой портал · дело № 001" key=jrp/investigation/dispatch/ask
@@ -23,4 +24,13 @@ ptext "Дело закрыто. Дорога в столицу остаётся 
 select ""
 option "Вернуться в столицу" key=jrp/investigation/dispatch/revisit -> :depart
 option "Остаться в Бюро" key=jrp/investigation/dispatch/done -> :stay
+end
+
+:case2_dispatch
+select "Бюро выездов · дело № 002" key=jrp/case2/dispatch/0
+option "В деревню: расследовать «Пепельную жатву»" key=jrp/case2/dispatch/1 -> :case2_depart
+option "В столицу: проверить первое дело" key=jrp/case2/dispatch/2 -> :depart
+option "Остаться в Бюро" key=jrp/case2/dispatch/3 -> :stay
+:case2_depart
+action rpg.teleport map=jrp_ash_village x=13 y=23 dir=Up
 end

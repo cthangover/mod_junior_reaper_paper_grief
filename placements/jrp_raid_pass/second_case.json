@@ -1,0 +1,17 @@
+{
+  "Kind": "rpg_placement",
+  "Items": [
+    {
+      "Id": "jrp_raid_pass/room",
+      "Object": "junior_reaper_paper_grief/case2/approach",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Id": "jrp_raid_pass/marshal",
+      "Object": "junior_reaper_paper_grief/case2/marshal",
+      "X": 9,
+      "Y": 18
+    }
+  ]
+}

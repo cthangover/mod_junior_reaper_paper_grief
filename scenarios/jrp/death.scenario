@@ -1,4 +1,4 @@
-when "jrp_case_complete == 1" -> :quiet
+when "jrp_case_complete == 1" -> :case2_death
 when "jrp_guard_reformed == 1" -> :report
 when "jrp_wife_agreed == 1" -> :guard
 when "jrp_guard_agreed == 1" -> :wife
@@ -44,4 +44,109 @@ text "Смерть: Глеб на посту. Вызовов меньше. На�
 end
 :quiet
 text "Смерть: Пейджер молчит. Пять минут у кофейного столика — и ни одного вопроса про работу. С этим справишься?" key=jrp/investigation/death_hint/quiet second=jrp/death
+end
+
+:case2_death
+when "jrp_dragon_complete == 1" -> :case2_done
+when "jrp_dragon_started == 1" -> :case2_hint
+text "Смерть: Во вторник меня не ищи. Опять «Пепельная жатва». Пятьсот смертей одним пакетом." second=jrp/death key=jrp/case2/death/0
+text "Стас: Один акт на всех?" first=jrp/stas key=jrp/case2/death/1
+text "Смерть: Пятьсот актов. Каждому — причина, место, подпись. Весь день. Каждую неделю." second=jrp/death key=jrp/case2/death/2
+text "Стас: А деревня?" first=jrp/stas key=jrp/case2/death/3
+text "Смерть: Три деревни. Восстановят до утра. Потом снова. У них это называется повторяемый контент." second=jrp/death key=jrp/case2/death/4
+text "Стас: В прошлой жизни мне тоже обещали, что аврал последний. Я тогда поверил." first=jrp/stas key=jrp/case2/death/5
+text "Смерть: Хочешь шаблон? В нём уже проставлен следующий вторник." second=jrp/death key=jrp/case2/death/6
+text "Стас: Я хочу, чтобы следующего пакета не было. Мне второй раз офисной крысой работать не за что." first=jrp/stas key=jrp/case2/death/7
+text "Смерть: Начальник скажет, что это саботаж." second=jrp/death key=jrp/case2/death/8
+text "Стас: Пусть хоть раз правильно назовёт мою работу." first=jrp/stas key=jrp/case2/death/9
+flag jrp_dragon_started 1
+action quest.set_status quest_id=jrp_dragon_case status=Progress
+ptext "Дело № 002: «Пепельная жатва». Маршрут в деревню открыт на стойке выездов. Рабочие материалы — на личном столе Стаса. В коридоре доступен профсоюз NPC." key=jrp/case2/death/10
+goto -> :case2_sync
+:case2_hint
+when "jrp_dragon_verified == 1" -> :case2_report_hint
+when "jrp_dragon_strike == 1" -> :case2_check_hint
+when "jrp_dragon_registered == 1" -> :case2_strike_hint
+when "jrp_dragon_signed == 1" -> :case2_post_hint
+when "jrp_dragon_draft == 1" -> :case2_sign_hint
+when "jrp_dragon_legal_advice == 1" -> :case2_draft_hint
+when "jrp_dragon_plan == 1" -> :case2_union_hint
+text "Смерть: Спроси тех, кто живёт до следующего вторника. На площади — Аглая, травница и лавочник. Прочти афишу, потом поговори с распорядителем у пещеры." second=jrp/death key=jrp/case2/death/11
+goto -> :case2_sync
+:case2_union_hint
+text "Смерть: Дракон согласен судиться? У профсоюза есть юрист. Маленький, зелёный. Начальство при нём почему-то читает мелкий шрифт." second=jrp/death key=jrp/case2/death/12
+goto -> :case2_sync
+:case2_draft_hint
+text "Смерть: Для иска нужен текст, а не намерение. У тебя теперь свой стол. Хороший повод использовать его против работодателя." second=jrp/death key=jrp/case2/death/13
+goto -> :case2_sync
+:case2_sign_hint
+text "Смерть: Отнеси иск дракону. Подписывать за него нельзя. Даже если очень хочется сэкономить время." second=jrp/death key=jrp/case2/death/14
+goto -> :case2_sync
+:case2_post_hint
+text "Смерть: Анонимную копию — в красный ящик профсоюза. Подписанный оригинал — юристу. Моя фамилия ни в одном из них не нужна." second=jrp/death key=jrp/case2/death/15
+goto -> :case2_sync
+:case2_strike_hint
+text "Смерть: Иск принят, но вторник ещё в расписании. Поговори с драконом об отказе от работы. За него это решение не примешь." second=jrp/death key=jrp/case2/death/16
+goto -> :case2_sync
+:case2_check_hint
+text "Смерть: Заявление об отказе вижу. Теперь проверь сам ивент: сборный пункт у пещеры, звонок распорядителя, потом жители. Я пока не убираю пакет." second=jrp/death key=jrp/case2/death/17
+goto -> :case2_sync
+:case2_report_hint
+text "Смерть: На вторник — ни одного акта. Оформи результат на своём столе, пока начальник не назначил мне пятьсот учебных смертей." second=jrp/death key=jrp/case2/death/18
+goto -> :case2_sync
+:case2_done
+text "Смерть: Во вторник я выключила будильник. Не пейджер. Пока только будильник." second=jrp/death key=jrp/case2/death/19
+text "Стас: Уже нарушение регламента." first=jrp/stas key=jrp/case2/death/20
+text "Смерть: Ты дурно на меня влияешь. Поставь вторую чашку." second=jrp/death key=jrp/case2/death/21
+end
+
+:case2_sync
+when "jrp_dragon_complete == 1" -> :case2_stage11
+when "jrp_dragon_verified == 1" -> :case2_stage10
+when "jrp_dragon_strike == 1" -> :case2_stage9
+when "jrp_dragon_registered == 1" -> :case2_stage8
+when "jrp_dragon_letter_sent == 1" -> :case2_stage7
+when "jrp_dragon_signed == 1" -> :case2_stage6
+when "jrp_dragon_draft == 1" -> :case2_stage5
+when "jrp_dragon_legal_advice == 1" -> :case2_stage4
+when "jrp_dragon_plan == 1" -> :case2_stage3
+when "jrp_dragon_forewoman == 1 && jrp_dragon_healer == 1 && jrp_dragon_vendor == 1 && jrp_dragon_notice == 1 && jrp_dragon_marshal == 1" -> :case2_stage2
+when "jrp_dragon_village == 1" -> :case2_stage1
+when "jrp_dragon_started != 1" -> :case2_end
+action quest.set_data_status quest_id=jrp_dragon_case level=0
+end
+:case2_stage1
+action quest.set_data_status quest_id=jrp_dragon_case level=1
+end
+:case2_stage2
+action quest.set_data_status quest_id=jrp_dragon_case level=2
+end
+:case2_stage3
+action quest.set_data_status quest_id=jrp_dragon_case level=3
+end
+:case2_stage4
+action quest.set_data_status quest_id=jrp_dragon_case level=4
+end
+:case2_stage5
+action quest.set_data_status quest_id=jrp_dragon_case level=5
+end
+:case2_stage6
+action quest.set_data_status quest_id=jrp_dragon_case level=6
+end
+:case2_stage7
+action quest.set_data_status quest_id=jrp_dragon_case level=7
+end
+:case2_stage8
+action quest.set_data_status quest_id=jrp_dragon_case level=8
+end
+:case2_stage9
+action quest.set_data_status quest_id=jrp_dragon_case level=9
+end
+:case2_stage10
+action quest.set_data_status quest_id=jrp_dragon_case level=10
+end
+:case2_stage11
+action quest.set_data_status quest_id=jrp_dragon_case level=11
+end
+:case2_end
 end

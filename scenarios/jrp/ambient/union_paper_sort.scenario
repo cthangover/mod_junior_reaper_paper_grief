@@ -1,0 +1,14 @@
+scene: jrp_union
+channel: ambient
+actor.s: jrp_union/paper_sorter
+anchor: s
+condition: near("s", "player", 40)
+cooldown: 0.4
+---
+flag self.page_down 0
+delay 0.9 hidden
+flag self.page_down 1
+delay 0.9 hidden
+flag self.page_down 0
+delay 0.8 hidden
+end

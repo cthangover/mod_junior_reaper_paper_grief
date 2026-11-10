@@ -1,0 +1,112 @@
+when "jrp_dragon_complete == 1" -> :complete
+when "jrp_dragon_verified == 1" -> :report
+when "jrp_dragon_draft == 1" -> :drafted
+when "jrp_dragon_legal_advice == 1" -> :draft
+when "jrp_dragon_started == 1" -> :evidence
+ptext "Закрытое дело Глеба лежит отдельно. По вторникам в расписании Смерти зачернен целый день. Спросите её, что за вызов повторяется каждую неделю." key=jrp/case2/personal_desk/0
+goto -> :case2_sync
+:evidence
+ptext "Дело № 002. Нужны показания Аглаи, травницы и лавочника, копия афиши и приказ распорядителя. Затем — разговор с драконом и консультация Рикка в профсоюзе." key=jrp/case2/personal_desk/1
+text "Стас: Раньше я бы сделал таблицу на пятьсот строк. Теперь пусть строк не будет." first=jrp/stas key=jrp/case2/personal_desk/2
+goto -> :case2_sync
+:draft
+select "Составить иск по согласованным с Рикком требованиям?" key=jrp/case2/personal_desk/3
+option "Подготовить иск и отдельное анонимное письмо для огласки" key=jrp/case2/personal_desk/4 -> :write
+option "Пока оставить черновик" key=jrp/case2/personal_desk/5 -> :later
+:write
+flag jrp_dragon_draft 1
+ptext "В иске: исключить обязательные убийства; оплатить сверхурочные, лечение и компенсации гоблинам; обеспечить безопасность жителей, смену принцессе и сохранение гнезда на время спора." key=jrp/case2/personal_desk/6
+ptext "Стас делает вторую копию — только факты и условия, без имён, подписей и служебных номеров свидетелей. Это письмо для красного ящика. Оригинал повезёт дракону на подпись." key=jrp/case2/personal_desk/7
+text "Стас: Таблицы пригодились. Только теперь в них не люди должны помещаться." first=jrp/stas key=jrp/case2/personal_desk/8
+goto -> :case2_sync
+:drafted
+when "jrp_dragon_strike == 1" -> :check
+when "jrp_dragon_registered == 1" -> :strike
+when "jrp_dragon_letter_sent == 1" -> :file
+when "jrp_dragon_signed == 1" -> :mail
+ptext "Черновик иска готов. Отнесите дракону: он должен прочитать и подписать сам." key=jrp/case2/personal_desk/9
+goto -> :case2_sync
+:mail
+ptext "Подписанный оригинал сохранён. Анонимную копию — в красный ящик профсоюза; затем оригинал — Рикку." key=jrp/case2/personal_desk/10
+goto -> :case2_sync
+:file
+ptext "Анонимное письмо принято. Передайте Рикку подписанный иск и получите входящий номер." key=jrp/case2/personal_desk/11
+goto -> :case2_sync
+:strike
+ptext "Иск зарегистрирован. Поговорите с драконом об отказе от налётов до исполнения требований." key=jrp/case2/personal_desk/12
+goto -> :case2_sync
+:check
+ptext "Дракон отказался от налётов. Дождитесь недельного сигнала у распорядителя, затем подтвердите у Аглаи, что жители остались живы." key=jrp/case2/personal_desk/13
+goto -> :case2_sync
+:report
+select "Зафиксировано: очередной ивент прошёл без пятисот смертей. Как отправить результат начальству?" key=jrp/case2/personal_desk/14
+option "Оформить приостановку по судебному спору, сохранив свидетельства" key=jrp/case2/personal_desk/15 -> :close
+option "Пока не отправлять отчёт" key=jrp/case2/personal_desk/16 -> :later
+:close
+flag jrp_dragon_complete 1
+flag jrp_dragon_day_free 1
+action quest.set_data_status quest_id=jrp_dragon_case level=11
+action quest.set_status quest_id=jrp_dragon_case status=End
+ptext "Начальнику: «Повторяемый ивент приостановлен в связи с трудовым спором № 002-Д. Пакет актов не сформирован ввиду отсутствия страхового события». Подлинные показания остаются в деле." key=jrp/case2/personal_desk/17
+text "Стас: Худший сотрудник недели. Наконец-то по делу." first=jrp/stas key=jrp/case2/personal_desk/18
+ptext "Пейджер Смерти не требует ни одной из пятисот подписей. В её вторнике впервые свободен целый день. Иск ещё на рассмотрении; дракон продолжает отказ до исполнения требований." key=jrp/case2/personal_desk/19
+text "Смерть, из дверей: Я не на вызов. Просто зашла." second=jrp/death key=jrp/case2/personal_desk/20
+text "Стас: Вторую чашку?" first=jrp/stas key=jrp/case2/personal_desk/21
+text "Смерть: Поставь. И не пиши, на сколько минут." second=jrp/death key=jrp/case2/personal_desk/22
+goto -> :case2_sync
+:complete
+ptext "Дело № 002 закрыто для Бюро, трудовой спор продолжает вести профсоюз. Дракон не выполняет убийственный этап, жители живы, вторник Смерти свободен." key=jrp/case2/personal_desk/23
+goto -> :case2_sync
+:later
+goto -> :case2_sync
+
+:case2_sync
+when "jrp_dragon_complete == 1" -> :case2_stage11
+when "jrp_dragon_verified == 1" -> :case2_stage10
+when "jrp_dragon_strike == 1" -> :case2_stage9
+when "jrp_dragon_registered == 1" -> :case2_stage8
+when "jrp_dragon_letter_sent == 1" -> :case2_stage7
+when "jrp_dragon_signed == 1" -> :case2_stage6
+when "jrp_dragon_draft == 1" -> :case2_stage5
+when "jrp_dragon_legal_advice == 1" -> :case2_stage4
+when "jrp_dragon_plan == 1" -> :case2_stage3
+when "jrp_dragon_forewoman == 1 && jrp_dragon_healer == 1 && jrp_dragon_vendor == 1 && jrp_dragon_notice == 1 && jrp_dragon_marshal == 1" -> :case2_stage2
+when "jrp_dragon_village == 1" -> :case2_stage1
+when "jrp_dragon_started != 1" -> :case2_end
+action quest.set_data_status quest_id=jrp_dragon_case level=0
+end
+:case2_stage1
+action quest.set_data_status quest_id=jrp_dragon_case level=1
+end
+:case2_stage2
+action quest.set_data_status quest_id=jrp_dragon_case level=2
+end
+:case2_stage3
+action quest.set_data_status quest_id=jrp_dragon_case level=3
+end
+:case2_stage4
+action quest.set_data_status quest_id=jrp_dragon_case level=4
+end
+:case2_stage5
+action quest.set_data_status quest_id=jrp_dragon_case level=5
+end
+:case2_stage6
+action quest.set_data_status quest_id=jrp_dragon_case level=6
+end
+:case2_stage7
+action quest.set_data_status quest_id=jrp_dragon_case level=7
+end
+:case2_stage8
+action quest.set_data_status quest_id=jrp_dragon_case level=8
+end
+:case2_stage9
+action quest.set_data_status quest_id=jrp_dragon_case level=9
+end
+:case2_stage10
+action quest.set_data_status quest_id=jrp_dragon_case level=10
+end
+:case2_stage11
+action quest.set_data_status quest_id=jrp_dragon_case level=11
+end
+:case2_end
+end

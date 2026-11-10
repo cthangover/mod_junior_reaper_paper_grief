@@ -1,0 +1,11 @@
+scene: jrp_union
+channel: ambient
+actor.c: jrp_union/courier
+actor.s: jrp_union/secretary
+anchor: c
+condition: near("c", "player", 12)
+cooldown: 50
+---
+text "Входящие — по датам смерти. Не по датам воскрешения!" who=s key=jrp/case2/ambient/union0 duration=4
+text "Тогда мне опять всю тележку перекладывать." who=c key=jrp/case2/ambient/union1 duration=4
+end

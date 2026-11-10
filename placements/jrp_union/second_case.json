@@ -1,0 +1,73 @@
+{
+  "Kind": "rpg_placement",
+  "Items": [
+    {
+      "Id": "jrp_union/room",
+      "Object": "junior_reaper_paper_grief/case2/union",
+      "X": 0,
+      "Y": 0,
+      "Parts": [
+        {
+          "Image": "case2/union",
+          "At": [
+            -15.4296875,
+            2.0546875
+          ],
+          "Size": [
+            30,
+            20
+          ],
+          "Geometry": "upright",
+          "Along": "x",
+          "Only": "isometric",
+          "DrawOrder": "BelowCharacters"
+        },
+        {
+          "Image": "case2/union",
+          "At": [
+            0,
+            0
+          ],
+          "Size": [
+            32,
+            32
+          ],
+          "Geometry": "ground",
+          "Along": "x",
+          "Only": "topdown",
+          "DrawOrder": "BelowCharacters"
+        }
+      ]
+    },
+    {
+      "Id": "jrp_union/rikk",
+      "Object": "junior_reaper_paper_grief/case2/rikk",
+      "X": 13,
+      "Y": 8
+    },
+    {
+      "Id": "jrp_union/courier",
+      "Object": "junior_reaper_paper_grief/case2/union_courier",
+      "X": 18,
+      "Y": 14
+    },
+    {
+      "Id": "jrp_union/archivist",
+      "Object": "junior_reaper_paper_grief/case2/union_archivist",
+      "X": 8,
+      "Y": 10
+    },
+    {
+      "Id": "jrp_union/secretary",
+      "Object": "junior_reaper_paper_grief/case2/union_secretary",
+      "X": 15,
+      "Y": 19
+    },
+    {
+      "Id": "jrp_union/paper_sorter",
+      "Object": "junior_reaper_paper_grief/case2/paper_sorter",
+      "X": 13,
+      "Y": 14
+    }
+  ]
+}

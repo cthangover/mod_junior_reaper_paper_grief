@@ -1,0 +1,83 @@
+when "jrp_dragon_strike == 1" -> :after
+when "jrp_dragon_marshal == 1" -> :again
+text "Распорядитель: Заявка на героизм? В очередь. Пока дракон не сжёг пятьсот, принцесса не считается похищенной." second=jrp/marshal key=jrp/case2/marshal/0
+text "Стас: Она-то об этом знает?" first=jrp/stas key=jrp/case2/marshal/1
+text "Распорядитель: Разумеется. Четырнадцатый год в штате." second=jrp/marshal key=jrp/case2/marshal/2
+text "Стас: Кто обязывает дракона жечь деревни?" first=jrp/stas key=jrp/case2/marshal/3
+text "Распорядитель: Приложение к трудовому договору. Я лишь звоню в колокол. Невыполнение плана — удержание жалованья и лишение гнезда." second=jrp/marshal key=jrp/case2/marshal/4
+text "Стас: Копию этих условий. Заверенную." first=jrp/stas key=jrp/case2/marshal/5
+text "Распорядитель: Вы из проверки? Я же сказал — только звоню." second=jrp/marshal key=jrp/case2/marshal/6
+flag jrp_dragon_marshal 1
+goto -> :case2_sync
+:again
+text "Распорядитель: В пещеру можно. Только без битвы: сначала население, потом героизм. Строго по порядку." second=jrp/marshal key=jrp/case2/marshal/7
+goto -> :case2_sync
+:after
+when "jrp_dragon_event_checked == 1" -> :after_again
+text "Распорядитель: Дракон не выходит. У меня первый этап не закрыт." second=jrp/marshal key=jrp/case2/marshal/8
+select "Проверить начало следующей «Пепельной жатвы»?" key=jrp/case2/marshal/9
+option "Дождаться сигнала и проверить результат" key=jrp/case2/marshal/10 -> :observe
+option "Вернуться позже" key=jrp/case2/marshal/11 -> :later
+:observe
+ptext "В назначенный вторник распорядитель звонит. Очередь героев ждёт. Из пещеры приносят заявление об отказе выполнять опасную работу." key=jrp/case2/marshal/12
+text "Распорядитель: Этап один — не выполнен. Этап два — недоступен. Может, вручную поставить пятьсот?" second=jrp/marshal key=jrp/case2/marshal/13
+text "Стас: Поставите — получите пятьсот свидетелей." first=jrp/stas key=jrp/case2/marshal/14
+flag jrp_dragon_event_checked 1
+ptext "После недельного сигнала дракон остался в гнезде. Налёт не состоялся. Подтвердите у Аглаи в деревне, что все жители живы." key=jrp/case2/marshal/15
+goto -> :case2_sync
+:after_again
+text "Распорядитель: Событие приостановлено до исполнения требований. Колокол на месте. Звонить некуда." second=jrp/marshal key=jrp/case2/marshal/16
+goto -> :case2_sync
+:later
+goto -> :case2_sync
+
+:case2_sync
+when "jrp_dragon_complete == 1" -> :case2_stage11
+when "jrp_dragon_verified == 1" -> :case2_stage10
+when "jrp_dragon_strike == 1" -> :case2_stage9
+when "jrp_dragon_registered == 1" -> :case2_stage8
+when "jrp_dragon_letter_sent == 1" -> :case2_stage7
+when "jrp_dragon_signed == 1" -> :case2_stage6
+when "jrp_dragon_draft == 1" -> :case2_stage5
+when "jrp_dragon_legal_advice == 1" -> :case2_stage4
+when "jrp_dragon_plan == 1" -> :case2_stage3
+when "jrp_dragon_forewoman == 1 && jrp_dragon_healer == 1 && jrp_dragon_vendor == 1 && jrp_dragon_notice == 1 && jrp_dragon_marshal == 1" -> :case2_stage2
+when "jrp_dragon_village == 1" -> :case2_stage1
+when "jrp_dragon_started != 1" -> :case2_end
+action quest.set_data_status quest_id=jrp_dragon_case level=0
+end
+:case2_stage1
+action quest.set_data_status quest_id=jrp_dragon_case level=1
+end
+:case2_stage2
+action quest.set_data_status quest_id=jrp_dragon_case level=2
+end
+:case2_stage3
+action quest.set_data_status quest_id=jrp_dragon_case level=3
+end
+:case2_stage4
+action quest.set_data_status quest_id=jrp_dragon_case level=4
+end
+:case2_stage5
+action quest.set_data_status quest_id=jrp_dragon_case level=5
+end
+:case2_stage6
+action quest.set_data_status quest_id=jrp_dragon_case level=6
+end
+:case2_stage7
+action quest.set_data_status quest_id=jrp_dragon_case level=7
+end
+:case2_stage8
+action quest.set_data_status quest_id=jrp_dragon_case level=8
+end
+:case2_stage9
+action quest.set_data_status quest_id=jrp_dragon_case level=9
+end
+:case2_stage10
+action quest.set_data_status quest_id=jrp_dragon_case level=10
+end
+:case2_stage11
+action quest.set_data_status quest_id=jrp_dragon_case level=11
+end
+:case2_end
+end

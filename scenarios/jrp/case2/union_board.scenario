@@ -1,0 +1,60 @@
+when "jrp_dragon_letter_sent == 1" -> :public
+ptext "На доске — приёмные часы, отказы в сверхурочных и инструкция: «Анонимное сообщение можно опустить в красный ящик. Подписанный иск передаётся лично юристу»." key=jrp/case2/union_board/0
+goto -> :case2_sync
+:public
+ptext "«Пятьсот повторных смертей каждую неделю. «Пепельная жатва»: под видом развлечения действует обязательное уничтожение жителей. Требуем остановить налёты, оплатить лечение и пересмотреть условия труда». Источник и имена свидетелей не опубликованы." key=jrp/case2/union_board/1
+when "jrp_dragon_registered != 1" -> :end
+ptext "Рядом номер дела: 002-Д. Профсоюз поддерживает отказ от опасной работы до исполнения требований." key=jrp/case2/union_board/2
+:end
+goto -> :case2_sync
+
+:case2_sync
+when "jrp_dragon_complete == 1" -> :case2_stage11
+when "jrp_dragon_verified == 1" -> :case2_stage10
+when "jrp_dragon_strike == 1" -> :case2_stage9
+when "jrp_dragon_registered == 1" -> :case2_stage8
+when "jrp_dragon_letter_sent == 1" -> :case2_stage7
+when "jrp_dragon_signed == 1" -> :case2_stage6
+when "jrp_dragon_draft == 1" -> :case2_stage5
+when "jrp_dragon_legal_advice == 1" -> :case2_stage4
+when "jrp_dragon_plan == 1" -> :case2_stage3
+when "jrp_dragon_forewoman == 1 && jrp_dragon_healer == 1 && jrp_dragon_vendor == 1 && jrp_dragon_notice == 1 && jrp_dragon_marshal == 1" -> :case2_stage2
+when "jrp_dragon_village == 1" -> :case2_stage1
+when "jrp_dragon_started != 1" -> :case2_end
+action quest.set_data_status quest_id=jrp_dragon_case level=0
+end
+:case2_stage1
+action quest.set_data_status quest_id=jrp_dragon_case level=1
+end
+:case2_stage2
+action quest.set_data_status quest_id=jrp_dragon_case level=2
+end
+:case2_stage3
+action quest.set_data_status quest_id=jrp_dragon_case level=3
+end
+:case2_stage4
+action quest.set_data_status quest_id=jrp_dragon_case level=4
+end
+:case2_stage5
+action quest.set_data_status quest_id=jrp_dragon_case level=5
+end
+:case2_stage6
+action quest.set_data_status quest_id=jrp_dragon_case level=6
+end
+:case2_stage7
+action quest.set_data_status quest_id=jrp_dragon_case level=7
+end
+:case2_stage8
+action quest.set_data_status quest_id=jrp_dragon_case level=8
+end
+:case2_stage9
+action quest.set_data_status quest_id=jrp_dragon_case level=9
+end
+:case2_stage10
+action quest.set_data_status quest_id=jrp_dragon_case level=10
+end
+:case2_stage11
+action quest.set_data_status quest_id=jrp_dragon_case level=11
+end
+:case2_end
+end

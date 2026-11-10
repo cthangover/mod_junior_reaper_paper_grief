@@ -1,0 +1,6 @@
+when "jrp_case_complete != 1" -> :locked
+action rpg.teleport map=jrp_union x=9 y=19 dir=Up
+end
+:locked
+ptext "Профсоюз NPC. Дверь открывается по служебному пропуску после первого закрытого дела." key=jrp/case2/union_door/0
+end

@@ -1,0 +1,23 @@
+{
+  "Kind": "rpg_placement",
+  "Items": [
+    {
+      "Id": "jrp_dragon_nest/room",
+      "Object": "junior_reaper_paper_grief/case2/cave",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Id": "jrp_dragon_nest/dragon",
+      "Object": "junior_reaper_paper_grief/case2/dragon",
+      "X": 13,
+      "Y": 7
+    },
+    {
+      "Id": "jrp_dragon_nest/princess",
+      "Object": "junior_reaper_paper_grief/case2/princess",
+      "X": 9,
+      "Y": 14
+    }
+  ]
+}

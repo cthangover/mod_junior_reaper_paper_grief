@@ -1,0 +1,41 @@
+{
+  "Kind": "item",
+  "Items": [
+    {
+      "Id": "jrp/raid_notice",
+      "Name": "jrp/case2/item/raid_notice/name",
+      "Description": "jrp/case2/item/raid_notice/desc",
+      "Cost": 0,
+      "Sprite": "jrp/evidence_note",
+      "ItemType": "Quest,CantDrop",
+      "ItemAction": "null"
+    },
+    {
+      "Id": "jrp/dragon_contract",
+      "Name": "jrp/case2/item/dragon_contract/name",
+      "Description": "jrp/case2/item/dragon_contract/desc",
+      "Cost": 0,
+      "Sprite": "jrp/evidence_note",
+      "ItemType": "Quest,CantDrop",
+      "ItemAction": "null"
+    },
+    {
+      "Id": "jrp/dragon_claim",
+      "Name": "jrp/case2/item/dragon_claim/name",
+      "Description": "jrp/case2/item/dragon_claim/desc",
+      "Cost": 0,
+      "Sprite": "jrp/case_file",
+      "ItemType": "Quest,CantDrop",
+      "ItemAction": "null"
+    },
+    {
+      "Id": "jrp/dragon_receipt",
+      "Name": "jrp/case2/item/dragon_receipt/name",
+      "Description": "jrp/case2/item/dragon_receipt/desc",
+      "Cost": 0,
+      "Sprite": "jrp/claim_receipt",
+      "ItemType": "Quest,CantDrop",
+      "ItemAction": "null"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+when "jrp_dragon_letter_sent == 1" -> :already
+when "jrp_dragon_signed == 1" -> :case_letter
+select "Почтовый ящик профсоюза. Анонимность отправителя сохраняется." key=jrp/case2/mailbox/0
+option "Оставить анонимную записку о переработках Бюро" key=jrp/case2/mailbox/1 -> :ordinary
+option "Отойти" key=jrp/case2/mailbox/2 -> :later
+:ordinary
+when "jrp_union_note_sent == 1" -> :ordinary_again
+flag jrp_union_note_sent 1
+ptext "Стас опускает записку без подписи: «Полевая служба сокращена до одного человека. Нагрузка — за четверых». Ни номера кабинета, ни имени Смерти." key=jrp/case2/mailbox/3
+ptext "Секретарь забирает конверт в общую сортировку. Записка принята; это ещё не иск по делу дракона." key=jrp/case2/mailbox/4
+goto -> :case2_sync
+:ordinary_again
+ptext "Записка о переработках уже принята. Повторная отправка не создаст ещё одного сотрудника в поле." key=jrp/case2/mailbox/5
+goto -> :case2_sync
+:case_letter
+select "Оригинал подписан. Для огласки приготовлена отдельная копия без имён и подписей." key=jrp/case2/mailbox/6
+option "Опустить анонимное письмо о пятистах смертях каждую неделю" key=jrp/case2/mailbox/7 -> :post
+option "Сначала ещё проверить копию" key=jrp/case2/mailbox/8 -> :later
+:post
+flag jrp_dragon_letter_sent 1
+ptext "В конверте — расписание ивента, число повторных смертей и выдержки из условий труда. Имён жителей, подписи дракона и источника из Бюро нет. Оригинал иска остаётся у Стаса." key=jrp/case2/mailbox/9
+text "Секретарь: Пятьсот? В недельную сводку. И копию на доску — без обратного адреса." second=jrp/union_secretary key=jrp/case2/mailbox/10
+ptext "Проблема предана огласке. Передайте подписанный оригинал Рикку для регистрации иска." key=jrp/case2/mailbox/11
+goto -> :case2_sync
+:already
+ptext "Анонимное письмо по «Пепельной жатве» принято. Сводка опубликована. Повторная отправка не требуется." key=jrp/case2/mailbox/12
+goto -> :case2_sync
+:later
+goto -> :case2_sync
+
+:case2_sync
+when "jrp_dragon_complete == 1" -> :case2_stage11
+when "jrp_dragon_verified == 1" -> :case2_stage10
+when "jrp_dragon_strike == 1" -> :case2_stage9
+when "jrp_dragon_registered == 1" -> :case2_stage8
+when "jrp_dragon_letter_sent == 1" -> :case2_stage7
+when "jrp_dragon_signed == 1" -> :case2_stage6
+when "jrp_dragon_draft == 1" -> :case2_stage5
+when "jrp_dragon_legal_advice == 1" -> :case2_stage4
+when "jrp_dragon_plan == 1" -> :case2_stage3
+when "jrp_dragon_forewoman == 1 && jrp_dragon_healer == 1 && jrp_dragon_vendor == 1 && jrp_dragon_notice == 1 && jrp_dragon_marshal == 1" -> :case2_stage2
+when "jrp_dragon_village == 1" -> :case2_stage1
+when "jrp_dragon_started != 1" -> :case2_end
+action quest.set_data_status quest_id=jrp_dragon_case level=0
+end
+:case2_stage1
+action quest.set_data_status quest_id=jrp_dragon_case level=1
+end
+:case2_stage2
+action quest.set_data_status quest_id=jrp_dragon_case level=2
+end
+:case2_stage3
+action quest.set_data_status quest_id=jrp_dragon_case level=3
+end
+:case2_stage4
+action quest.set_data_status quest_id=jrp_dragon_case level=4
+end
+:case2_stage5
+action quest.set_data_status quest_id=jrp_dragon_case level=5
+end
+:case2_stage6
+action quest.set_data_status quest_id=jrp_dragon_case level=6
+end
+:case2_stage7
+action quest.set_data_status quest_id=jrp_dragon_case level=7
+end
+:case2_stage8
+action quest.set_data_status quest_id=jrp_dragon_case level=8
+end
+:case2_stage9
+action quest.set_data_status quest_id=jrp_dragon_case level=9
+end
+:case2_stage10
+action quest.set_data_status quest_id=jrp_dragon_case level=10
+end
+:case2_stage11
+action quest.set_data_status quest_id=jrp_dragon_case level=11
+end
+:case2_end
+end

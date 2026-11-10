@@ -54,6 +54,17 @@
           "Solid": true,
           "Trigger": "Use",
           "Scenario": "jrp/bureau/stas_door"
+        },
+        {
+          "Id": "union_door",
+          "X": 8,
+          "Y": 0,
+          "Width": 2,
+          "Height": 1,
+          "Name": "jrp/case2/world/event/union_door",
+          "Trigger": "Use",
+          "Scenario": "jrp/case2/union_door",
+          "Solid": true
         }
       ]
     }

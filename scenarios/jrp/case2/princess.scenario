@@ -1,0 +1,15 @@
+when "jrp_dragon_strike == 1" -> :free
+text "Принцесса: По должности похищена. По факту — неотлучное дежурство. Даже когда дракон спит, я должна подавать признаки пленения." second=jrp/princess key=jrp/case2/princess/0
+when "jrp_dragon_plan != 1" -> :before_plan
+text "Стас: В иске будет сменный график. И право выйти." first=jrp/stas key=jrp/case2/princess/1
+text "Принцесса: Право выйти запиши первым. Чай я и снаружи выпью." second=jrp/princess key=jrp/case2/princess/2
+end
+:before_plan
+text "Стас: И выйти нельзя?" first=jrp/stas key=jrp/case2/princess/4
+text "Принцесса: Спасать меня можно. Отпускать — нарушение условий." second=jrp/princess key=jrp/case2/princess/5
+text "Стас: Кто условия утверждал?" first=jrp/stas key=jrp/case2/princess/6
+text "Принцесса: Тот, у кого похищение длится с девяти до шести. Дракон покажет договор." second=jrp/princess key=jrp/case2/princess/7
+end
+:free
+text "Принцесса: Уведомление об отказе подала. Теперь пью чай без признаков пленения. Вкус тот же, а какая разница." second=jrp/princess key=jrp/case2/princess/3
+end

@@ -1,0 +1,495 @@
+{
+  "Kind": "rpg_object",
+  "Items": [
+    {
+      "Id": "junior_reaper_paper_grief/case2/village",
+      "Name": "jrp/case2/world/scenery/village",
+      "Form": "sprite",
+      "Category": "building",
+      "Solid": false,
+      "Footprint": {
+        "Size": [
+          32,
+          32
+        ]
+      },
+      "Anchor": [
+        0,
+        0
+      ],
+      "Parts": [
+        {
+          "Image": "case2/village",
+          "Geometry": "upright",
+          "Only": "isometric",
+          "At": [
+            -15,
+            2.5
+          ],
+          "Size": [
+            30,
+            20
+          ],
+          "DrawOrder": "BelowCharacters"
+        },
+        {
+          "Image": "case2/village",
+          "Geometry": "ground",
+          "Only": "topdown",
+          "At": [
+            0,
+            0
+          ],
+          "Size": [
+            32,
+            32
+          ],
+          "DrawOrder": "BelowCharacters"
+        }
+      ]
+    },
+    {
+      "Id": "junior_reaper_paper_grief/case2/union",
+      "Name": "jrp/case2/world/scenery/union",
+      "Form": "sprite",
+      "Category": "interior",
+      "Solid": false,
+      "Footprint": {
+        "Size": [
+          32,
+          32
+        ]
+      },
+      "Anchor": [
+        0,
+        0
+      ],
+      "Parts": [
+        {
+          "Image": "case2/union",
+          "Geometry": "upright",
+          "Only": "isometric",
+          "At": [
+            -15,
+            2.5
+          ],
+          "Size": [
+            30,
+            20
+          ],
+          "DrawOrder": "BelowCharacters"
+        },
+        {
+          "Image": "case2/union",
+          "Geometry": "ground",
+          "Only": "topdown",
+          "At": [
+            0,
+            0
+          ],
+          "Size": [
+            32,
+            32
+          ],
+          "DrawOrder": "BelowCharacters"
+        }
+      ]
+    },
+    {
+      "Id": "junior_reaper_paper_grief/case2/approach",
+      "Name": "jrp/case2/world/scenery/approach",
+      "Form": "sprite",
+      "Category": "building",
+      "Solid": false,
+      "Footprint": {
+        "Size": [
+          32,
+          32
+        ]
+      },
+      "Anchor": [
+        0,
+        0
+      ],
+      "Parts": [
+        {
+          "Image": "case2/approach",
+          "Geometry": "upright",
+          "Only": "isometric",
+          "At": [
+            -15,
+            2.5
+          ],
+          "Size": [
+            30,
+            20
+          ],
+          "DrawOrder": "BelowCharacters"
+        },
+        {
+          "Image": "case2/approach",
+          "Geometry": "ground",
+          "Only": "topdown",
+          "At": [
+            0,
+            0
+          ],
+          "Size": [
+            32,
+            32
+          ],
+          "DrawOrder": "BelowCharacters"
+        }
+      ]
+    },
+    {
+      "Id": "junior_reaper_paper_grief/case2/cave",
+      "Name": "jrp/case2/world/scenery/cave",
+      "Form": "sprite",
+      "Category": "building",
+      "Solid": false,
+      "Footprint": {
+        "Size": [
+          32,
+          32
+        ]
+      },
+      "Anchor": [
+        0,
+        0
+      ],
+      "Parts": [
+        {
+          "Image": "case2/cave",
+          "Geometry": "upright",
+          "Only": "isometric",
+          "At": [
+            -15,
+            2.5
+          ],
+          "Size": [
+            30,
+            20
+          ],
+          "DrawOrder": "BelowCharacters"
+        },
+        {
+          "Image": "case2/cave",
+          "Geometry": "ground",
+          "Only": "topdown",
+          "At": [
+            0,
+            0
+          ],
+          "Size": [
+            32,
+            32
+          ],
+          "DrawOrder": "BelowCharacters"
+        }
+      ]
+    },
+    {
+      "Id": "junior_reaper_paper_grief/case2/forewoman",
+      "Name": "jrp/case2/world/actor/forewoman",
+      "Form": "actor",
+      "Category": "npc",
+      "Charset": "jrp/forewoman",
+      "Facing": "Down",
+      "Solid": true,
+      "Scale": 1,
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/case2/forewoman"
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/case2/healer",
+      "Name": "jrp/case2/world/actor/healer",
+      "Form": "actor",
+      "Category": "npc",
+      "Charset": "jrp/herbalist",
+      "Facing": "Down",
+      "Solid": true,
+      "Scale": 1,
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/case2/healer"
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/case2/village_vendor",
+      "Name": "jrp/case2/world/actor/village_vendor",
+      "Form": "actor",
+      "Category": "npc",
+      "Charset": "jrp/merchant",
+      "Facing": "Down",
+      "Solid": true,
+      "Scale": 1,
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/case2/vendor"
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/case2/marshal",
+      "Name": "jrp/case2/world/actor/marshal",
+      "Form": "actor",
+      "Category": "npc",
+      "Charset": "jrp/colleague",
+      "Facing": "Down",
+      "Solid": true,
+      "Scale": 1,
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/case2/marshal"
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/case2/rikk",
+      "Name": "jrp/case2/world/actor/rikk",
+      "Form": "actor",
+      "Category": "npc",
+      "Charset": "jrp/goblin_lawyer",
+      "Facing": "Down",
+      "Solid": true,
+      "Scale": 1,
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/case2/lawyer"
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/case2/union_courier",
+      "Name": "jrp/case2/world/actor/union_courier",
+      "Form": "actor",
+      "Category": "npc",
+      "Charset": "jrp/goblin_lawyer",
+      "Facing": "Down",
+      "Solid": false,
+      "Scale": 1,
+      "Route": {
+        "Steps": [
+          "wait:1",
+          "right",
+          "down",
+          "right",
+          "down",
+          "face_up",
+          "wait:3",
+          "up",
+          "left",
+          "up",
+          "left",
+          "face_left",
+          "wait:2"
+        ],
+        "Every": 0.12,
+        "Speed": 1.15,
+        "Repeat": true,
+        "RetryBlocked": true
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/case2/union_archivist",
+      "Name": "jrp/case2/world/actor/union_archivist",
+      "Form": "actor",
+      "Category": "npc",
+      "Charset": "jrp/librarian",
+      "Facing": "Down",
+      "Solid": false,
+      "Scale": 1,
+      "Route": {
+        "Steps": [
+          "wait:2",
+          "down",
+          "down",
+          "face_left",
+          "wait:4",
+          "right",
+          "up",
+          "up",
+          "face_up",
+          "wait:3",
+          "left"
+        ],
+        "Every": 0.12,
+        "Speed": 1.15,
+        "Repeat": true,
+        "RetryBlocked": true
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/case2/union_secretary",
+      "Name": "jrp/case2/world/actor/union_secretary",
+      "Form": "actor",
+      "Category": "npc",
+      "Charset": "jrp/union_employee",
+      "Facing": "Down",
+      "Solid": false,
+      "Scale": 1,
+      "Route": {
+        "Steps": [
+          "wait:3",
+          "right",
+          "right",
+          "face_up",
+          "wait:5",
+          "left",
+          "left",
+          "face_left",
+          "wait:4"
+        ],
+        "Every": 0.12,
+        "Speed": 1.15,
+        "Repeat": true,
+        "RetryBlocked": true
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/case2/village_builder",
+      "Name": "jrp/case2/world/actor/village_builder",
+      "Form": "actor",
+      "Category": "npc",
+      "Charset": "jrp/market_man",
+      "Facing": "Down",
+      "Solid": false,
+      "Scale": 1,
+      "Route": {
+        "Steps": [
+          "wait:4",
+          "up",
+          "left",
+          "face_up",
+          "wait:5",
+          "right",
+          "down",
+          "wait:3"
+        ],
+        "Every": 0.12,
+        "Speed": 1.15,
+        "Repeat": true,
+        "RetryBlocked": true
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/case2/village_carrier",
+      "Name": "jrp/case2/world/actor/village_carrier",
+      "Form": "actor",
+      "Category": "npc",
+      "Charset": "jrp/market_woman",
+      "Facing": "Down",
+      "Solid": false,
+      "Scale": 1,
+      "Route": {
+        "Steps": [
+          "right",
+          "down",
+          "wait:3",
+          "left",
+          "up",
+          "wait:4"
+        ],
+        "Every": 0.12,
+        "Speed": 1.15,
+        "Repeat": true,
+        "RetryBlocked": true
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/case2/dragon",
+      "Name": "jrp/case2/world/actor/dragon",
+      "Form": "sprite",
+      "Category": "npc",
+      "Footprint": {
+        "Size": [
+          5,
+          3
+        ]
+      },
+      "Anchor": [
+        1.5,
+        1.5
+      ],
+      "Parts": [
+        {
+          "Image": "case2/dragon",
+          "Geometry": "upright",
+          "At": [
+            0.5,
+            -3.5
+          ],
+          "Size": [
+            8,
+            7
+          ]
+        }
+      ],
+      "Interact": {
+        "Trigger": "Use",
+        "Scenario": "jrp/case2/dragon"
+      }
+    },
+    {
+      "Id": "junior_reaper_paper_grief/case2/paper_sorter",
+      "Name": "jrp/case2/world/actor/paper_sorter",
+      "Form": "sprite",
+      "Category": "npc",
+      "Solid": false,
+      "Footprint": {
+        "Size": [
+          1,
+          1
+        ]
+      },
+      "Anchor": [
+        0.5,
+        1
+      ],
+      "Parts": [
+        {
+          "Image": "case2/paper_sort_a",
+          "Geometry": "upright",
+          "At": [
+            -1,
+            -2.75
+          ],
+          "Size": [
+            3,
+            3.75
+          ]
+        }
+      ],
+      "States": [
+        {
+          "Id": "page_down",
+          "When": "self.page_down == 1",
+          "Parts": [
+            {
+              "Image": "case2/paper_sort_b",
+              "Geometry": "upright",
+              "At": [
+                -1,
+                -2.75
+              ],
+              "Size": [
+                3,
+                3.75
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "junior_reaper_paper_grief/case2/princess",
+      "Name": "jrp/case2/world/actor/princess",
+      "Form": "actor",
+      "Category": "npc",
+      "Charset": "jrp/princess",
+      "Facing": "Right",
+      "Solid": false,
+      "Scale": 1
+    }
+  ]
+}
