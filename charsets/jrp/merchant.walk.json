@@ -1,11 +1,13 @@
 {
-  "Columns": 3,
-  "IdleColumn": 1,
+  "Columns": 7,
+  "IdleColumn": 6,
   "WalkFrames": [
     0,
     1,
     2,
-    1
+    3,
+    4,
+    5
   ],
   "SpeedScale": 0.8
 }
