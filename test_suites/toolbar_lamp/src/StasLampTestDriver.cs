@@ -15,7 +15,10 @@ namespace Cthangover.Mods.JuniorReaper.Tests.Lamp
     /// <summary>Real pointer events drag the novel's existing toolbar lamp into Stas's actual office; no map resource is written.</summary>
     public partial class StasLampTestDriver : Node
     {
-        private readonly Timer timer = new() { WaitTime = 0.35, Autostart = true };
+        private int readinessToken = int.MinValue;
+        private ulong readinessStarted;
+        private ulong readinessFrame;
+        private readonly Timer timer = new() { WaitTime = 0.05, Autostart = true };
         private LampBehaviour lamp;
         private RpgMap map;
         private string previousMode;
@@ -42,8 +45,26 @@ namespace Cthangover.Mods.JuniorReaper.Tests.Lamp
             if (elapsed > 45) { Check(false, "timeout step " + step); Finish(); return; }
             try { Run(); } catch (Exception ex) { Check(false, ex.ToString()); Finish(); }
         }
+        // Deferred UI/scene work must finish before the original assertions run.
+        private bool WaitForReadyFrames(int token, bool ready, double timeoutSeconds = 30)
+        {
+            var now = global::Godot.Time.GetTicksMsec();
+            if (readinessToken != token)
+            {
+                readinessToken = token;
+                readinessStarted = now;
+                readinessFrame = 0;
+            }
+            if (now - readinessStarted > timeoutSeconds * 1000)
+                throw new global::System.TimeoutException($"readiness at step {token}: scene/UI did not become ready");
+            if (!ready) { readinessFrame = 0; return false; }
+            if (readinessFrame == 0) readinessFrame = global::Godot.Engine.GetProcessFrames();
+            return global::Godot.Engine.GetProcessFrames() - readinessFrame >= 2;
+        }
+
         private void Run()
         {
+            if (!WaitForReadyFrames(step, Boot.IsReady && RpgWorldHost.Current?.View?.Map != null && !Cthangover.Core.Scenes.GodotSceneService.IsTransitioning, 30)) return;
             switch (step)
             {
                 case 0:
