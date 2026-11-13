@@ -2,5 +2,5 @@
   "name": "Junior Reaper investigation play test",
   "description": "Exercises the first case through real input, checks evidence and journal progress, selective reset, repeat-safe dialogue and a real save/load round trip.",
   "sources": ["src/*.cs"],
-  "depends": ["rpg>=1", "dialog_base>=1", "quests_base>=1", "items_base>=1", "ui_base>=1"]
+  "depends": ["rpg>=0.1.0", "dialog_base>=0.1.0", "quests_base>=0.1.0", "items_base>=0.1.0", "ui_base>=0.1.0"]
 }
