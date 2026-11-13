@@ -6,15 +6,15 @@
   "description": "Два дела младшего менеджера по реанимации: повторные смерти стражника и еженедельный налёт дракона. Осмотр мельницы, опросы жителей, профсоюз NPC и иск против убийственного плана.",
   "category": "story",
   "depends": [
-    "rpg>=1",
-    "tile_isometric_base>=1",
-    "dialog_base>=1",
-    "characters_base>=1",
-    "items_base>=1",
-    "quests_base>=1",
-    "interactive_base>=1",
-    "ui_base>=1",
-    "npc_barks_base>=0.1"
+    "rpg>=0.1.0",
+    "tile_isometric_base>=0.1.0",
+    "dialog_base>=0.1.0",
+    "characters_base>=0.1.0",
+    "items_base>=0.1.0",
+    "quests_base>=0.1.0",
+    "interactive_base>=0.1.0",
+    "ui_base>=0.1.0",
+    "npc_barks_base>=0.1.0"
   ],
   "test_suites": [
     {
