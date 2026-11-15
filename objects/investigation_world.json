@@ -35,54 +35,6 @@
       }
     },
     {
-      "Id": "junior_reaper_paper_grief/jrp_world/gatehouse",
-      "Name": "jrp/world/object/gatehouse",
-      "Category": "building",
-      "Form": "sprite",
-      "Footprint": {
-        "Size": [
-          6,
-          4
-        ],
-        "Solid": [
-          "######",
-          "######",
-          "######",
-          "######"
-        ]
-      },
-      "Parts": [
-        {
-          "Image": "jrp_world/gatehouse",
-          "Geometry": "upright"
-        }
-      ]
-    },
-    {
-      "Id": "junior_reaper_paper_grief/jrp_world/mill",
-      "Name": "jrp/world/object/mill",
-      "Category": "building",
-      "Form": "sprite",
-      "Footprint": {
-        "Size": [
-          5,
-          4
-        ],
-        "Solid": [
-          "#####",
-          "#####",
-          "#####",
-          "#####"
-        ]
-      },
-      "Parts": [
-        {
-          "Image": "jrp_world/mill",
-          "Geometry": "upright"
-        }
-      ]
-    },
-    {
       "Id": "junior_reaper_paper_grief/jrp_world/townhouse",
       "Name": "jrp/world/object/townhouse",
       "Category": "building",
@@ -102,29 +54,6 @@
       "Parts": [
         {
           "Image": "jrp_world/townhouse",
-          "Geometry": "upright"
-        }
-      ]
-    },
-    {
-      "Id": "junior_reaper_paper_grief/jrp_world/stall",
-      "Name": "jrp/world/object/stall",
-      "Category": "decor",
-      "Form": "sprite",
-      "Footprint": {
-        "Size": [
-          3,
-          3
-        ],
-        "Solid": [
-          "###",
-          "###",
-          "###"
-        ]
-      },
-      "Parts": [
-        {
-          "Image": "jrp_world/stall",
           "Geometry": "upright"
         }
       ]
